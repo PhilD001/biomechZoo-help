@@ -3,8 +3,8 @@
 % Usage: All searching of zoo files for various processes and GUIs relies on the use of the 
 % 'engine' recursive fuction.  
 % 
-% Example: We have a folder 'raw data'. This folder contains numerous trials. We will use 
-% engine to search for different sets of files  
+% Example: We have a folder 'raw data'. This folder contains numerous trials for different 
+% subjects and of differet file types. We will use engine to search for different sets of files  
 %
 % See also engine
 
@@ -88,11 +88,11 @@ pause(time)
 
 % Search for certain file names
 %
-disp('let''s search for all zoo files in the subfolder ''HC030A'' containing the string ''C03''')
+disp('let''s search for all c3d files in the subfolder ''HC030A'' containing the string ''C03''')
 disp(' ')
-disp('fl = engine(''path'',fld,''extension'',''zoo'',''search file'',''C03'',''search path'',''HC030A'');')
+disp('fl = engine(''path'',fld,''extension'',''c3d'',''search file'',''C03'',''search path'',''HC030A'');')
 disp(' ')
-fl = engine('path',fld,'extension','zoo','search file','C03','search path','HC030A');
+fl = engine('path',fld,'extension','c3d','search file','C03','search path','HC030A');
 for i = 1:length(fl)
     [p,f,ext] = fileparts(fl{i});
     indx = strfind(p,filesep);
@@ -100,7 +100,8 @@ for i = 1:length(fl)
     disp([p,filesep,f,ext])
 end
 disp(' ')
-pause(time)
+
+clear ext f fl fld i indx p time
 
 
 

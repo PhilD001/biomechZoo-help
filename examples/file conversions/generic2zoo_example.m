@@ -47,15 +47,17 @@ pause(time)
 chHeaderRow = 5;
 del = false;
 delimiter = '\n';
+section = 'Video';
 disp('We call ''generic2zoo(fld,chHeaderRow,ext,delimiter,del)'', where: ')
 disp(['chHeaderRow = ',num2str(chHeaderRow)])
 disp(['ext = ',ext])
 disp('delimiter = ''\n''')
+disp('section = ''Video''')
 disp(['del =', num2str(del)])
 disp(' ')
 pause(time)
 
-data = generic2zoo(fl,chHeaderRow,ext,delimiter,del);
+data = generic2zoo(fl,chHeaderRow,ext,delimiter,section,del);
     
      
 % Final message to user
@@ -66,4 +68,4 @@ disp(['We load the zoo file created from ',file,ext])
 disp(' ')
 disp('Explore the new zoo file created')
 disp(' ')
-clear fl fld chHeaderRow del time ext file
+clear delimiter section fl fld chHeaderRow del time ext file

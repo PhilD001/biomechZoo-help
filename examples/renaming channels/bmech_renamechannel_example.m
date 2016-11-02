@@ -1,11 +1,12 @@
+
 % bmech_renamechannel_example demonstrates how to rename channels in zoo files. 
 %
 % Usage: Renaming channels in zoo files can be useful to ensure channel names best represent
-% the data. Renaming channels can be beneficial prior to producing figures 
+% the data. Renaming channels can be beneficial prior to producing figures. 
 % 
 % Example: The files in our example data folder (~/examples/example data) contain muscle 
-% activity channels which contain the prefix 'voltage'. We We would like to remove the prefix
-% 'voltage' from each of these channels.  
+% activity channels which contain the prefix 'Voltage'. We would like to remove the prefix
+% 'Voltage' from each of these channels.  
 %
 % See also bmech_renamechannel, renamechannel_data
 

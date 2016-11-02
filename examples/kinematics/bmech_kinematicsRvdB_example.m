@@ -1,3 +1,4 @@
+
 % bmech_kinematicsRvdB_example demonstrates how to compute lower-limb 
 % (ankle, knee, hip) joint kinematics using the kinemat toolbox of Reinschmidt 
 % and Van den Bogert
@@ -7,7 +8,7 @@
 %
 % Example: The files in our example data folder (~/examples/example data) contain marker data 
 % affixed to body segments. Use these markers to compute ankle kinematics using the kinemat 
-% toolbox functions. 
+% toolbox functions and compare to existing PiG angle outputs
 %
 %
 % See also bmech_kinematicsRvdB,  bmech_kinematics, kinematicsRvdB_data, kinematics_data
@@ -66,7 +67,7 @@ disp(' ')
 disp(' ')
 pause(time)
 
-disp('We call the function as ''kinematicsRvdB_data(sdata,data,{''},{''},Shank,Foot,sequence,test)''')
+disp('We call the function as ''kinematicsRvdB_data(sdata,data,{''''},{''''},Shank,Foot,sequence,test)''')
 test = true;
 disp('The function will produce plots when test = true')
 disp(' ')
@@ -77,10 +78,12 @@ pause(time)
 
 
 % Final output to user
+disp('Explore the figures...')
+disp(' ')
 disp('A processed file was loaded into the workspace...')
 disp(' ')
 disp('Explore the file by double clicking on ''data'' or by typing ''data'' in the command window')
-clear time fld fl test
+clear fld test time flDyn flSta Foot sdata sequence Shank
 
 
 

@@ -1,3 +1,4 @@
+
 % bmech_jointcentrePiG_example demonstrates how to compute lower-limb joint angles for 
 % plug-in gait (PiG) data 
 %
@@ -34,7 +35,7 @@ pause(time)
 
 % Compute hip joint centre
 %
-disp('We compute the hip joint centre by calling hipjointcentrePiG_data(data,test)')
+disp('We compute the hip joint centre by calling ''hipjointcentrePiG_data(data,test)'':')
 disp('Note: With the second argument set to ''true'', the function will compare outputs')
 disp('between the PiG and biomechZoo versions')
 disp(' ')
@@ -44,25 +45,25 @@ pause(time)
 
 % Compute knee
 %
-disp('We compute the knee joint centre by calling jointcentrePiG_data(data,''knee'',test)')
-disp('Here we set the 3rd argument to test in order to compare outputs')
+disp('We compute the knee joint centre by calling ''jointcentrePiG_data(data,''knee'',test)'':')
+disp('Here we set the 3rd argument test to ''true'' in order to compare outputs')
 disp(' ')
-test = true;
 data = jointcentrePiG_data(data,'knee',test);
 pause(time)
 
 
 % Compute Ankle
 %
-disp('We compute the akle joint centre by calling jointcentrePiG_data(data,''ankle'',test)')
-disp('Again, we set the 3rd argument to test in order to compare outputs')
+disp('We compute the akle joint centre by calling ''jointcentrePiG_data(data,''ankle'',test)'':')
+disp('Again, we set the 3rd argument test to ''true'' in order to compare outputs')
 disp(' ')
-test = true;
 data = jointcentrePiG_data(data,'ankle',test);
 pause(time)
 
 
 % Final output to user
+disp('Explore figures...')
+disp(' ')
 disp('A processed file was loaded into the workspace...')
 disp(' ')
 disp('Explore the file by double clicking on ''data'' or by typing ''data'' in the command window')

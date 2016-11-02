@@ -1,6 +1,6 @@
-function sample_prop(r,h,c)
+function sampleprop_example(r,h,c)
 
-% SAMPLE_PROP(r,h,c) demonstrates how to create a simple cylinder for use
+% SAMPLEPROP_EXAMPLE(r,h,c) demonstrates how to create a simple cylinder for use
 % in director as a 'prop' object. 
 %
 % ARGUMENTS

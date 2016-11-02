@@ -6,10 +6,8 @@
 % Example: The files in our example data folder (~/examples/example data) contain a series of 
 % gait trials. We would like to present data normalized to 100% of a right limb gait cycle. 
 % First, we need to partition the data between 'Right_FootStrike1' and 'Right_FootStrike2'
-% Second, we can apply the normalization algorithm 
+% Second, we can apply the normalization algorithm. 
 % 
- 
-
 % See also bmech_normalize, normaliza_data, bmech_partition, partition_data
 
 
@@ -35,7 +33,7 @@ batchdisp(fl{2},' ')
 disp(' ')
 pause(time)
 
-disp('Let''s plot the unpartitionned data for the right knee angles using plot(data.RKneeAngles.line(:,1))')
+disp('Let''s plot the unpartitionned data for the right knee angles using ''plot(data.RKneeAngles.line(:,1))''')
 disp(' ')
 pause(time)
 subplot(1,3,1)
@@ -57,7 +55,7 @@ disp(['evt2: ',evt2])
 disp(' ')
 pause(time)
 
-disp('We call bmech_partition(fld,evt1,evt2):')
+disp('We call ''bmech_partition(fld,evt1,evt2)'':')
 disp(' ')
 bmech_partition(fld,evt1,evt2)
 disp(' ')
@@ -94,7 +92,7 @@ disp(' ')
 pause(time)
 
 disp('We now want to normalize both trials to 100% of the gait cycle')
-disp('We call bmech_normalize(fld):')
+disp('We call ''bmech_normalize(fld)'':')
 disp(' ')
 bmech_normalize(fld)
 disp(' ')

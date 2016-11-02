@@ -5,7 +5,7 @@
 % Example: The files in our example data folder (~/examples/example data) contain gait events 
 % representing foot strike and foot off timings in the channel 'SACR'. Let's remove 
 % 'Right_FootStrike1' and 'Right_FootStrike2' from all the files. Note, some files don't
-% contain these events, not to worry, these files will be skipped
+% contain these events, not to worry, these files will be skipped.
 %  
 % See also bmech_removeevent, removeevent_data
 
@@ -32,7 +32,7 @@ pause(time)
 
 % Process data
 %
-disp('We call bmech_removeevent(fld,evts,''SACR''):')
+disp('We call ''bmech_removeevent(fld,evts,''SACR'')'':')
 disp(' ')
 pause(time)
 bmech_removeevent(fld,evts,'SACR');

@@ -23,7 +23,7 @@ pause(time)
 
 % Process
 %
-disp('We will first create a local event as in bmech_addevent_example')
+disp('We will first create a local event as in bmech_addevent_example:')
 disp(' ')
 bmech_addevent(fld,'ForceFz2','PeakFz','min');
 disp(' ')
@@ -87,7 +87,7 @@ excelserver = 'off';                                                        % us
 ext = '.xls';                                                               % pref ext
 
 disp('Finally, we set up the settings for the eventval function:')
-disp(['excelserver = :',excelserver])
+disp(['excelserver = ',excelserver])
 disp(['extension = ',ext])
 disp(' ')
 pause(time)
@@ -95,7 +95,10 @@ pause(time)
 
 % Process
 %
-disp('We can now call eventval')
+disp('We can now call eventval as:')
+disp('''eventval(''fld'',fld,''dim1'',dim1,''dim2'',dim2,...')
+disp('''localevts'',levts,''globalevts'',gevts,''anthroevts'',aevts,''ch'',ch,...')
+disp('''excelserver'',excelserver,''ext'',ext);    ''')
 disp(' ')
 evalFile = eventval('fld',fld,'dim1',dim1,'dim2',dim2,'localevts',levts,...
     'globalevts',gevts,'anthroevts',aevts,'ch',ch,'excelserver',excelserver,...

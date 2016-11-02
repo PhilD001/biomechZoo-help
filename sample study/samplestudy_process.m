@@ -17,7 +17,6 @@
 % - Individual processess performed here can be explored in 'standalone' form. Please see 
 %   'biomechzoo-help/examples' for a list of sample scripts
 %
-%
 % THE STUDY
 % - 12 subjects were asked to perform straight walking (Straight) and 90 degree turning
 %   while walking (Turn) trials in a typical motion capture environment while fit with the
@@ -37,7 +36,7 @@
 %
 % Created by Philippe C. Dixon November 2013
 %
-% Last updated by Philippe C. Dixon October 27th 2016
+% Last updated by Philippe C. Dixon NoOctober 27th 2016
 % - Improved help
 % - Error checking on various systems
 %
@@ -45,7 +44,6 @@
 %
 %
 % License, citations, and latest version information, type 'zooinfo'
-
 
 
 %% Step 0: Set run mode ------------------------------------------------------------------
@@ -84,10 +82,12 @@ end
 del = 'yes';                                                                % delete c3ds
 
 c3d2zoo(fld,del);                                                           % run conv
-
+%c3d2zooBtk(fld,del);                                                       % btk version
 
 % User notes:
 % - Explore the structure of a raw zoo file by typing 'grab' and selecting any file.
+% - Users wishing to use 'c3d2zooBtk' must download the BTK toolkit and add it to their
+%   Matlab path
 
 
 %% STEP 2: Cleaning the data -------------------------------------------------------------
@@ -344,19 +344,23 @@ end
 
 levts = {'max'};                                                            % local events
 gevts = {'RFO'};                                                            % global events
-aevts = {'Bodymass','Height'};                                              % anthro events
 ch    = {'RightGroundReactionForce_x','RightHipAngle_y',...                 % channels 
          'RightKneeMoment_x','RightAnklePower'};                            % to export
 dim1  = {'Straight','Turn'};                                                % conditions
 dim2  = {'HC002D','HC030A','HC031A','HC032A','HC033A','HC036A',...          % subjects
          'HC038A','HC039A','HC040A','HC044A','HC050A','HC055A'};
     
-excelserver = 'off';                                                        % use java
-ext = '.xls';                                                               % pref ext
-
 eventval('fld',fld,'dim1',dim1,'dim2',dim2,'localevts',levts,...
-    'globalevts',gevts,'anthroevts',aevts,'ch',ch,'excelserver',excelserver,...
-    'ext',ext)
+    'globalevts',gevts,'ch',ch)
+     
+% additional inputs to eventval (not described in paper)
+% aevts = {'Bodymass','Height'};                                            % anthro events
+% excelserver = 'off';                                                      % use java
+% ext = '.xls';                                                             % pref ext
+%
+% eventval('fld',fld,'dim1',dim1,'dim2',dim2,'localevts',levts,...
+%     'globalevts',gevts,'anthroevts',aevts,'ch',ch,'excelserver',excelserver,...
+%     'ext',ext)
 
 % User notes:
 % - If you run into problems take a look at the exisiting 'eventval.xls' file
@@ -383,7 +387,7 @@ disp(['GRF_ML Straight = ',sprintf('%.1f',nanmean(r.Straight)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' N/kg'])
 disp(['GRF_ML Turn = ',sprintf('%.1f',nanmean(r.Turn)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Turn)),' N/kg'])
-
+disp(' ')
 
 % RightHipAngle maximum (Hip_ADD)
 %
@@ -396,6 +400,7 @@ disp(['Hip_ADD Straight = ',sprintf('%.1f',nanmean(r.Straight)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' deg'])
 disp(['Hip_ADD Turn = ',sprintf('%.1f',nanmean(r.Turn)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Turn)),' deg'])
+disp(' ')
 
 % RightKneeMoment_x at foot off (Knee_FLX)
 %
@@ -408,6 +413,7 @@ disp(['Knee_FLX Straight = ',sprintf('%.1f',nanmean(r.Straight)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' Nmm/Kg'])
 disp(['Knee_FLX Turn = ',sprintf('%.1f',nanmean(r.Turn)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Turn)),' Nmm/kg'])
+disp(' ')
 
 
 % RightAnklePower max (Ankle_PWR)
@@ -421,6 +427,7 @@ disp(['Ankle_PWR Straight = ',sprintf('%.1f',nanmean(r.Straight)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' W/kg'])
 disp(['Ankle_PWR Turn = ',sprintf('%.1f',nanmean(r.Turn)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Turn)),' W/kg'])
+disp(' ')
 
 if strfind(mode,'auto')
     disp(' ')

@@ -1,11 +1,11 @@
 % bmech_removechannel_example demonstrates how to remove channels from zoo files. 
 %
 % Usage: Removing channels from a zoo files can be useful process to remove unwanted channels
-% from zoo data. This process makes the files smaller and easier to navigate
+% from zoo data. This process makes the files smaller and easier to navigate.
 % 
-% Example: The files in our example data folder (~/examples/example data) contains channels
+% Example: The files in our example data folder (~/examples/example data) contain channels
 % that we are not interested in analysing for our study. We only want to analyse lower-limb
-% angles for the right limb. We will remove all other channels using bmech_removechannel
+% angles for the right limb. We will remove all other channels using bmech_removechannel.
 %
 % See also bmech_removechannel, removechannel_data
 

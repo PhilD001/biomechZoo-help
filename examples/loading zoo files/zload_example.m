@@ -23,7 +23,7 @@ pause(time)
 fl = engine('pth',fld,'extension','zoo');
 file = fl{1};
 disp('we select a file from the data base:')
-disp(file)
+batchdisp(file,' ')
 disp(' ')
 pause(time)
 
@@ -34,7 +34,7 @@ disp('data = data.data;')
 disp(' ')
 pause(time)
 
-disp('Let''s load the file')
+disp('Let''s load the file using ''data = zload(file)''')
 disp(' ')
 data = zload(file);
 

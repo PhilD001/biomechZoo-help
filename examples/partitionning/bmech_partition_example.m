@@ -2,11 +2,11 @@
 %
 % Usage: Partitionning files is relevant when one wants to focus on a particular section of the
 % data time series. Partitioning can make event identification or computations easier since data
-% are restricted to a known zone
+% are restricted to a known zone.
 %
 % Example: The files in our example data folder (~/examples/example data) contain gait events
 % representing foot strike and foot off. Let's partition trials to contain a single right limb
-% stance phase defined from 'Right_FootStrike1' to 'Right_FootStrike2'
+% stance phase defined from 'Right_FootStrike1' to 'Right_FootStrike2'.
  
 
 % See also bmech_partition, partition_data
@@ -36,7 +36,7 @@ disp(['Right_FootStrike2 occurs at frame: ',num2str(data.SACR.event.Right_FootSt
 disp(' ')
 pause(time)
 
-disp('Let''s plot the data for the right knee angles using plot(data.RKneeAngles.line(:,1))')
+disp('Let''s plot the data for the right knee angles using ''plot(data.RKneeAngles.line(:,1))''')
 disp(' ')
 subplot(1,2,1)
 plot(data.RKneeAngles.line(:,1))
@@ -56,12 +56,11 @@ disp(' ')
 pause(time)
 
 
-disp('We call bmech_partition(fld,evt1,evt2):')
+disp('We call ''bmech_partition(fld,evt1,evt2)'':')
 disp(' ')
 bmech_partition(fld,evt1,evt2)
 disp(' ')
 pause(time)
-
 
 
 % Show some results to the user

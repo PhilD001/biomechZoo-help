@@ -6,14 +6,14 @@ and has been tested on both mac OS and windows platforms
 The biomechZoo-help repository contains the following help sub-folders:
 - examples: Basic functions of biomechZoo are demonstrated to the user using example scripts
 - reference materials: Manuals and manuscripts related to biomechZoo
-- sample study: A complete processing script and data for a sample gait study
+- sample study: A complete processing script and data for a sample gait study (accompanies manuscript)
 - user guides: Presentations and other user guides (in development)
 
 Getting started: 
-1- Download the biomechZoo toolbox (https://github.com/PhilD001/biomechZoo)
-2- Make sure both the 'biomechZoo' an 'biomechZoo-help' folders are placed side by side on your system
+- Download the biomechZoo toolbox (https://github.com/PhilD001/biomechZoo)
+- Make sure both the 'biomechZoo' an 'biomechZoo-help' folders are placed side by side on your system
 e.g. 'C:\users\me\myresearch\biomechZoo' and 'C:\users\me\myresearch\biomechZoo-help'
-3- Start Matlab 
-4- Open and run 'startZoo.m' located in the root biomechZoo folder to set your Matlab path
+- Start Matlab 
+- Open and run 'startZoo.m' located in the root biomechZoo folder to set your Matlab path
 
 email philippe dot dixon at gmail dot com to report any bugs or to request further information

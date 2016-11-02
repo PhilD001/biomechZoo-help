@@ -1,7 +1,8 @@
 function fld = example_setup(action)
 
 % fld = EXAMPLE_SETUP cleans up the common startup for all examples and
-% returns folder to operate on
+% returns folder to operate on. This function should not be called
+% directly, it is only a support function for the example files
 
 
 if nargin==0
@@ -14,13 +15,13 @@ ST = dbstack(1);
 
 % opening message
 %
-disp(['Running ',ST.file,' ...'])
+disp(['Running ',ST(1).file,' ...'])
 disp(' ')
-help(ST.file)
+help(ST(1).file)
 
 % set folders 
 %
-pth = which(ST.file);
+pth = which(ST(1).file);
 indx = strfind(pth,filesep);
 
 fld_ex = fullfile(pth(1:indx(end-1)),'example data');

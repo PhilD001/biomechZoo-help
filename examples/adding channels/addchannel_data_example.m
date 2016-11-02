@@ -26,8 +26,28 @@ pause(time)
 
 % Process
 %
-disp('In order to add channels to our data, we need to build our own batch process script')
-disp('Fmag is added by calling data = addchannel_data(data,''Fmag2'',Fmag,''Video'')');
+disp('In order to add channels to our data, we need to build our own batch process script:')
+disp(' ')
+disp('fl = engine(''fld'',fld,''extension'',''zoo'')');                        
+disp(' ')
+disp('for i = 1:length(fl)')
+disp('    data = zload(fl{i})');                                       
+disp('    batchdisplay(fl{i},''computing resultant force'')')              
+disp(' ')   
+disp('    fx = data.ForceFx2.line');                                     
+disp('    fy = data.ForceFy2.line');                
+disp('    fz = data.ForceFz2.line');
+disp(' ')    
+disp('    Fmag = magnitude([fx fy fz])');                                
+disp(' ')    
+disp('    data = addchannel_data(data,''Fmag2'',Fmag,''Video'')');           
+disp(' ')   
+disp('    zsave(fl{i},data)')                                            
+disp('end')
+disp(' ')
+pause(time)
+
+disp('Note: Fmag is added by calling data = addchannel_data(data,''Fmag2'',Fmag,''Video'')');
 disp(' ')
 pause(time)
 

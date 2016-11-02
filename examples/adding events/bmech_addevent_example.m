@@ -45,7 +45,7 @@ pause(time)
 
 % Plot some results for user to explore
 %
-disp('Let''s plot the data with the event using zplot(data.ForceFz2):')
+disp('Let''s plot the data with the event using ''zplot(data.ForceFz2)'':')
 disp(' ')
 pause(time)
 disp('The plot shows the line and event data, clicking on the event reveals it''s name')

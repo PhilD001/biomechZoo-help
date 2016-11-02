@@ -50,13 +50,12 @@ disp('We define a settings struct to set the mode used by the various processes'
 settings.graph = true;        % graph comparisons between biomechZoo and PiG
 settings.flat  = true;        % the subject had their feet flat on the ground in static pose
 settings.comp  = false;       % compare (RMS difference between biomechZoo and PiG)
-disp('settings: ')
-disp('graph = true,  to produce comparison plots between biomechZoo and PiG')
-disp('flat = true,   assume subjects had feet flat on floor during static pose')
-disp('comp = false,  do not numerically (RMS diff) compare outputs')
+disp('settings.graph = true,  to produce comparison plots between biomechZoo and PiG')
+disp('settings.flat = true,   assume subjects had feet flat on floor during static pose')
+disp('settings.comp = false,  do not numerically (RMS diff) compare outputs')
 disp(' ')
 
-disp('we start by creating ''bones'' using the ''makebones'' function for the static data')
+disp('we start by creating ''bones'' for the static data: ''sdata = makebones(sdata,''static'',settings.flat)''')
 disp('These ''bones'' represent local coordinate systems for each body segment')
 disp(' ')
 sdata = makebones(sdata,'static',settings.flat);
@@ -83,14 +82,13 @@ disp(' ')
 data = kinematics_data(data,settings);
 figs =findobj('type','fig');
 delete(figs(1))  % hide oxford foot model comparisons
-delete(figs(2))  % hide oxford foot model comparisons 
 pause(time)
 
 % Final output to user
 disp('A processed file was loaded into the workspace...')
 disp(' ')
 disp('Explore the file by double clicking on ''data'' or by typing ''data'' in the command window')
-clear time fld fl test
+clear figs flDyn flSta sdata settings time fld fl test
 
 
 

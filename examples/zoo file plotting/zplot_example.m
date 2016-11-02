@@ -1,11 +1,13 @@
 % zplot_example demonstrates how to plot a single zoo file's line and event data
 %
 % Usage: Zplot provides a quick way to explore a given zoo file's channel information
-%Loading zoo files allow various processess to be run on a given file. 
 % 
-% Example: We have a file 'HC002D06.zoo' that we would like to open. 
+% Example: We would like to plot the right ankle power channel's line and event data for
+% one of the zoo files in the database. These files don't have any events, so it would
+% be interesting to first create an event (we will chose max for simplicity). Also, 
+% relevent power data is in third column so we will explode the channel first.
 %
-% See also zload
+% See also zplot
 
 
 % Example setup
@@ -23,16 +25,23 @@ pause(time)
 %
 fl = engine('pth',fld,'extension','zoo');
 file = fl{1};
+data = zload(file);
 disp('we select a file from the data base:')
-disp(file)
+batchdisp(file,' ')
 disp(' ')
 pause(time)
 
-disp('The zload function relies on Matlab''s built-in ''load'' function')
-disp('It is a shortcut to avoid typing the following: ')
-disp('data = load(fl,''-mat'');');
-disp('data = data.data;')
+disp('We start by exploding the channel into 3 n x 1 channels')
 disp(' ')
+data = explode_data(data,'RAnklePower');
+pause(time)
+
+disp('We then add the event ''max'' to the ''RAnklePower_z'' channel: ')
+data = addevent_data(data,'RAnklePower_z','max','max');
+pause(time)
+
+disp('Now let''s plot the channel using ''zplot(data.RAnklePower''')
+zplot(data.RAnklePower_z)
 pause(time)
 
 disp('Let''s load the file')
@@ -40,5 +49,5 @@ disp(' ')
 data = zload(file);
 
 
-disp('Explore data loaded to workspace...')
+disp('Explore graph and data loaded to workspace...')
 clear time fld file fl

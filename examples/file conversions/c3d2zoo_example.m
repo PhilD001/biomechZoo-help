@@ -41,6 +41,6 @@ data = c3d2zoo(fld);
 disp(' ')
 disp(['We load the zoo file created from ',file,ext])
 disp(' ')
-disp('Explore the new zoo files created')
+disp('Explore the new zoo file loaded in the workspace...')
 disp(' ')
 clear fl fld i time file ext
