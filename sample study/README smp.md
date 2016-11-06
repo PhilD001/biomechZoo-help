@@ -1,16 +1,18 @@
-17.10.2016
+06.11.2016 README for biomechZoo sample study
 
-biomechZoo sample study 			
+The help repository contains sample data associated with the biomechZoo manuscript
 
-This repository contains sample data associated with the biomechZoo manuscript
+The sample study repository contains the following sub-folders:
+- Data: raw and processed files
+- Figures/manuscript: The figures associated with the biomechZoo manuscript
+- Statistics: Exported events and SPSS outputs associated with the biomechZoo mansucript  
 
 
-What's inside
--Sample data 
--Figures from mansucript
+Getting started: 
+- Download the biomechZoo toolbox (https://github.com/PhilD001/biomechZoo)
+- Make sure both the 'biomechZoo' an 'biomechZoo-help' folders are placed side by side on your system
+e.g. 'C:\users\me\myresearch\biomechZoo' and 'C:\users\me\myresearch\biomechZoo-help'
+- Start Matlab 
+- Open and run 'startZoo.m' located in the root biomechZoo folder to set your Matlab path
 
-Additionally, we have included example scripts (~/Examples) and related outputs (~/Figures and /Statistics) to help users get started with the sample data set and toolbox
-
-Getting Started
-
-repository (https://github.com/PhilD001/biomechZoo)
+email philippe dot dixon at gmail dot com to report any bugs or to request further information

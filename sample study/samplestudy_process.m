@@ -36,7 +36,7 @@
 %
 % Created by Philippe C. Dixon November 2013
 %
-% Last updated by Philippe C. Dixon NoOctober 27th 2016
+% Last updated by Philippe C. Dixon November 6th 2016
 % - Improved help
 % - Error checking on various systems
 %
@@ -59,7 +59,7 @@ mode = 'auto';                                                             % ent
 if strfind(mode,'auto')
     tic
     rfld = fullfile(fileparts(which('samplestudy_process')),'Data');
-    fld1 = fullfile(rfld,'raw c3d files');
+    fld1 = fullfile(rfld,'raw files');
     fld2 = fullfile(rfld,'zoo files (auto process)');
     disp('Creating process folder:')
     disp(fld2)
@@ -155,7 +155,7 @@ evtn1 = 'RFS';                                                              % st
 evtn2 = 'RFO';                                                              % end name
 evtt1 = 'FS_FP';                                                            % start type
 evtt2 = 'FO_FP';                                                            % end type
-ch    = 'RightGroundReactionForce';                                                              % event channel
+ch    = 'RightGroundReactionForce';                                         % event ch
 
 bmech_addevent(fld,ch,evtn1,evtt1,sfld)                                     % Find FS & FO
 bmech_addevent(fld,ch,evtn2,evtt2,sfld)                                     % based on Fz
@@ -342,8 +342,8 @@ if strfind(mode,'manual')
     fld = uigetfolder('select ''7-normalize''');
 end
 
-levts = {'max'};                                                            % local events
-gevts = {'RFO'};                                                            % global events
+levts = {'max'};                                                            % local evts
+gevts = {'RFO'};                                                            % global evts
 ch    = {'RightGroundReactionForce_x','RightHipAngle_y',...                 % channels 
          'RightKneeMoment_x','RightAnklePower'};                            % to export
 dim1  = {'Straight','Turn'};                                                % conditions
@@ -354,7 +354,7 @@ eventval('fld',fld,'dim1',dim1,'dim2',dim2,'localevts',levts,...
     'globalevts',gevts,'ch',ch)
      
 % additional inputs to eventval (not described in paper)
-% aevts = {'Bodymass','Height'};                                            % anthro events
+% aevts = {'Bodymass','Height'};                                            % anthro evts
 % excelserver = 'off';                                                      % use java
 % ext = '.xls';                                                             % pref ext
 %

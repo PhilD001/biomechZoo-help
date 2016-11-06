@@ -31,7 +31,11 @@ fld = fullfile(fileparts(pth),'example data (processed)');
 % Copy data to new folder which will be processed
 %
 if action
-    copyfile(fld_ex,fld,'f');
+    s = copyfile(fld_ex,fld,'f');
+    if s ==0
+        cd(fld_ex)
+        copyfile(fld_ex,fld,'f');
+    end
     disp('We create a new folder ''fld'' to contain our processed data:')
     batchdisp(fld,' ')
     disp(' ')
