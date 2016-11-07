@@ -1,14 +1,14 @@
-% SAMPLESTUDY_PROCESS demonstrates the tools available in biomechZoo by processing sample data 
-% set for a hypothetical study. 
+% SAMPLESTUDY_PROCESS demonstrates the tools available in biomechZoo by processing sample
+% data set for a hypothetical study. 
 %
 % NOTES
 % - biomechZoo folders should be added to the MatLab path before starting the demo.
 %   This can be accomplished by running startZoo.m (located in the root biomechZoo folder)
 % - Sample data can be downloaded as part of the biomechZoo help package repository at 
 %   https://github.com/PhilD001/biomechzoo-help
-% - Run mode ('auto','manual'). If input set to 'auto' (default) all processing steps are run 
-%   automatically without user input. In manual mode, each processing step should operate
-%   on a new folder. This allows the user to check each process before moving on. 
+% - Run mode ('auto','manual'). If input set to 'auto' (default) all processing steps are 
+%   run automatically without user input. In manual mode, each processing step should 
+%   operate on a new folder. This allows the user to check each process before moving on. 
 %   All steps are included in the download to help users trouble-shoot problems.
 % - The user is encouraged to first run through the entire script in 'auto' mode to ensure
 %   biomechZoo is properly loaded. Afterwards, exploraton of each each step will help 
@@ -36,7 +36,7 @@
 %
 % Created by Philippe C. Dixon November 2013
 %
-% Last updated by Philippe C. Dixon November 6th 2016
+% Last updated by Philippe C. Dixon November 7th 2016
 % - Improved help
 % - Error checking on various systems
 %
@@ -59,7 +59,7 @@ mode = 'auto';                                                             % ent
 if strfind(mode,'auto')
     tic
     rfld = fullfile(fileparts(which('samplestudy_process')),'Data');
-    fld1 = fullfile(rfld,'raw files');
+    fld1 = fullfile(rfld,'raw c3d files');
     fld2 = fullfile(rfld,'zoo files (auto process)');
     disp('Creating process folder:')
     disp(fld2)
@@ -76,18 +76,18 @@ end
 %   allow us to return to the original data at any time
 
 if strfind(mode,'manual')
-    fld = uigetfolder('select ''1-c3d2zoo''');
+    fld = uigetfolder('select ''1-convert2zoo''');
 end
 
-del = 'yes';                                                                % delete c3ds
+del = 'yes';                                                                % del raw files
 
-c3d2zoo(fld,del);                                                           % run conv
+c3d2zoo(fld,del);                                                           % conv c3d 
 %c3d2zooBtk(fld,del);                                                       % btk version
 
 % User notes:
 % - Explore the structure of a raw zoo file by typing 'grab' and selecting any file.
 % - Users wishing to use 'c3d2zooBtk' must download the BTK toolkit and add it to their
-%   Matlab path
+%   Matlab path (see '1-c3d2zoBtk' for sample output')
 
 
 %% STEP 2: Cleaning the data -------------------------------------------------------------
@@ -114,7 +114,8 @@ ch = {'LFHD','LBHD','RFHD','RBHD','C7','T10','T12','RBAK','CLAV','STRN',... % Pi
       'RGroundReactionForce','RGroundReactionMoment',...
       'ForceFx1','ForceFy1','ForceFz1','MomentMx1','MomentMy1',...          % raw GRF
       'MomentMz1','ForceFx2','ForceFy2','ForceFz2','MomentMx2',...
-      'MomentMy2','MomentMz2'};
+      'MomentMy2','MomentMz2'};                                                   
+                       
     
 bmech_removechannel(fld,ch,'keep')                  
 
@@ -381,7 +382,7 @@ alpha = 0.05;
 ch  = 'RightGroundReactionForce_x';
 evt = 'max';
 r = extractevents(fld,dim1,dim2,ch,evt);
-[~,pval] = ttest(r.Straight,r.Turn,alpha);                                   % p = 0.008*
+[~,pval] = ttest(r.Straight,r.Turn,alpha);                                  % p = 0.008*
 disp(['p-value for GRF_ml = ',num2str(pval)])
 disp(['GRF_ML Straight = ',sprintf('%.1f',nanmean(r.Straight)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' N/kg'])
@@ -394,7 +395,7 @@ disp(' ')
 ch  = 'RightHipAngle_y';
 evt = 'max';
 r = extractevents(fld,dim1,dim2,ch,evt);
-[~,pval] = ttest(r.Straight,r.Turn,alpha);                                   % p = 0.007*
+[~,pval] = ttest(r.Straight,r.Turn,alpha);                                  % p = 0.007*
 disp(['p-value for Hip_ADD = ',num2str(pval)])
 disp(['Hip_ADD Straight = ',sprintf('%.1f',nanmean(r.Straight)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' deg'])
@@ -407,7 +408,7 @@ disp(' ')
 ch  = 'RightKneeMoment_x';
 evt = 'RFO';
 r = extractevents(fld,dim1,dim2,ch,evt);
-[~,pval] = ttest(r.Straight,r.Turn,alpha);                                   % p = 0.028
+[~,pval] = ttest(r.Straight,r.Turn,alpha);                                  % p = 0.028
 disp(['p-value for Knee_FLX = ',num2str(pval)])
 disp(['Knee_FLX Straight = ',sprintf('%.1f',nanmean(r.Straight)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' Nmm/Kg'])
@@ -421,7 +422,7 @@ disp(' ')
 ch  = 'RightAnklePower';
 evt = 'max';
 r = extractevents(fld,dim1,dim2,ch,evt);
-[~,pval] = ttest(r.Straight,r.Turn,alpha);                                   % p = 0.002
+[~,pval] = ttest(r.Straight,r.Turn,alpha);                                  % p = 0.002
 disp(['p-value for Ankle_PWR = ',num2str(pval)])
 disp(['Ankle_PWR Straight = ',sprintf('%.1f',nanmean(r.Straight)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' W/kg'])

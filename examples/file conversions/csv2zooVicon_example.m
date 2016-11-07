@@ -27,7 +27,7 @@ pause(time)
 % 
 ext = '.csv';
 disp(['In this folder, we have a ',ext,' file:'])
-fl = engine('path',fld,'extension',ext,'search file','529_1_g_01');
+fl = engine('path',fld,'extension',ext);
 
 batchdisp(fl{1},' ')
 disp(' ')
