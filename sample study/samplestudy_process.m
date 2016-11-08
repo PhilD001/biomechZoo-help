@@ -2,9 +2,10 @@
 % data set for a hypothetical study. 
 %
 % NOTES
-% - biomechZoo folders should be added to the MatLab path before starting the demo.
-%   This can be accomplished by running startZoo.m (located in the root biomechZoo folder)
-% - Sample data can be downloaded as part of the biomechZoo help package repository at 
+% - biomechZoo and biomechzoo-help folders should be added to the MatLab path before 
+%   starting the demo.This can be accomplished by running startZoo.m (located in the root 
+%   biomechZoo folder)
+% - Sample data can be downloaded as part of the 'biomechZoo-help' repository at 
 %   https://github.com/PhilD001/biomechzoo-help
 % - Run mode ('auto','manual'). If input set to 'auto' (default) all processing steps are 
 %   run automatically without user input. In manual mode, each processing step should 
@@ -76,10 +77,10 @@ end
 %   allow us to return to the original data at any time
 
 if strfind(mode,'manual')
-    fld = uigetfolder('select ''1-convert2zoo''');
+    fld = uigetfolder('select ''1-c3d2zoo''');
 end
 
-del = 'yes';                                                                % del raw files
+del = 'yes';                                                                % del raw
 
 c3d2zoo(fld,del);                                                           % conv c3d 
 %c3d2zooBtk(fld,del);                                                       % btk version
@@ -262,9 +263,9 @@ bmech_normalize(fld,ch,nlength,method)
 %
 % - Now that the processing is complete, it is important to visualize the data to check
 %   for any errors/problems. This can be done using the 'ensembler' and 'director' tools.
-
+%
 % Generating time-series graphs for RightGroundReactionForce_x, RightHipAngle_y, 
-% RightKneeMoment_x, and Righ3tAnklePower in Ensembler:
+% RightKneeMoment_x, and RightAnklePower in Ensembler:
 % 
 % 1. Type ensembler in the Matlab command window. A preliminary settings window opens.
 % 2. Change the name field to Straight Turn, rows to 1, and columns to 4 and click OK. 
@@ -312,12 +313,13 @@ bmech_normalize(fld,ch,nlength,method)
 % Visualizing three-dimensional motion capture data in Director:
 % 
 % 1. Type director in the command window. A blank three-dimensional canvas opens.
-% 2. Select Load File and choose a file from the “Step 1” folder.
+% 2. Select Load File and choose a file from the Step 1 or 'raw c3d files' folder.
 % 3. Choose lower-limbs to load a lower-body skeleton for the selected trial.
 % 4. Choose a few markers to display in the animation and select OK
 % 5. Choose a channel to plot by clicking on the channel list in the upper left corner.
 % 6. Press Play to start animation (Stop to stop).
-% 7. Repeat this process for a number of trials (including
+% 7. Repeat this process for a number of trials  (including HC002D25.zoo) to reveal the 
+%    reason for removing the specific trial from the analysis (see mansucript Section 3.3)
 
 if strfind(mode,'auto')
     events = {'RFS','RFO'};                
