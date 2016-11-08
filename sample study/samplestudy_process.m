@@ -39,7 +39,7 @@
 %
 % Last updated by Philippe C. Dixon November 7th 2016
 % - Improved help
-% - Error checking on various systems
+% - Bug checking on various systems
 %
 % see http://www.biomechzoo.com for the latest updates on the biomechZoo project
 %
