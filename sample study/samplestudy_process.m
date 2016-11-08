@@ -354,7 +354,7 @@ dim2  = {'HC002D','HC030A','HC031A','HC032A','HC033A','HC036A',...          % su
          'HC038A','HC039A','HC040A','HC044A','HC050A','HC055A'};
     
 eventval('fld',fld,'dim1',dim1,'dim2',dim2,'localevts',levts,...
-    'globalevts',gevts,'ch',ch)
+    'globalevts',gevts,'ch',ch);
      
 % additional inputs to eventval (not described in paper)
 % aevts = {'Bodymass','Height'};                                            % anthro evts
