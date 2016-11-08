@@ -14,5 +14,7 @@ Getting started:
 e.g. 'C:\users\me\myresearch\biomechZoo' and 'C:\users\me\myresearch\biomechZoo-help'
 - Start Matlab 
 - Open and run 'startZoo.m' located in the root biomechZoo folder to set your Matlab path
+- explore the sample study by typing "samplestudy" in the command window 
+- explore the data set located in biomechZoo-help\sample study\Data
 
 email philippe dot dixon at gmail dot com to report any bugs or to request further information
