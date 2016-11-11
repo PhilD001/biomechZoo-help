@@ -37,7 +37,7 @@
 %
 % Created by Philippe C. Dixon November 2013
 %
-% Last updated by Philippe C. Dixon November 7th 2016
+% Last updated by Philippe C. Dixon November 11th 2016
 % - Improved help
 % - Bug checking on various systems
 %
