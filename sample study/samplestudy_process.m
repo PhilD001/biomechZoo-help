@@ -202,7 +202,7 @@ bmech_kinematics(fld)                                                       % ru
 
 bmech_kinetics(fld)                                                         % run kinetics
 
-bmech_removefolder(fld,sfld)                                                % rm static
+% bmech_removefolder(fld,sfld)                                                % rm static
 
 
 % User notes:
