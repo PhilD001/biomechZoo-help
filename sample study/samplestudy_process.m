@@ -37,9 +37,9 @@
 %
 % Created by Philippe C. Dixon November 2013
 %
-% Last updated by Philippe C. Dixon November 11th 2016
-% - Improved help
-% - Bug checking on various systems
+% Last updated by Philippe C. Dixon March 30th 2017
+% - Removed warnings on versions < r2016a 
+% - Tested on Liux platform (Ubuntu 16.04 LTS) 
 %
 % see http://www.biomechzoo.com for the latest updates on the biomechZoo project
 %
@@ -57,7 +57,7 @@
 % mode = 'manual';                                                         % cell by cell
 mode = 'auto';                                                             % entire code
 
-if strfind(mode,'auto')
+if strfind(mode,'auto')                                                    %#ok<*STRIFCND>
     tic
     rfld = fullfile(fileparts(which('samplestudy_process')),'Data');
     fld1 = fullfile(rfld,'raw c3d files');
@@ -202,7 +202,7 @@ bmech_kinematics(fld)                                                       % ru
 
 bmech_kinetics(fld)                                                         % run kinetics
 
-% bmech_removefolder(fld,sfld)                                                % rm static
+bmech_removefolder(fld,sfld)                                                % rm static
 
 
 % User notes:
@@ -301,13 +301,13 @@ bmech_normalize(fld,ch,nlength,method)
 %
 % Generating a bar graph for the maximum hip adduction angle (HipADD) in Ensembler:
 %
-% 1. Repeat steps 1–4 from the time-series instructions, modified to load the 
+% 1. Repeat steps 1ï¿½4 from the time-series instructions, modified to load the 
 %    RightHipAngle_y channel data only.
 % 2. Clear the event NRMSE by selecting Events then clear events by type.
 % 3. Select Ensembler, ensemble (CI) then Ensembler, combine data.
 % 4. Select Bar Graph from the menu, then bar graph to display discrete event data as a 
 %    bar graph.
-% 5. Finalize, and save using steps 8–10 from the time-series graphing instructions.
+% 5. Finalize, and save using steps 8ï¿½10 from the time-series graphing instructions.
 %
 %
 % Visualizing three-dimensional motion capture data in Director:
