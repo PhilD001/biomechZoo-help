@@ -1,4 +1,3 @@
-
 % bmech_jointcentrePiG_example demonstrates how to compute lower-limb joint angles for 
 % plug-in gait (PiG) data 
 %

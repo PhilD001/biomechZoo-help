@@ -12,7 +12,7 @@
 %   operate on a new folder. This allows the user to check each process before moving on. 
 %   All steps are included in the download to help users trouble-shoot problems.
 % - The user is encouraged to first run through the entire script in 'auto' mode to ensure
-%   biomechZoo is properly loaded. Afterwards, exploraton of each each step will help 
+%   biomechZoo is properly loaded. Afterwards, exploraton of each step will help 
 %   the user understand the procedure.
 % - The advanced user may also want to explore the underlying code of each function.
 % - Individual processess performed here can be explored in 'standalone' form. Please see 
@@ -37,11 +37,14 @@
 %
 % Created by Philippe C. Dixon November 2013
 %
-% Last updated by Philippe C. Dixon March 30th 2017
-% - Removed warnings on versions < r2016a 
-% - Tested on Liux platform (Ubuntu 16.04 LTS) 
+% Updated by Philippe C. Dixon May 2017 
+% - Removed warnings on versions < r2014b 
+% - Tested on Liux platform (Ubuntu 16.04 LTS)
+% - Switched to java as default for STEP 9 process
 %
-% see http://www.biomechzoo.com for the latest updates on the biomechZoo project
+%  Updated by Philippe C. Dixon June 2017
+% - see http://www.biomechzoo.com for the latest updates on the biomechZoo project
+% - testing of global upper body angles included (does not affect original analysis)
 %
 %
 % License, citations, and latest version information, type 'zooinfo'
@@ -54,7 +57,6 @@
 % - If mode is set to 'manual', the user can run each cell (step 1-9) indivdually, each 
 %   time manually copying a new folder for each step
 
-% mode = 'manual';                                                         % cell by cell
 mode = 'auto';                                                             % entire code
 
 if strfind(mode,'auto')                                                    %#ok<*STRIFCND>
@@ -104,7 +106,7 @@ ch = {'LFHD','LBHD','RFHD','RBHD','C7','T10','T12','RBAK','CLAV','STRN',... % Pi
       'LSHO','LELB','LWRA','LWRB','LFIN','RSHO','RELB','RWRA','RWRB',...
       'RFIN','SACR','RASI','LASI','LTHI','LTIB','LKNE','LANK','LHEE',...
       'LTOE','RTHI','RTIB','RKNE','RANK','RHEE','RTOE',...
-      'RHJC','LHJC','RFEO','LFEO','RTIO','LTIO',...                         % PiG jnts
+      'LHeadAngles','RHeadAngles','LThoraxAngles','RThoraxAngles',...
       'LPelvisAngles','LHipAngles','LKneeAngles','LAnkleAngles',...         % PiG kinemat
       'RPelvisAngles','RHipAngles','RKneeAngles','RAnkleAngles',...
       'LHipForce','LKneeForce','LAnkleForce','LHipMoment','LKneeMoment',... % PiG kinetics
@@ -301,7 +303,7 @@ bmech_normalize(fld,ch,nlength,method)
 %
 % Generating a bar graph for the maximum hip adduction angle (HipADD) in Ensembler:
 %
-% 1. Repeat steps 1�4 from the time-series instructions, modified to load the 
+% 1. Repeat steps 1-4 from the time-series instructions, modified to load the 
 %    RightHipAngle_y channel data only.
 % 2. Clear the event NRMSE by selecting Events then clear events by type.
 % 3. Select Ensembler, ensemble (CI) then Ensembler, combine data.
@@ -345,6 +347,9 @@ if strfind(mode,'manual')
     fld = uigetfolder('select ''7-normalize''');
 end
 
+excelserver = 'off';                                                        % switch to 'off' 
+ext = '.xlsx';                                                              % if java error
+
 levts = {'max'};                                                            % local evts
 gevts = {'RFO'};                                                            % global evts
 ch    = {'RightGroundReactionForce_x','RightHipAngle_y',...                 % channels 
@@ -354,8 +359,9 @@ dim2  = {'HC002D','HC030A','HC031A','HC032A','HC033A','HC036A',...          % su
          'HC038A','HC039A','HC040A','HC044A','HC050A','HC055A'};
     
 eventval('fld',fld,'dim1',dim1,'dim2',dim2,'localevts',levts,...
-    'globalevts',gevts,'ch',ch);
-     
+     'globalevts',gevts,'ch',ch,'excelserver',excelserver,...
+     'ext',ext)
+
 % additional inputs to eventval (not described in paper)
 % aevts = {'Bodymass','Height'};                                            % anthro evts
 % excelserver = 'off';                                                      % use java
@@ -366,6 +372,7 @@ eventval('fld',fld,'dim1',dim1,'dim2',dim2,'localevts',levts,...
 %     'ext',ext)
 
 % User notes:
+% - If you get a java error use code on 
 % - If you run into problems take a look at the exisiting 'eventval.xls' file
 % - Outliers will show as 999
 % - Check that data in excel sheet matches zoo data using grab
