@@ -324,7 +324,7 @@ bmech_normalize(fld,ch,nlength,method)
 %    reason for removing the specific trial from the analysis (see mansucript Section 3.3)
 
 if strfind(mode,'auto')
-    events = {'RFS','RFO'};                
+    events = {'RFS','RFO','max'};                
     out_file_turn = [fld,filesep,'HC002D',filesep,'Turn',filesep,'HC002D25.zoo'];
     out_file_straight = [fld,filesep,'HC036A',filesep,'Straight',filesep,'HC036A10.zoo'];
 
@@ -372,14 +372,15 @@ eventval('fld',fld,'dim1',dim1,'dim2',dim2,'localevts',levts,...
 %     'ext',ext)
 
 % User notes:
-% - If you get a java error use code on 
+% - If you get a java error use code 'on' 
 % - If you run into problems take a look at the exisiting 'eventval.xls' file
 % - Outliers will show as 999
 % - Check that data in excel sheet matches zoo data using grab
 % - This sheet can be imported into SPSS/R or other programs to test the hypotheses...
 %   what do you find?
 % - On mac or if excel is not installed on computer, 'excelserver' must be set to 'off'
-
+% - There are known problems when concurrently updating dropbox and writing
+%   to eventval. Pause syncing on dropbox for best performance
 
 
 % METHOD B: Analysis within the Matlab environment (using extractevents.m)
@@ -393,10 +394,10 @@ evt = 'max';
 r = extractevents(fld,dim1,dim2,ch,evt);
 [~,pval] = ttest(r.Straight,r.Turn,alpha);                                  % p = 0.008*
 disp(['p-value for GRF_ml = ',num2str(pval)])
-disp(['GRF_ML Straight = ',sprintf('%.1f',nanmean(r.Straight)),...
-    ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' N/kg'])
-disp(['GRF_ML Turn = ',sprintf('%.1f',nanmean(r.Turn)),...
-    ' +/- ',sprintf('%.1f',nanstd(r.Turn)),' N/kg'])
+disp(['GRF_ML Straight = ',sprintf('%.1f',nanmean(r.Straight)),...          % values diff
+    ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' N/kg'])                    % from SPSS
+disp(['GRF_ML Turn = ',sprintf('%.1f',nanmean(r.Turn)),...                  % which avrgs 
+    ' +/- ',sprintf('%.1f',nanstd(r.Turn)),' N/kg'])                        % ignroring NaN 
 disp(' ')
 
 % RightHipAngle maximum (Hip_ADD)

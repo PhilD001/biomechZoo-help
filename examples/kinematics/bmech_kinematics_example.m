@@ -58,7 +58,7 @@ disp(' ')
 disp('we start by creating ''bones'' for the static data: ''sdata = makebones(sdata,''static'',settings.flat)''')
 disp('These ''bones'' represent local coordinate systems for each body segment')
 disp(' ')
-sdata = makebones(sdata,'static',settings.flat);
+sdata = makebones_data(sdata,'static',settings.flat);
 pause(time)
 
 disp('We then compute kinematics for the static trial by calling ''sdata = kinematics_data(sdata)''');
@@ -72,7 +72,7 @@ data = ankleoffsetPiG_data(data,sdata);
 
 disp('We can now create the ''bones'' for the dynamic trial: ''data = makebones(data,''dynamic'')''');
 disp(' ')
-data = makebones(data,'dynamic');
+data = makebones_data(data,'dynamic');
 pause(time)
 
 disp('Finally, we can compute kinematics for the dynamic trial: ''data = kinematics_data(data,settings)''');
