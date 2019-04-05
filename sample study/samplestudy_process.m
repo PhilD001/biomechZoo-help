@@ -39,7 +39,7 @@
 %
 % Updated by Philippe C. Dixon May 2017 
 % - Removed warnings on versions < r2014b 
-% - Tested on Liux platform (Ubuntu 16.04 LTS)
+% - Tested on Linux platform (Ubuntu 16.04 LTS)
 % - Switched to java as default for STEP 9 process
 %
 %  Updated by Philippe C. Dixon June 2017
@@ -347,7 +347,7 @@ if strfind(mode,'manual')
     fld = uigetfolder('select ''7-normalize''');
 end
 
-excelserver = 'off';                                                        % switch to 'off' 
+excelserver = 'on';                                                        % switch to 'off' 
 ext = '.xlsx';                                                              % if java error
 
 levts = {'max'};                                                            % local evts

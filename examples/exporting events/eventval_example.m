@@ -89,6 +89,7 @@ ext = '.xls';                                                               % pr
 disp('Finally, we set up the settings for the eventval function:')
 disp(['excelserver = ',excelserver])
 disp(['extension = ',ext])
+disp('**users without excel should turn excelserver to off')
 disp(' ')
 pause(time)
 
