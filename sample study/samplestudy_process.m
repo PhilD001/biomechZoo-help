@@ -85,7 +85,7 @@ end
 del = 'yes';                                                                % del raw
 
 c3d2zoo(fld,del);                                                           % conv c3d 
-%c3d2zooBtk(fld,del);                                                       % btk version
+% c3d2zooBtk(fld,del);                                                       % btk version
 
 % User notes:
 % - Explore the structure of a raw zoo file by typing 'grab' and selecting any file.
@@ -352,6 +352,7 @@ ext = '.xlsx';                                                              % if
 
 levts = {'max'};                                                            % local evts
 gevts = {'RFO'};                                                            % global evts
+aevts = {'Bodymass', 'Height'};                                             % anthro evts
 ch    = {'RightGroundReactionForce_x','RightHipAngle_y',...                 % channels 
          'RightKneeMoment_x','RightAnklePower'};                            % to export
 dim1  = {'Straight','Turn'};                                                % conditions
@@ -359,8 +360,8 @@ dim2  = {'HC002D','HC030A','HC031A','HC032A','HC033A','HC036A',...          % su
          'HC038A','HC039A','HC040A','HC044A','HC050A','HC055A'};
     
 eventval('fld',fld,'dim1',dim1,'dim2',dim2,'localevts',levts,...
-     'globalevts',gevts,'ch',ch,'excelserver',excelserver,...
-     'ext',ext)
+         'globalevts',gevts, 'anthroevts', aevts, 'ch',ch,...
+         'excelserver',excelserver,'ext',ext)
 
 % additional inputs to eventval (not described in paper)
 % aevts = {'Bodymass','Height'};                                            % anthro evts
@@ -389,10 +390,13 @@ alpha = 0.05;
 
 % RightGroundReactionForce_x maximum (GRF_ML)
 %
+% p-value for GRF_ml = 0.008259*
+% GRF_ML Straight = 0.5 +/- 0.3 N/kg
+% GRF_ML Turn = 1.3 +/- 0.8 N/kg
 ch  = 'RightGroundReactionForce_x';
 evt = 'max';
 r = extractevents(fld,dim1,dim2,ch,evt);
-[~,pval] = ttest(r.Straight,r.Turn,alpha);                                  % p = 0.008*
+[~,pval] = ttest(r.Straight,r.Turn,alpha);                                  
 disp(['p-value for GRF_ml = ',num2str(pval)])
 disp(['GRF_ML Straight = ',sprintf('%.1f',nanmean(r.Straight)),...          % values diff
     ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' N/kg'])                    % from SPSS
@@ -402,10 +406,13 @@ disp(' ')
 
 % RightHipAngle maximum (Hip_ADD)
 %
+% p-value for Hip_ADD = 0.0074108*
+% Hip_ADD Straight = 7.2 +/- 3.9 deg
+% Hip_ADD Turn = 9.1 +/- 2.7 deg
 ch  = 'RightHipAngle_y';
 evt = 'max';
 r = extractevents(fld,dim1,dim2,ch,evt);
-[~,pval] = ttest(r.Straight,r.Turn,alpha);                                  % p = 0.007*
+[~,pval] = ttest(r.Straight,r.Turn,alpha);                                  
 disp(['p-value for Hip_ADD = ',num2str(pval)])
 disp(['Hip_ADD Straight = ',sprintf('%.1f',nanmean(r.Straight)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' deg'])
@@ -415,10 +422,13 @@ disp(' ')
 
 % RightKneeMoment_x at foot off (Knee_FLX)
 %
+% p-value for Knee_FLX = 0.012054*
+% Knee_FLX Straight = -31.5 +/- 12.5 Nmm/Kg
+% Knee_FLX Turn = -46.7 +/- 17.9 Nmm/kg
 ch  = 'RightKneeMoment_x';
 evt = 'RFO';
 r = extractevents(fld,dim1,dim2,ch,evt);
-[~,pval] = ttest(r.Straight,r.Turn,alpha);                                  % p = 0.028
+[~,pval] = ttest(r.Straight,r.Turn,alpha);                                  
 disp(['p-value for Knee_FLX = ',num2str(pval)])
 disp(['Knee_FLX Straight = ',sprintf('%.1f',nanmean(r.Straight)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' Nmm/Kg'])
@@ -429,10 +439,14 @@ disp(' ')
 
 % RightAnklePower max (Ankle_PWR)
 %
+% p-value for Ankle_PWR = 0.0019418*
+% Ankle_PWR Straight = 4.3 +/- 0.8 W/kg
+% Ankle_PWR Turn = 3.1 +/- 1.0 W/kg
+
 ch  = 'RightAnklePower';
 evt = 'max';
 r = extractevents(fld,dim1,dim2,ch,evt);
-[~,pval] = ttest(r.Straight,r.Turn,alpha);                                  % p = 0.002
+[~,pval] = ttest(r.Straight,r.Turn,alpha);                                  
 disp(['p-value for Ankle_PWR = ',num2str(pval)])
 disp(['Ankle_PWR Straight = ',sprintf('%.1f',nanmean(r.Straight)),...
     ' +/- ',sprintf('%.1f',nanstd(r.Straight)),' W/kg'])
