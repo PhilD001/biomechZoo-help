@@ -88,7 +88,7 @@ bmech_continuous_relative_phase(fld, dist_phase_angle_ch, prox_phase_angle_ch)
 
 %% STEP 5: COMPUTE METRICS AND PLOT
 % - collect CRP and run basic stats to get output metrics
-crp_ch = 'LKneeAngles_x_phase_LHipAngles_x_phase_crp';
+crp_ch = 'LHipAngles_x_phase_LKneeAngles_x_phase_crp';
 fl = engine('path',fld,'extension','zoo');
 crp_stk = [];
 for i = 1:length(fl)
@@ -105,5 +105,5 @@ plot(MARP, 'LineWidth',2)
 hold on
 plot(DP, 'LineWidth',2)
 legend ('MARP','DP')
-title('CRP zoo')
+title(crp_ch, 'interpreter', 'latex')
 
