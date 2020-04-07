@@ -105,5 +105,5 @@ plot(MARP, 'LineWidth',2)
 hold on
 plot(DP, 'LineWidth',2)
 legend ('MARP','DP')
-title(crp_ch, 'interpreter', 'latex')
+title(crp_ch)
 
