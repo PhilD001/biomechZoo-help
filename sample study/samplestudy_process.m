@@ -347,7 +347,7 @@ if strfind(mode,'manual')
     fld = uigetfolder('select ''7-normalize''');
 end
 
-excelserver = 'on';                                                        % switch to 'off' 
+excelserver = 'off';                                                        % switch to 'off' 
 ext = '.xlsx';                                                              % if java error
 
 levts = {'max'};                                                            % local evts
@@ -361,8 +361,8 @@ dim2  = {'HC002D','HC030A','HC031A','HC032A','HC033A','HC036A',...          % su
     
 eventval('fld',fld,'dim1',dim1,'dim2',dim2,'localevts',levts,...
          'globalevts',gevts, 'anthroevts', aevts, 'ch',ch,...
-         'excelserver',excelserver,'ext',ext)
-
+         'excelserver',excelserver,'ext',ext);
+     
 % additional inputs to eventval (not described in paper)
 % aevts = {'Bodymass','Height'};                                            % anthro evts
 % excelserver = 'off';                                                      % use java
