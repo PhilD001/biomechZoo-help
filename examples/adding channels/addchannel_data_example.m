@@ -32,7 +32,7 @@ disp('fl = engine(''fld'',fld,''extension'',''zoo'')');
 disp(' ')
 disp('for i = 1:length(fl)')
 disp('    data = zload(fl{i})');                                       
-disp('    batchdisplay(fl{i},''computing resultant force'')')              
+disp('    batchdisp(fl{i},''computing resultant force'')')              
 disp(' ')   
 disp('    fx = data.ForceFx2.line');                                     
 disp('    fy = data.ForceFy2.line');                
@@ -56,7 +56,7 @@ fl = engine('fld',fld,'extension','zoo');                        % get location 
 
 for i = 1:length(fl)
     data = zload(fl{i});                                         % load individual file
-    batchdisplay(fl{i},'computing resultant force')              % display message to user
+    batchdisp(fl{i},'computing resultant force')              % display message to user
     
     fx = data.ForceFx2.line;                                     % extract forces
     fy = data.ForceFy2.line;                
