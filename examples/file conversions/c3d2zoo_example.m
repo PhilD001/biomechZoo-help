@@ -33,7 +33,12 @@ pause(time)
 
 disp('We call c3d2zoo(fld) to process these files:')
 disp(' ')
-data = c3d2zoo(fld);               
+c3d2zoo(fld);               
+
+%load a trial
+trial=fl{i};
+trial_zoo = strrep(trial,'.c3d','.zoo');
+data = zload(trial_zoo);
 
 % Final message to user
 %
