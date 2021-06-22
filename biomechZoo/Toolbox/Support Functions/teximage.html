@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of teximage</title>
+  <meta name="keywords" content="teximage">
+  <meta name="description" content="TEXIMAGE display a LaTeX string as a bitmap image">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; teximage.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Support Functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>teximage
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>TEXIMAGE display a LaTeX string as a bitmap image</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function out=teximage(s,varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment">TEXIMAGE display a LaTeX string as a bitmap image
+  H = TEXIMAGE(S) creates an image of the LaTeX string S and
+   displays it in the current figure. Click and drag to
+   move the image and use the context menu to change properties.
+   The image handle is returned in H, if specified. If S is a cell
+   array of strings then each is made into a separate image and
+   the resulting handles are returned as a vector. S can also be a
+   symbolic expression (see SYM).
+
+  H = TEXIMAGE(S,PARAM1,VALUE1,PARAM2,VALUE2,...) creates the image
+   with options given by the parameter-value pairs. The argument S
+   can be a string or the image handle H returned by a previous
+   call to TEXIMAGE or a cell array of strings or vector of handles.
+   The legal parameter strings and values are:
+
+    'antialias'        one of the strings 'on' or 'off'
+      antialiasing will produce more readable text on-screen
+      but will sacrifice printout quality (default on)
+
+    'convolution'      an integer
+      the size of the convolution matrix for antialiasing (default 7)
+      smaller numbers will result in sharper text
+
+    'background'       a colorspec
+      specifies the background color (default white) 
+      background color 'none' means no background (requires OpenGL renderer)
+
+    'scale'            a double
+      multiplies the image size by specified scale (default 1)
+
+    'resolution'       a double
+      the font resolution to use (default 600)
+
+    'displaymode'      one of the strings 'math', 'text' or 'none'
+      specifies the TeX display mode to use (default 'math')
+      The 'none' displaymode will put the string S directly into
+      the TeX file without any surrounding $ or $$.
+
+    'rotation'         a multiple of 90
+      rotates the image counterclockwise in degrees (default 0)
+
+    'position'         a 2 element vector 
+      specifies the position of the center of the bitmap on the
+      figure (default [.5 .5])
+
+    'units'            an HG units string ('normalized','inches',...)
+      specifies the units for the position property (default 'normalized')
+
+    'parent'           a figure handle
+      specifies the figure to use (default current figure)
+
+  When the input S is a handle a new TeX string can be specified
+  with the parameter 'texstring'. To get the current parameter
+  value for a given handle call GETAPPDATA with the handle and
+  the name of the parameter. eg,
+    scale = getappdata(h,'scale');
+
+  The default parameter values can be set in R12(or later) by calling 
+  SETPREF. eg, 
+    setpref('teximage','resolution',300);
+    setpref('teximage','background',get(0,'DefaultFigureColor'));
+  and in R11 by modifying STARTUP.M to call setappdata as follows:
+    setappdata(0,'teximage',struct(...
+      'resolution',300,'background',get(0,'DefaultFigureColor'));
+
+  H = TEXIMAGE('-noHG',S,PARAM1,VALUE1,...) generates the bitmap
+  but does not create an HG image object. The bitmap is return in
+  H as a height x width x 3 matrix of doubles.
+
+  Important note: LaTeX must be installed before running this
+  function. To obtain a LaTeX distribution see your system 
+  administrator or go to the web site http://www.tug.org
+  This function was tested with MikTeX on PCs and Web2c7.2 on Unix.
+
+  Examples:
+   h = teximage('\dot{x} = \sqrt{x+1}','scale',2);
+   teximage(h,'antialias','off');
+   h2 = teximage('\lim_{n \rightarrow \infty} \left(1+\frac{1}{n}\right)^n')
+   h3 = teximage('Math $x^2+1$ inline.','displaymode','none');
+
+  See also: TEXT, SYM, LATEX</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="angle.html" class="code" title="function r = angle(m1,m2,ref)">angle</a>	Calculates the smallest angle between two vectors, m1 and m2.</li><li><a href="teximage.html" class="code" title="function out=teximage(s,varargin)">teximage</a>	TEXIMAGE display a LaTeX string as a bitmap image</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="teximage.html" class="code" title="function out=teximage(s,varargin)">teximage</a>	TEXIMAGE display a LaTeX string as a bitmap image</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

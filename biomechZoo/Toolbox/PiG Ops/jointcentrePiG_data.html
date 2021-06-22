@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of jointcentrePiG_data</title>
+  <meta name="keywords" content="jointcentrePiG_data">
+  <meta name="description" content="data = JOINTCENTREPIG_DATA(data,joint) returns knee, or anke joint centre">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">PiG Ops</a> &gt; jointcentrePiG_data.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\PiG Ops&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>jointcentrePiG_data
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>data = JOINTCENTREPIG_DATA(data,joint) returns knee, or anke joint centre</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function data = jointcentrePiG_data(data,joint,test) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> data = JOINTCENTREPIG_DATA(data,joint) returns knee, or anke joint centre
+ computed via the Plug-in gait methods
+
+ ARGUMENTS
+  data       ...  Zoo struct
+  joint      ...  Joint to compute (string): 'knee' or 'ankle'.
+  test       ...  Compare against exisiting PiG data, if available(boolean). Default: false
+
+ RETURNS
+  data       ...  zoo struct with joint centre coordinates appended
+
+ See also <a href="hipjointcentrePiG_data.html" class="code" title="function [data,localjc] = hipjointcentrePiG_data(data,test)">hipjointcentrePiG_data</a>, <a href="chordPiG.html" class="code" title="function jc = chordPiG(a,b,c,delta)">chordPiG</a></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="chordPiG.html" class="code" title="function jc = chordPiG(a,b,c,delta)">chordPiG</a>	jc = CHORDPIG(a,b,c,delta) computes knee and ankle joint centres</li><li><a href="hipjointcentrePiG_data.html" class="code" title="function [data,localjc] = hipjointcentrePiG_data(data,test)">hipjointcentrePiG_data</a>	data = HIPJOINTCENTREPIG_DATA(data,test) computes left and right hip joint centers for</li><li><a href="jointcentrePiG_data.html" class="code" title="function data = jointcentrePiG_data(data,joint,test)">jointcentrePiG_data</a>	data = JOINTCENTREPIG_DATA(data,joint) returns knee, or anke joint centre</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="bmech_jointcentrePiG.html" class="code" title="function bmech_jointcentrePiG(fld,joints)">bmech_jointcentrePiG</a>	BMECH_JOINTCENTREPIG(fld,joints) is a batch process function to compute left</li><li><a href="jointcentrePiG_data.html" class="code" title="function data = jointcentrePiG_data(data,joint,test)">jointcentrePiG_data</a>	data = JOINTCENTREPIG_DATA(data,joint) returns knee, or anke joint centre</li><li><a href="makebones_data.html" class="code" title="function data = makebones_data(data,type,foot_flat,test)">makebones_data</a>	DATA = MAKEBONES_DATA(data,type,foot_flat,test) creates segment 'bones' for use in kinematic /</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of propscopy</title>
+  <meta name="keywords" content="propscopy">
+  <meta name="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; propscopy.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Support Functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>propscopy
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong></strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function varargout = props(action,varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="angle.html" class="code" title="function r = angle(m1,m2,ref)">angle</a>	Calculates the smallest angle between two vectors, m1 and m2.</li><li><a href="associatedlg.html" class="code" title="function r = associatedlg(action,fld1,fld2)">associatedlg</a>	Main dialog box interface used by ensembler</li><li><a href="cameraman.html" class="code" title="function varargout = cameraman(action,varargin)">cameraman</a>	</li><li><a href="colorpallete.html" class="code" title="function varargout = colorpallete(action,varargin);">colorpallete</a>	</li><li><a href="createmarker.html" class="code" title="function r = createmarker(nm,sz,dis,clr)">createmarker</a>	ARGUMENTS</li><li><a href="ctransform.html" class="code" title="function vout = ctransform(c1,c2,vec)">ctransform</a>	vout = CTRANSFORM(c1,c2,vec) will transform a vector from c1 to c2 (T2/1)</li><li><a href="currentobject.html" class="code" title="function varargout = currentobject(varargin)">currentobject</a>	</li><li><a href="currentperson.html" class="code" title="function r = currentperson">currentperson</a>	Updated Sept 2016</li><li><a href="displace.html" class="code" title="function r = displace(m,vec)">displace</a>	DISPLACE moves a matrix m to vector vec</li><li><a href="engine.html" class="code" title="function fl = engine(varargin)">engine</a>	fl = ENGINE(varargin) is a file searching algorithm</li><li><a href="extension.html" class="code" title="function varargout = extension(f,ext)">extension</a>	varargout = extension(f,ext) returns file extension. File extension can be changed if</li><li><a href="fitobject.html" class="code" title="function [zdis,ort,pdis] = fitobject(objvr,fitvr)">fitobject</a>	this function will displace and rotate objvr to fit the fitvr</li><li><a href="forceplate.html" class="code" title="function varargout = forceplate(action,varargin)">forceplate</a>	</li><li><a href="getchannelc3d.html" class="code" title="function r = getchannelc3d(c3ddata,label,varargin)">getchannelc3d</a>	r = getchannelc3d(c3ddata,label)</li><li><a href="gunit.html" class="code" title="function r = gunit;">gunit</a>	</li><li><a href="listchannelc3d.html" class="code" title="function varargout = listchannelc3d(data)">listchannelc3d</a>	</li><li><a href="makecolumn.html" class="code" title="function r = makecolumn(s)">makecolumn</a>	MAKECOLUMN forces row vector to be a column vector</li><li><a href="makerow.html" class="code" title="function r = makerow(s)">makerow</a>	MAKEROW forces a column vector to be a row vector</li><li><a href="makeunit.html" class="code" title="function r = makeunit(unt)">makeunit</a>	MAKEUNIT  makes all vectors unit vectors</li><li><a href="marker.html" class="code" title="function varargout = marker(action,varargin)">marker</a>	varargout = marker(action,varargin) performs various actions for director</li><li><a href="partitionfile.html" class="code" title="function varargout = partitionfile(filename)">partitionfile</a>	updated Jan 2013</li><li><a href="plugingait.html" class="code" title="function ob = plugingait(bones,c3d)">plugingait</a>	</li><li><a href="readc3d.html" class="code" title="function data =readc3d(fname)">readc3d</a>	DATA = READC3D(FNAME) will read a .c3d file and output the data in a structured array</li><li><a href="surface2patch.html" class="code" title="function [vr,fc] = surface2patch(x,y,z)">surface2patch</a>	[vr,fc] = SURFACE2PATCH(x,y,z) converts surface orientation data to patch</li><li><a href="uigetfolder.html" class="code" title="function folder = uigetfolder(title, initial_path)">uigetfolder</a>	UIGETFOLDER(title, initial_path)  Standard Windows browse for folder dialog box.</li><li><a href="vecrotate.html" class="code" title="function vout = vecrotate(vin,ang,ax)">vecrotate</a>	vout = VECROTATE(vin,ang,ax) rotates a vector any number of degrees about any axis</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

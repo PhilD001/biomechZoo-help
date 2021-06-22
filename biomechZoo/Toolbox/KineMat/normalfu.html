@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of normalfu</title>
+  <meta name="keywords" content="normalfu">
+  <meta name="description" content="function [N, time] = normalfu(A,n,before,after,nanum)">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">KineMat</a> &gt; normalfu.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\KineMat&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>normalfu
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [N, time] = normalfu(A,n,before,after,nanum)</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [N,time] = normalfu(A,n,before,after,nanum) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> function [N, time] = normalfu(A,n,before,after,nanum)
+ Description:  normalizes to n-data points using &quot;linear interpolation&quot;
+ Input:    A        = matrix to be normalized
+           n        = normalized to n points (default = 101; 0% to 100%)
+           before   = # of data points before the phase determining 
+                      determining the 'normalization phase'
+           after    = --&quot;--, but after
+           nanum    =    1 -&gt; will leave NaNs'
+                      else -&gt; will interpolate for missing values (NaNs')
+                      (default)
+                      Note: NaNs' at the beginninng or end of column
+                            are not replaced
+ Output:   N        = matrix with normalized data
+           time     = time (&quot;xaxis&quot;), starts at zero (if before =0)
+                      e.g. if n=101 -&gt; time = [0:100]
+ Remarks:      This function may be used just in the form normalfu(A). In that
+            case, n=101, before=0; after=0; nanum=0;
+               The code for this function is far from being optimal and
+        therefore this function is rather slow.
+ Author:       Christoph Reinschmidt, HPL, The University of Calgary
+ Date:            September, 1994
+ Last Changes: November 29, 1996
+ Version:    1.0</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

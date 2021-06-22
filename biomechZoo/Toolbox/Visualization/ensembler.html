@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of ensembler</title>
+  <meta name="keywords" content="ensembler">
+  <meta name="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Visualization</a> &gt; ensembler.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Visualization&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>ensembler
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong></strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function ensembler(action) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment">
+ ENSEMBLER is the main graphical user interface (GUI) for the zoosystem
+ Time-series data can be graphed by group/channel.
+
+ QUICK GUIDE
+ - The user can change groupings by entering appropriate fields in the 'name'
+   section of the dialog box. These names should correspond to folder names
+   in the user's databa
+ - Individual axes must be tagged to list a given channel before accepting line data
+
+
+ EXAMPLES
+   e.g.1 There are two groups: 'elite' and 'rec' performing a task. Typing 'elite rec'
+   in the 'name' section at startup will create two windows allowing the user to graph
+   all files in 'elite' folder together and all files in 'rec' together. A space must
+   separate input strings.
+
+   e.g.2 There are two groups 'elite' and 'rec' performing two conditions
+   'slap' and 'wrist' (ice hockey shot styles). Typing 'elite+slap elite+wrist rec+slap rec+wrist'
+   will create 4 windows. Each window will collect all files containing both input strings.
+
+ NOTES
+ - Ensembler can also ensemble event data. Ensembled events may not &quot;sit&quot; on the mean
+   line due to standard deviation of their respective indices, i.e. different trials may
+   have different index for a common event
+ - There are known functionality issues graphing patches (e.g. standard deviation cloud)
+   on Mac OSX platforms
+ - There are known functionality issues with errorbars on Matlab version 2014a and up
+ - Functions tested on v2012a on MAC OS 10.8.6 and Windows 7
+ - Users wishing to use the exact version described in the biomechZoo
+   manuscript can download the original code on github</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="ensembler.html" class="code" title="function ensembler(action)">ensembler</a>	</li><li><a href="sigdiff.html" class="code" title="function sigdiff(x,y,FontName,FontSize)">sigdiff</a>	SIGDIFF(x,y,FontName,FontSize) displays a beautiful significant difference 'star'</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="ensembler.html" class="code" title="function ensembler(action)">ensembler</a>	</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

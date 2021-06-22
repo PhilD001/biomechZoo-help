@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of fft_line</title>
+  <meta name="keywords" content="fft_line">
+  <meta name="description" content="[mean_freq,max_freq,cut]= FFT_LINE(r,fsamp,thresh,graph) performs calculation of">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Biomech Ops</a> &gt; fft_line.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Biomech Ops&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>fft_line
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>[mean_freq,max_freq,cut]= FFT_LINE(r,fsamp,thresh,graph) performs calculation of</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [mean_freq,max_freq,cut]= fft_line(r,fsamp,thresh,graph) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> [mean_freq,max_freq,cut]= FFT_LINE(r,fsamp,thresh,graph) performs calculation of
+ single-sides amplitude spectrum and estimates cutoff frequency for filtering
+
+ ARGUMENTS
+  r          ...   Column vector data (n x 1)
+  fsamp      ...   sampling rate of signal
+  thresh     ...   threshold value to choose cutoff frequency. Default 10
+  graph      ...   Generate plot of data (Boolean). Default true
+
+ RETURNS
+  mean_freq  ...   Weighted mean frequency of signal
+  max_freq   ...   Frequency with maximum amplitude
+  cut        ...   Estimated cutof frequency
+
+ EXAMPLE
+
+ here is a signal sampled at 1000Hz with a frequency of 10Hz. The
+ fourier transform clearly shows a spike at 10Hz
+ t = (0:0.001:1);   
+ x = sin(20*pi*t);  
+ fft_line(x,1000)
+
+ See also fft, <a href="bmech_filter.html" class="code" title="function bmech_filter(fld,ch,filt)">bmech_filter</a>, <a href="filter_data.html" class="code" title="function data = filter_data(data,ch,filt)">filter_data</a>, <a href="filter_line.html" class="code" title="function r = filter_line(r,filt,fsamp)">filter_line</a></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

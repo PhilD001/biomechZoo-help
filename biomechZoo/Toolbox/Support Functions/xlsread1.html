@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of xlsread1</title>
+  <meta name="keywords" content="xlsread1">
+  <meta name="description" content="XLSREAD Get data and text from a spreadsheet in an Excel workbook.">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; xlsread1.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Support Functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>xlsread1
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>XLSREAD Get data and text from a spreadsheet in an Excel workbook.</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [data, text, rawData, customOutput]=xlsread1(file,sheet,range,mode,customFun) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> XLSREAD Get data and text from a spreadsheet in an Excel workbook.
+   [NUMERIC,TXT,RAW]=XLSREAD(FILE) reads the data specified in the Excel 
+   file, FILE. The numeric cells in FILE are returned in NUMERIC, the text 
+   cells in FILE are returned in TXT, while the raw, unprocessed cell 
+   content is returned in RAW.  
+
+   [NUMERIC,TXT,RAW]=XLSREAD(FILE,SHEET,RANGE) reads the data specified
+   in RANGE from the worksheet SHEET, in the Excel file specified in FILE. 
+   It is possible to select the range of data interactively (see Examples
+   below). Please note that the full functionality of XLSREAD depends on 
+   the ability to start Excel as a COM server from MATLAB. 
+
+   [NUMERIC,TXT,RAW]=XLSREAD(FILE,SHEET,RANGE,'basic') reads an XLS file as
+   above, using basic input mode. This is the mode used on UNIX platforms
+   as well as on Windows when Excel is not available as a COM server.  
+   In this mode, XLSREAD does not use Excel as a COM server, which limits
+   import ability. Without Excel as a COM server, RANGE will be ignored
+   and, consequently, the whole active range of a sheet will be imported. 
+   Also, in basic mode, SHEET is case-sensitive and must be a string.
+
+   [NUMERIC,TXT,RAW]=XLSREAD(FILE,SHEET,RANGE,'',CUSTOMFUN)
+   [NUMERIC,TXT,RAW,CUSTOMOUTPUT]=XLSREAD(FILE,SHEET,RANGE,'',CUSTOMFUN)
+   When the Excel COM server is used, allows passing in a handle to a
+   custom function.  This function will be called just before retrieving 
+   the actual data from Excel. It must take an Excel Range object (e.g. of
+   type 'Interface.Microsoft_Excel_5.0_Object_Library.Range') as input,
+   and return one as output.  Optionally, this custom function may return
+   a second output argument, which will be returned from XLSREAD as the
+   fourth output argument, CUSTOMOUTPUT.  For details of what is possible 
+   using the EXCEL COM interface, please refer to Microsoft documentation.
+
+   INPUT PARAMETERS:
+   FILE: string defining the file to read from. Default directory is pwd.
+         Default extension is 'xls'.
+   SHEET: string defining worksheet name in workbook FILE.
+          double scalar defining worksheet index in workbook FILE. See
+          NOTE 1.
+   RANGE: string defining the data range in a worksheet. See NOTE 2.
+   MODE: string enforcing basic import mode. Valid value = 'basic'.  This
+   is the mode always used when COM is not available (e.g. on Unix).
+
+   RETURN PARAMETERS:
+   NUMERIC = n x m array of type double.
+   TXT = r x s cell string array containing text cells in RANGE.
+   RAW = v x w cell array containing unprocessed numeric and text data.
+   Both NUMERIC and TXT are subsets of RAW.
+
+   EXAMPLES:
+   1. Default operation:  
+      NUMERIC = xlsread(FILE);
+      [NUMERIC,TXT]=xlsread(FILE);
+      [NUMERIC,TXT,RAW]=xlsread(FILE);
+
+   2. Get data from the default region:
+      NUMERIC = xlsread('c:\matlab\work\myspreadsheet')
+
+   3. Get data from the used area in a sheet other than the first sheet:
+      NUMERIC = xlsread('c:\matlab\work\myspreadsheet','sheet2')
+
+   4. Get data from a named sheet:
+      NUMERIC = xlsread('c:\matlab\work\myspreadsheet','NBData')
+
+   5. Get data from a specified region in a sheet other than the first
+      sheet:
+      NUMERIC = xlsread('c:\matlab\work\myspreadsheet','sheet2','a2:j5')
+ 
+   6. Get data from a specified region in a named sheet:
+      NUMERIC = xlsread('c:\matlab\work\myspreadsheet','NBData','a2:j5')
+ 
+   7. Get data from a region in a sheet specified by index:
+      NUMERIC = xlsread('c:\matlab\work\myspreadsheet',2,'a2:j5')
+ 
+   8. Interactive region selection:
+      NUMERIC = xlsread('c:\matlab\work\myspreadsheet',-1);
+      You have to select the active region and the active sheet in the
+      EXCEL window that will come into focus. Click OK in the Data 
+      Selection Dialog when you have finished selecting the active region.
+
+   9. Using the custom function:
+      [NUMERIC,TXT,RAW,CUSTOMOUTPUT] = xlsread('equity.xls', ..., @MyCustomFun)
+      Where the CustomFun is defined as:
+
+      function [DataRange, customOutput] = MyCustomFun(DataRange)
+         DataRange.NumberFormat = 'Date';
+         customOutput = 'Anything I want';
+     
+      This will convert to dates all cells where that is possible.
+
+   NOTE 1: The first worksheet of the workbook is the default sheet. If 
+         SHEET is -1, Excel comes to the foreground to enable interactive 
+         selection (optional). In interactive mode, a dialogue will prompt 
+         you to click the OK button in that dialogue to continue in MATLAB. 
+          (Only supported when Excel COM server is available.)
+   NOTE 2: The regular form is: 'D2:F3' to select rectangular region D2:F3 
+         in a worksheet. RANGE is not case sensitive and uses Excel A1 
+         notation (see Excel Help). (Only supported when Excel COM server 
+         is available.)
+   NOTE 3: Excel formats other than the default can also be read.
+          (Only supported when Excel COM server is available.)
+
+   See also XLSWRITE, CSVREAD, CSVWRITE, DLMREAD, DLMWRITE, TEXTSCAN.</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

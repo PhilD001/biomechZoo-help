@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of COP_oneplate</title>
+  <meta name="keywords" content="COP_oneplate">
+  <meta name="description" content="COP = COP_ONEPLATE(F,M,a,b,c,cutoff) calculats COP of force plates">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; COP_oneplate.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Support Functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>COP_oneplate
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>COP = COP_ONEPLATE(F,M,a,b,c,cutoff) calculats COP of force plates</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function COP = COP_oneplate(F,M,a,b,c,cutoff) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> COP = COP_ONEPLATE(F,M,a,b,c,cutoff) calculats COP of force plates 
+
+
+ ARGUMENTS
+  F      ...  n x 3 matrix w/ columns Fx, Fy, Fz. Directly from FP data
+  M      ...  n x 3 matrix w/ columns Mx, My, Mz, moments of force plate
+  a,b,c  ...  true coordinates from manufacturer (metres) centre of plate
+  cutoff ...  Threshold from which to start computing COP. Default 20N
+
+ RETURNS
+  COP  ...  struct containing COP info for both plates 
+
+ Updated Jan 14th 2008
+   -replace NaN with first and last values of array
+   -cutoff is back to 60N to be consistent with the rest of thesis
+
+ Updated Jan 4th 2013
+  - cutoff magnitude default is 20N to match vicon output
+
+ Updated Jan 7th 2013
+ - fix removal of NaNs at start and end of data
+
+ NOTES
+  -COP coordinates are outputted in the original FP coordinate system, ie
+  origin in is center of FPlate
+  - Moments must be expressed about the true center of the plate.
+    moment adjustment calculations (based on AMTI) not done here...use
+   moment_coordchange.m
+  Mx = Mxo - Fy*zo - Fz*yo
+  My = Myo + Fx*zo + Fz*xo
+  Mz = Mzo - Fx*yo - Fy*xo
+
+ Current McGill Biomechanics Lab FP AMTI OR6-5-1000 s.n. 3403
+
+ 
+ x = -0.778/1000; %mm to m
+ y =  0.459/1000;
+ z = -37.635/1000;</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of print2array</title>
+  <meta name="keywords" content="print2array">
+  <meta name="description" content="PRINT2ARRAY  Exports a figure to an image array">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; <a href="#">export_fig</a> &gt; print2array.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../../index.html"><img alt="<" border="0" src="../../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Support Functions\export_fig&nbsp;<img alt=">" border="0" src="../../../../right.png"></a></td></tr></table>-->
+
+<h1>print2array
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="box"><strong>PRINT2ARRAY  Exports a figure to an image array</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="box"><strong>function [A, bcol] = print2array(fig, res, renderer, gs_options) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment">PRINT2ARRAY  Exports a figure to an image array
+
+ Examples:
+   A = print2array
+   A = print2array(figure_handle)
+   A = print2array(figure_handle, resolution)
+   A = print2array(figure_handle, resolution, renderer)
+   A = print2array(figure_handle, resolution, renderer, gs_options)
+   [A bcol] = print2array(...)
+
+ This function outputs a bitmap image of the given figure, at the desired
+ resolution.
+
+ If renderer is '-painters' then ghostcript needs to be installed. This
+ can be downloaded from: http://www.ghostscript.com
+
+ IN:
+   figure_handle - The handle of the figure to be exported. Default: gcf.
+   resolution - Resolution of the output, as a factor of screen
+                resolution. Default: 1.
+   renderer - string containing the renderer paramater to be passed to
+              print. Default: '-opengl'.
+   gs_options - optional ghostscript options (e.g.: '-dNoOutputFonts'). If
+                multiple options are needed, enclose in call array: {'-a','-b'}
+
+ OUT:
+   A - MxNx3 uint8 image of the figure.
+   bcol - 1x3 uint8 vector of the background color</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../../matlabicon.gif)">
+<li><a href="ghostscript.html" class="code" title="function varargout = ghostscript(cmd)">ghostscript</a>	GHOSTSCRIPT  Calls a local GhostScript executable with the input command</li><li><a href="print2eps.html" class="code" title="function print2eps(name, fig, export_options, varargin)">print2eps</a>	PRINT2EPS  Prints figures to eps with improved line styles</li><li><a href="user_string.html" class="code" title="function string = user_string(string_name, string)">user_string</a>	USER_STRING  Get/set a user specific string</li><li><a href="using_hg2.html" class="code" title="function tf = using_hg2(fig)">using_hg2</a>	USING_HG2 Determine if the HG2 graphics engine is used</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../../matlabicon.gif)">
+<li><a href="export_fig.html" class="code" title="function [imageData, alpha] = export_fig(varargin) %#ok<*STRCL1>">export_fig</a>	EXPORT_FIG  Exports figures in a publication-quality format</li><li><a href="print2eps.html" class="code" title="function print2eps(name, fig, export_options, varargin)">print2eps</a>	PRINT2EPS  Prints figures to eps with improved line styles</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

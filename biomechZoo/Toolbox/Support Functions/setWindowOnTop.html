@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of setWindowOnTop</title>
+  <meta name="keywords" content="setWindowOnTop">
+  <meta name="description" content="SETWINDOWONTOP sets a figures Always On Top state on or off">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; setWindowOnTop.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Support Functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>setWindowOnTop
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>SETWINDOWONTOP sets a figures Always On Top state on or off</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function setWindowOnTop(h,state) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> SETWINDOWONTOP sets a figures Always On Top state on or off
+
+  Copyright (C) 2006  Matt Whitaker
+ 
+  This program is free software; you can redistribute it and/or modify it
+  under
+   the terms of the GNU General Public License as published by the Free
+   Software Foundation; either version 2 of the License, or (at your
+   option) any later version.
+ 
+  This program is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  General Public License for more details.
+
+ SETWINDOWONTOP(H,STATE): H is figure handle or a vector of figure handles
+                          STATE is a string or cell array of strings-
+                               'true' - set figure to be always on top
+                               'false' - set figure to normal
+                           if STATE is a string the state is applied to
+                           all H. If state is a cell array the length STATE
+                           must equal that of H and each state is applied
+                           individually.
+  Examples: 
+   h= figure;
+   s = 'true';
+   setWindowOnTop(h,s) %sets h to be on top
+   
+   h(1) = figure;
+   h(2) = figure; 
+   s = 'true';
+   setWindowOnTop(h,s) %sets both figures to  be on top
+
+   h(1) = figure;
+   h(2) = figure; 
+   s = {'true','false'};
+   setWindowOnTop(h,s) %sets h(1) on top, h(2) normal
+ Notes: 
+ 1. Figures must have 'Visible' set to 'on' and not be docked for
+    setWindowOnTop to work.
+ 2. Routine does not work for releases prior to R14SP2
+ 3. The Java calls are undocumented by Mathworks
+
+ Revisions: 09/28/06- Corrected call to warning and uopdated for R2006b</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

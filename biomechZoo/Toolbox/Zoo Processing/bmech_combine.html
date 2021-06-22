@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of bmech_combine</title>
+  <meta name="keywords" content="bmech_combine">
+  <meta name="description" content="BMECH_COMBINE(fld1,fld2,method,fl1exclude,fl2exclude) will combine data from 2 separate zoo files.">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Zoo Processing</a> &gt; bmech_combine.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Zoo Processing&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>bmech_combine
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>BMECH_COMBINE(fld1,fld2,method,fl1exclude,fl2exclude) will combine data from 2 separate zoo files.</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function bmech_combine(fld1,fld2,method,fl1exclude,fl2exclude) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> BMECH_COMBINE(fld1,fld2,method,fl1exclude,fl2exclude) will combine data from 2 separate zoo files.
+
+ ARGUMENTS
+  fld1      ...  folder for first data set. Files saved to fld1
+  fld2      ...  folder for second data set
+  method   ...   determines if you want to upsample the signal with the lower frequency ('up'),
+                 if you want to downsample the signal with the  highest frequency ('down'), or
+                 leave them the same 'none'. Default is down if frequencies are different.
+  fl1exclude ... Files names to ignore from fld1. Default none, {}
+  fl2exclude ... File names to ignore from fld2. Default none, {}
+
+ Example
+  You may have collected data using 2 separate systems. As each signal was colected by a different system,
+  you have 2 sets of zoo data per trial. This file will create a sigle zoo file containing
+  all the channels in the first folder fld1
+
+ NOTES
+  - make a copy of &quot;folder 1&quot; this is where all your data will be combined
+  - please make sure correct trials are combined. Files in each folder
+    should follow the same number sequence.
+  - You can check the zoosystem SourceFile to make sure process was completed correctly</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="combine_data.html" class="code" title="function data = combine_data (data1,data2,method)">combine_data</a>	data = COMBINE_DATA(data1,data2,method)</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

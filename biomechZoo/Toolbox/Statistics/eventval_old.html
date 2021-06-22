@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of eventval_old</title>
+  <meta name="keywords" content="eventval_old">
+  <meta name="description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Statistics</a> &gt; eventval_old.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Statistics&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>eventval_old
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong></strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function eventval_old(varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment">
+ eventval(varargin) will transfer the values of all channels at given events to
+ an excel sheet for inspection. Careful setup must be followed
+
+ ARGUMENTS
+ 'fld'          ... path to data folder as string
+ 'ch'           ... list of channels as cell array of strings
+ 'localevts'    ... list of local events as cell array of strings
+ 'globalevts'   ... list of global events as cell array of strings
+ 'subprefix'    ... subject code prefix as string. e.g. 'subject','P'
+
+
+ PREREQUISITES:
+
+ 1-Create an excel file names 'dim1.xls' which contains the Conditions in
+   your study
+
+   ex. if your study has the Conditions 'pre' and 'post' enter 'pre' and
+   'post' (no quotes) in cells A1 and A2 of your excel sheet.
+   ex. if your study design in more complicated, where two groups (rec and
+   elite) perform 3 tasks (wrist shot, snap shot and slap shot). you would
+   then write in column A the following rec\wrist, rec\snap, rec\slap,
+   elite\wrist, elite\snap, elite\slap
+
+   NOTE: -your Condition folder names and dim1 names must be identical
+         - your structure should be group/subject/condition
+           e.g   rec/subject01/wrist
+                              /snap
+                              /slap
+                     subject02/wrist
+                               /...
+                  elite/subject03/wrist
+                               /...
+
+
+ 2-create an excel file names 'dim2.xls' which contains the names of the subjects in
+   your study
+   ex. if your study has 5 subjects called 'subject01', 'subject02',...'subject05' then enter
+   'subject01', 'subject02',...'subject05'(no quotes) in cells A1,A2,...A5 of your excel sheet.
+
+   NOTES: - Your subject folder names and dim2 names must be identical.
+          - Do not use spaces or capitals in your subject folders.
+          - Always name your subjects beginning with subject01,...
+          - for between subject designs write all possible subject names
+            in dim file
+
+ 3-create a blank excel file to write data to. Name it as you wish.
+
+
+ BACKGROUND INFO:
+
+ This function will ask you to select the events you are interested in
+ extracting. Following the zoosystem, there are two kinds of events to
+ choose from.
+
+ 'Local Events' are events tagged in each channel. ex. an event 'max' may
+ exist in each channel that specifies the maximum data point and its index for a given
+ channel.
+
+ 'Global Events' are events tagged in a single channel, but for which we
+ require info in all channels. ex. an event 'heel strike' may exist in a
+ force plate channel. If it is selected as a global event, this function
+ wil return the value of every channel at the index of heel strike.</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

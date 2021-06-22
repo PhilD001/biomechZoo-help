@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of makebones_data</title>
+  <meta name="keywords" content="makebones_data">
+  <meta name="description" content="DATA = MAKEBONES_DATA(data,type,foot_flat,test) creates segment 'bones' for use in kinematic /">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">PiG Ops</a> &gt; makebones_data.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\PiG Ops&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>makebones_data
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>DATA = MAKEBONES_DATA(data,type,foot_flat,test) creates segment 'bones' for use in kinematic /</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function data = makebones_data(data,type,foot_flat,test) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> DATA = MAKEBONES_DATA(data,type,foot_flat,test) creates segment 'bones' for use in kinematic /
+ kinetic modelling or for visualization in director. Bones are virtual markers representing
+ segment axes.
+
+ ARGUMENTS
+
+  data        ... Zoo data
+  type        ... Trial type (String) (static or dynamic)
+  foot_flat   ... Foot flat (Boolean) to represent if foot flat should be assumed
+                  Default 'false'
+  test        ... Test against existing PiG 'bones' (Boolean). Default 'false'
+
+ RETURNS
+  data        ... Zoo data with new 'bones' appended
+
+ NOTES
+ - Following anthropometric/metainfo data must be available:
+   'MarkerDiameter, R/LLegLength,R/LKneeWidth,R/LAnkleWidth
+ - Foot length may be inexact during visualization in director. Joint angles are unaffected
+ - Only lower-limb bones are currently created
+
+ See also getbones, <a href="bmech_kinematics.html" class="code" title="function bmech_kinematics(fld,settings)">bmech_kinematics</a>, bmech_kinetics</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="comparePiG.html" class="code" title="function comparePiG(data,segment,mO,mA,mL,mP)">comparePiG</a>	COMPAREPIG(data,segment,mO,mA,mL,mP) is used to check outputs of</li><li><a href="getGlobalCoord.html" class="code" title="function [O,A,L,P] = getGlobalCoord(data,O,A,L,P,segment,boneLength,test)">getGlobalCoord</a>	[O,A,L,P] = GETGLOBALCOORD(data,O,A,L,P,segment,boneLength,test) moves</li><li><a href="hipjointcentrePiG_data.html" class="code" title="function [data,localjc] = hipjointcentrePiG_data(data,test)">hipjointcentrePiG_data</a>	data = HIPJOINTCENTREPIG_DATA(data,test) computes left and right hip joint centers for</li><li><a href="jointcentrePiG_data.html" class="code" title="function data = jointcentrePiG_data(data,joint,test)">jointcentrePiG_data</a>	data = JOINTCENTREPIG_DATA(data,joint) returns knee, or anke joint centre</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="bmech_kinematics.html" class="code" title="function bmech_kinematics(fld,settings)">bmech_kinematics</a>	BMECH_KINEMATICS(fld,settings) is a batch process function to compute lower-limb</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

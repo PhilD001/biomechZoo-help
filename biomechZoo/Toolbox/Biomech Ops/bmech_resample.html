@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of bmech_resample</title>
+  <meta name="keywords" content="bmech_resample">
+  <meta name="description" content="BMECH_RESAMPLE(fld,ch,p,q,method) batch process resampling function without filtering">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Biomech Ops</a> &gt; bmech_resample.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Biomech Ops&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>bmech_resample
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>BMECH_RESAMPLE(fld,ch,p,q,method) batch process resampling function without filtering</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function bmech_resample(fld,ch,p,q,method) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> BMECH_RESAMPLE(fld,ch,p,q,method) batch process resampling function without filtering
+
+ ARGUMENTS
+  fld     ... Folder to batch process (string).
+  ch      ... Channel(s) to operate on (single string or cell array of strings).
+              Use 'Video' or 'Analog' to resample all video or analog channels
+  p       ... Numerator of fraction of sampling rate. Default = [];
+  q       ... Denominator of fraction of fraction of sampling rate. Default = []
+  method  ... Interpolation method used during resampling. Default 'linear'
+
+ NOTES:
+ - If p and q are not provided, then all channels of ch type will be resampled 
+   to the rate of the other type. e.g. bmech_resampe(fld,'Analog') resamples all
+   Analog channels to the 'Video' sampling rate
+ - If only select channels are provided from a given type (e.g. only 'Fz1'
+   from 'Analog' channel list. zoosystem metainfo will provide incorrect
+   information.
+
+ See also <a href="resample_data.html" class="code" title="function  data = resample_data(data,ch,p,q,method)">resample_data</a>, <a href="bmech_normalize.html" class="code" title="function bmech_normalize(fld,ch,datalength,method)">bmech_normalize</a>, <a href="normalize_line.html" class="code" title="function [nr,nlength]=normalize_line(r,datalength,method)">normalize_line</a></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="resample_data.html" class="code" title="function  data = resample_data(data,ch,p,q,method)">resample_data</a>	data = resample_data(data,ch,p,q) resampling function without filtering</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

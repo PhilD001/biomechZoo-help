@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of addchannel_data</title>
+  <meta name="keywords" content="addchannel_data">
+  <meta name="description" content="data = ADDCHANNEL_DATA(data,ch,ndata,section)">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Zoo Processing</a> &gt; addchannel_data.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Zoo Processing&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>addchannel_data
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>data = ADDCHANNEL_DATA(data,ch,ndata,section)</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function data = addchannel_data(data,ch,ndata,section) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> data = ADDCHANNEL_DATA(data,ch,ndata,section)
+
+ ARGUMENTS
+  data     ...  Zoo data (struct)
+  ch       ...  Name of new channel to add (string) 
+  ndata    ...  vector of new data to be added to new channel
+  section  ...  'Video' or 'Analog' section
+
+ RETURNS
+  data    ...   Zoo data with new channel appended 
+
+ NOTES
+ - unlike 'bmech_removechannel', there is no batch processing equivalent
+   function to add channels since for a given channel, each file needs to contain
+   specific data.
+
+ See also <a href="bmech_removechannel.html" class="code" title="function bmech_removechannel(fld,ch,action)">bmech_removechannel</a>, <a href="bmech_removeevent.html" class="code" title="function bmech_removeevent(fld,evt,ch)">bmech_removeevent</a>, <a href="bmech_addevent.html" class="code" title="function bmech_addevent(fld,ch,ename,type,sfld)">bmech_addevent</a>, <a href="removechannel_data.html" class="code" title="function data= removechannel_data(data,ch)">removechannel_data</a></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="combine_data.html" class="code" title="function data = combine_data (data1,data2,method)">combine_data</a>	data = COMBINE_DATA(data1,data2,method)</li><li><a href="explode_data.html" class="code" title="function data = explode_data(data,ch)">explode_data</a>	data = EXPLODE_DATA(data,ch) explodes channels</li><li><a href="explodechannel_data.html" class="code" title="function data = explodechannel_data(data,ch)">explodechannel_data</a>	data = EXPLODECHANNEL_DATA(data,ch) explodes channels</li><li><a href="mergechannel_data.html" class="code" title="function data = mergechannel_data(data,ch)">mergechannel_data</a>	data = MERGECHANNEL_DATA(data,ch) explodes channels</li><li><a href="renamechannel_data.html" class="code" title="function data = renamechannel_data(data,och,nch)">renamechannel_data</a>	data = RENAMECHANNEL_DATA(data,och,nch) renames zoo channels</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of bmech_kinematicsRvdB</title>
+  <meta name="keywords" content="bmech_kinematicsRvdB">
+  <meta name="description" content="BMECH_KINEMATICSRVDB(fld,Pelvis,Thigh,Shank,Foot,sequence) computes lower-limb">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">KineMat</a> &gt; bmech_kinematicsRvdB.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\KineMat&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>bmech_kinematicsRvdB
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>BMECH_KINEMATICSRVDB(fld,Pelvis,Thigh,Shank,Foot,sequence) computes lower-limb</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function bmech_kinematicsRvdB(fld,Pelvis,Thigh,Shank,Foot,sequence) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> BMECH_KINEMATICSRVDB(fld,Pelvis,Thigh,Shank,Foot,sequence) computes lower-limb 
+ (ankle, knee, hip) joint kinematics using the kinemat toolbox of Reinschmidt 
+ and Van den Bogert
+
+ ARGUMENTS
+  fld      ...  Folder to batch process (string). Default: folder selection window. 
+  Pelvis    ... cell array of markers (min 3) defining pelvis segment. 
+                Default, use markers 'RASI','LASI','SACR'
+  Thigh     ... cell array of markers (min 3) defining Thigh segment.  
+                Default, use markers 'THI','KNE','KneeJC','HipJC'
+  Shank     ... cell array of markers (min 3) defining Shank segment.
+                Default, use markers 'ANK','TIB','AnkleJC','KneeJC'
+  Foot      ... cell array of markers (min 3) defining Foot segment.
+                Default, use markers 'TOE','HEE','AnkleJC'
+  sequence  ... cardan sequence to choose. Default 'yxz'
+
+ NOTES
+ - Code based on 'cardan.m' part of Reinschmidt and Van den Bogert 'kinemat'
+   toolbox: http://isbweb.org/software/movanal/kinemat/
+ - If hip, knee, and/or ankle joint center  are chosen as virtual tracking
+   markers for kinematics, these will be computed by hipJointCentrePiG and
+   jointCentrePiG. The latter requires the Symbolic Math Toolbox
+
+ See also <a href="cardan.html" class="code" title="function helicang=cardan(s1neut,s2neut,s1mov,s2mov,sequence)">cardan</a>, <a href="kinematicsRvdB_data.html" class="code" title="function data = kinematicsRvdB_data(sdata,data,Pelvis,Thigh,Shank,Foot,sequence,test)">kinematicsRvdB_data</a></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="kinematicsRvdB_data.html" class="code" title="function data = kinematicsRvdB_data(sdata,data,Pelvis,Thigh,Shank,Foot,sequence,test)">kinematicsRvdB_data</a>	data = KINEMATICSRVDB_DATA(sdata,data,Pelvis,Thigh,Shank,Foot,sequence,test) computes</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

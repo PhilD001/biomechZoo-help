@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of addevent_data</title>
+  <meta name="keywords" content="addevent_data">
+  <meta name="description" content="data = ADDEVENT_DATA(data,ch,ename,type) called by bmech_addevent to add data to event branches.">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Zoo Processing</a> &gt; addevent_data.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Zoo Processing&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>addevent_data
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>data = ADDEVENT_DATA(data,ch,ename,type) called by bmech_addevent to add data to event branches.</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function data = addevent_data(data,ch,ename,type) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> data = ADDEVENT_DATA(data,ch,ename,type) called by bmech_addevent to add data to event branches.
+
+ ARGUMENTS
+  data     ...  Zoo data
+  ch       ...  Channels to add event to (cell arrray of strings). 
+  ename    ...  The name of the new event branch in zoo file as string
+  type     ...  See line 47 ('max' 'min' 'toe off' heel strike'...) string
+
+ RETURNS
+  data     ...  Zoo data with new event data appended
+
+ NOTES
+ - Users are encouraged to modify event functions for specific needs
+ - Not all events have been tested
+
+ See also <a href="bmech_addevent.html" class="code" title="function bmech_addevent(fld,ch,ename,type,sfld)">bmech_addevent</a>, <a href="bmech_removeevent.html" class="code" title="function bmech_removeevent(fld,evt,ch)">bmech_removeevent</a>, <a href="bmech_renameevent.html" class="code" title="function bmech_renameevent(fld,evt,nevt)">bmech_renameevent</a></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="bmech_addevent.html" class="code" title="function bmech_addevent(fld,ch,ename,type,sfld)">bmech_addevent</a>	BMECH_ADDEVENT(fld,ch,ename,type,sfld) batch process of event addition</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

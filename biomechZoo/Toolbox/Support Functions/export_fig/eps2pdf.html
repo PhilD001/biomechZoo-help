@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of eps2pdf</title>
+  <meta name="keywords" content="eps2pdf">
+  <meta name="description" content="EPS2PDF  Convert an eps file to pdf format using ghostscript">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; <a href="#">export_fig</a> &gt; eps2pdf.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../../index.html"><img alt="<" border="0" src="../../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Support Functions\export_fig&nbsp;<img alt=">" border="0" src="../../../../right.png"></a></td></tr></table>-->
+
+<h1>eps2pdf
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="box"><strong>EPS2PDF  Convert an eps file to pdf format using ghostscript</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="box"><strong>function eps2pdf(source, dest, crop, append, gray, quality, gs_options) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment">EPS2PDF  Convert an eps file to pdf format using ghostscript
+
+ Examples:
+   eps2pdf source dest
+   eps2pdf(source, dest, crop)
+   eps2pdf(source, dest, crop, append)
+   eps2pdf(source, dest, crop, append, gray)
+   eps2pdf(source, dest, crop, append, gray, quality)
+   eps2pdf(source, dest, crop, append, gray, quality, gs_options)
+
+ This function converts an eps file to pdf format. The output can be
+ optionally cropped and also converted to grayscale. If the output pdf
+ file already exists then the eps file can optionally be appended as a new
+ page on the end of the eps file. The level of bitmap compression can also
+ optionally be set.
+
+ This function requires that you have ghostscript installed on your
+ system. Ghostscript can be downloaded from: http://www.ghostscript.com
+
+ Inputs:
+   source  - filename of the source eps file to convert. The filename is
+             assumed to already have the extension &quot;.eps&quot;.
+   dest    - filename of the destination pdf file. The filename is assumed
+             to already have the extension &quot;.pdf&quot;.
+   crop    - boolean indicating whether to crop the borders off the pdf.
+             Default: true.
+   append  - boolean indicating whether the eps should be appended to the
+             end of the pdf as a new page (if the pdf exists already).
+             Default: false.
+   gray    - boolean indicating whether the output pdf should be grayscale
+             or not. Default: false.
+   quality - scalar indicating the level of image bitmap quality to
+             output. A larger value gives a higher quality. quality &gt; 100
+             gives lossless output. Default: ghostscript prepress default.
+   gs_options - optional ghostscript options (e.g.: '-dNoOutputFonts'). If
+                multiple options are needed, enclose in call array: {'-a','-b'}</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../../matlabicon.gif)">
+<li><a href="ghostscript.html" class="code" title="function varargout = ghostscript(cmd)">ghostscript</a>	GHOSTSCRIPT  Calls a local GhostScript executable with the input command</li><li><a href="user_string.html" class="code" title="function string = user_string(string_name, string)">user_string</a>	USER_STRING  Get/set a user specific string</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../../matlabicon.gif)">
+<li><a href="export_fig.html" class="code" title="function [imageData, alpha] = export_fig(varargin) %#ok<*STRCL1>">export_fig</a>	EXPORT_FIG  Exports figures in a publication-quality format</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

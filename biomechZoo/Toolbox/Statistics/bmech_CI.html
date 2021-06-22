@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of bmech_CI</title>
+  <meta name="keywords" content="bmech_CI">
+  <meta name="description" content="[CIlow, CIhigh, SE, CIw, stat] =  bmech_CI(data,type,alpha,normal) computes confidence interval for">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Statistics</a> &gt; bmech_CI.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Statistics&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>bmech_CI
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>[CIlow, CIhigh, SE, CIw, stat] =  bmech_CI(data,type,alpha,normal) computes confidence interval for</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [CIlo, CIhi, SE,CIw,stat] =  bmech_CI(data,type,alpha,normal) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> [CIlow, CIhigh, SE, CIw, stat] =  bmech_CI(data,type,alpha,normal) computes confidence interval for
+ unidimension data 
+
+ ARGUMENTS
+  data   ...   r x c matrix where CI are computed columnwise
+  type   ...   computes CI about mean (arithmetic) or median. Default mean.
+  alpha  ...   significance level. Default 0.05
+  normal ...   normality of data. 'Yes' or 'no'. In case of 'no' non parametric CI built 
+
+ RETURNS
+  CIlow  ...  lower limit of confidence interval
+  CIhigh ...  upper limit of confidence interval
+  SE     ...  standard error
+  CIw    ...  half width of CI
+  stat   ...  mean or median of data
+
+
+ NOTES
+ - for parametric data, CI built using standard formula :  xbar +/- t*(SD)/n
+ - For non-parametric data. Approximate CI given using median and rank 
+  (see Gibbons 1993 &quot;Nonparametric statistics&quot; table B)</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="anthrobycon.html" class="code" title="function r = anthrobycon(fld,name,display)">anthrobycon</a>	r = anthrobycon(fld,name,display) returns anthropometric data by condition</li><li><a href="omni_ttest.html" class="code" title="function [P,t,df,e,md,CIdiff] = omni_ttest(data1,data2,type,alpha,thresh,mode,bonf)">omni_ttest</a>	[P,t,df,e] = OMNI_TTEST(data1,data2,type,alpha,thresh,tail,mode,bonf) performs statistical</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of append_pdfs</title>
+  <meta name="keywords" content="append_pdfs">
+  <meta name="description" content="APPEND_PDFS Appends/concatenates multiple PDF files">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; <a href="#">export_fig</a> &gt; append_pdfs.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../../index.html"><img alt="<" border="0" src="../../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Support Functions\export_fig&nbsp;<img alt=">" border="0" src="../../../../right.png"></a></td></tr></table>-->
+
+<h1>append_pdfs
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="box"><strong>APPEND_PDFS Appends/concatenates multiple PDF files</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="box"><strong>function append_pdfs(varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment">APPEND_PDFS Appends/concatenates multiple PDF files
+
+ Example:
+   append_pdfs(output, input1, input2, ...)
+   append_pdfs(output, input_list{:})
+   append_pdfs test.pdf temp1.pdf temp2.pdf
+
+ This function appends multiple PDF files to an existing PDF file, or
+ concatenates them into a PDF file if the output file doesn't yet exist.
+
+ This function requires that you have ghostscript installed on your
+ system. Ghostscript can be downloaded from: http://www.ghostscript.com
+
+ IN:
+    output - string of output file name (including the extension, .pdf).
+             If it exists it is appended to; if not, it is created.
+    input1 - string of an input file name (including the extension, .pdf).
+             All input files are appended in order.
+    input_list - cell array list of input file name strings. All input
+                 files are appended in order.</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../../matlabicon.gif)">
+<li><a href="ghostscript.html" class="code" title="function varargout = ghostscript(cmd)">ghostscript</a>	GHOSTSCRIPT  Calls a local GhostScript executable with the input command</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of partition_data</title>
+  <meta name="keywords" content="partition_data">
+  <meta name="description" content="data = PARTITION_DATA(data,evt1,evt2,ch) standalone function to partition data">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Zoo Processing</a> &gt; partition_data.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Zoo Processing&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>partition_data
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>data = PARTITION_DATA(data,evt1,evt2,ch) standalone function to partition data</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function data = partition_data(data,evt1,evt2,ch) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> data = PARTITION_DATA(data,evt1,evt2,ch) standalone function to partition data
+
+ ARGUMENTS
+  data ...  Zoo data file (struct)
+  evt1 ...  Name of event for start of partition (string)
+  evt2 ...  Name of event for end of partition (string)
+  ch   ...  List of channels to partition (string or cell array of string).
+            Default 'all' channels
+
+ RETURNS
+  data ... partitionned zoo data</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="bmech_NaNpartition.html" class="code" title="function bmech_NaNpartition(fld)">bmech_NaNpartition</a>	bmech_NaNpartition(fld) parititons all channels based on NaNs. All channels are</li><li><a href="bmech_partition.html" class="code" title="function bmech_partition(fld,evt1,evt2,nfld)">bmech_partition</a>	BMECH_PARTITION(fld,evt1,evt2,nfld) partitions (cuts) files from evt1 and evt2.</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of ctransform</title>
+  <meta name="keywords" content="ctransform">
+  <meta name="description" content="vout = CTRANSFORM(c1,c2,vec) will transform a vector from c1 to c2 (T2/1)">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; ctransform.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Support Functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>ctransform
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>vout = CTRANSFORM(c1,c2,vec) will transform a vector from c1 to c2 (T2/1)</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function vout = ctransform(c1,c2,vec) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> vout = CTRANSFORM(c1,c2,vec) will transform a vector from c1 to c2 (T2/1)
+
+ ARGUMENTS
+   c1    ... initial coordinate system 3 by 3 matrix rows = i,j,k columns =X,Y,Z
+   c2    ... final coordinate system 3 by 3 matrix rows = i,j,k columns =X,Y,Z
+   vec   ... n x 3 matrix in c1 rows = samples; columns X Y Z
+
+ RETURNS
+   vout  ... n x 3 matrix in c2 rows = samples; columns X Y Z 
+
+
+ Example
+ Let us consider two coordinate systems
+ c1 = [1 0 0;  0 1 0; 0 0 1]  % in line with the global coordinate system
+ c2 = [0 1 0; -1 0 0; 0 0 1]  % rotated version of c1 90deg about z axis
+ 
+ what would be the coordinates of a vector vec = [2 0 0] from c1 expressed in c2?
+
+ vout = ctransform(c1,c2,vec)
+
+ vout = [0 -2 0]
+
+ see also <a href="vecrotate.html" class="code" title="function vout = vecrotate(vin,ang,ax)">vecrotate</a>, <a href="gunit.html" class="code" title="function r = gunit;">gunit</a></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="accessoryfxn.html" class="code" title="function varargout = accessoryfxn(action,varargin)">accessoryfxn</a>	</li><li><a href="actor.html" class="code" title="function varargout = actor(action,varargin)">actor</a>	</li><li><a href="bargraphfxn.html" class="code" title="function varargout = bargraphfxn(action,varargin)">bargraphfxn</a>	</li><li><a href="c3d2com.html" class="code" title="function data = c3d2com(c3d)">c3d2com</a>	data = c3d2com(c3d_data)</li><li><a href="cameracontrol.html" class="code" title="function ismov = cameracontrol(action,varargin)">cameracontrol</a>	</li><li><a href="cameraman.html" class="code" title="function varargout = cameraman(action,varargin)">cameraman</a>	</li><li><a href="chop.html" class="code" title="function [r,nvn] = chop(vr,fc,vn,pln,top);">chop</a>	pln consists of 3 points that make the plane</li><li><a href="costume.html" class="code" title="function varargout = costume(action,varargin)">costume</a>	</li><li><a href="drawboneorientation.html" class="code" title="function drawboneorientation">drawboneorientation</a>	</li><li><a href="fan.html" class="code" title="function [vr,fc] = fan(dis,vec)">fan</a>	</li><li><a href="fitobject.html" class="code" title="function [zdis,ort,pdis] = fitobject(objvr,fitvr)">fitobject</a>	this function will displace and rotate objvr to fit the fitvr</li><li><a href="forceplate.html" class="code" title="function varargout = forceplate(action,varargin)">forceplate</a>	</li><li><a href="getjointcenters.html" class="code" title="function r = getJointCenters">getjointcenters</a>	Lhipvec = [0.001047173543632   0.008637260481034   0.987698733491366];</li><li><a href="grips.html" class="code" title="function varargout = grips(action,varargin)">grips</a>	edited by Phil Dixon Dec 2010</li><li><a href="lightman.html" class="code" title="function varargout = lightman(action,varargin);">lightman</a>	</li><li><a href="move_rotateobject.html" class="code" title="function varargout = move_rotateobject(action)">move_rotateobject</a>	</li><li><a href="movepoint.html" class="code" title="function [nextpt,norm] = movepoint(curpt,delta,pch,pln);">movepoint</a>	</li><li><a href="mtransform.html" class="code" title="function [x,y,z] = mtransform(unt1,unt2,xdata,ydata,zdata);">mtransform</a>	</li><li><a href="point2line.html" class="code" title="function index = point2line(pt,ln)">point2line</a>	this function returns the row index of the matrix of points (pt) closest</li><li><a href="propscopy.html" class="code" title="function varargout = props(action,varargin)">propscopy</a>	</li><li><a href="rotatefaces.html" class="code" title="function nfc = rotatefaces(vr,fc,outside)">rotatefaces</a>	</li><li><a href="sculpttool.html" class="code" title="function varargout = sculpttool(action,varargin)">sculpttool</a>	</li><li><a href="specialobject.html" class="code" title="function varargout = specialobject(action,varargin)">specialobject</a>	Updated by Philippe C. Dixon March 30th 2016</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

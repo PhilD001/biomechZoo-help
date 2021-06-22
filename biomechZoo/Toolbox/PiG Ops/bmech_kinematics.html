@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of bmech_kinematics</title>
+  <meta name="keywords" content="bmech_kinematics">
+  <meta name="description" content="BMECH_KINEMATICS(fld,settings) is a batch process function to compute lower-limb">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">PiG Ops</a> &gt; bmech_kinematics.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\PiG Ops&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>bmech_kinematics
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>BMECH_KINEMATICS(fld,settings) is a batch process function to compute lower-limb</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function bmech_kinematics(fld,settings) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> BMECH_KINEMATICS(fld,settings) is a batch process function to compute lower-limb
+ joint kinematics according to the plug-in gait (PiG) model
+
+ ARGUMENTS
+  fld       ... Folder to batch process (string). Default: folder selection window.
+  settings  ... Settings control (struct) with the following fields:
+                'graph' (boolean). Graph comparisons agains Vicon. Default, false
+                'comp'  (boolean). Vicon vs BiomeZoo RMS diff (if available). Default, true
+                'flat' Assume foot flat for static pose. Default: true
+
+ NOTES
+ - Static files associated with a given dynamic file should be placed in a
+   folder called 'Static' or contain the word 'static' in the file name
+   e.g.     root - Subject 1 - cond1
+                             - Static
+
+ See also bmech_kinematicsRvdB,<a href="bmech_jointcentrePiG.html" class="code" title="function bmech_jointcentrePiG(fld,joints)">bmech_jointcentrePiG</a>, bmech_kinetics</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="ankleoffsetPiG_data.html" class="code" title="function data = ankleoffsetPiG_data(data,sdata)">ankleoffsetPiG_data</a>	data = ankleoffsetPiG_data(data,sdata) adds the Plantarflexion and Rotation offset</li><li><a href="kinematics_data.html" class="code" title="function data = kinematics_data(data,settings)">kinematics_data</a>	data = KINEMATICS_DATA(data,settings) computes global and lower-limb</li><li><a href="makebones_data.html" class="code" title="function data = makebones_data(data,type,foot_flat,test)">makebones_data</a>	DATA = MAKEBONES_DATA(data,type,foot_flat,test) creates segment 'bones' for use in kinematic /</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

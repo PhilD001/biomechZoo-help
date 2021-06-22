@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of marker</title>
+  <meta name="keywords" content="marker">
+  <meta name="description" content="varargout = marker(action,varargin) performs various actions for director">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; marker.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Support Functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>marker
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>varargout = marker(action,varargin) performs various actions for director</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function varargout = marker(action,varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> varargout = marker(action,varargin) performs various actions for director
+
+ Updated by JJ Loh and Philippe C. Dixon June 2015
+ - new case added to load the skate props
+
+ Updated by Philippe C. Dixon Jan 2016
+ - Bug fixes for backwards comp
+
+ Updated by Philippe C. Dixon June 2017
+ - clean up pop up window for marker selection
+
+ Updated by Philippe C. Dixon July 2017
+ - added creation of PiG bones, if available
+
+ Updated by Philippe C. Dixon August 2017
+ - Exploded PiG data are automatically merged in order to build bones, if available
+
+ Updated by Philippe C. Dixon January 2018
+ - Improved search for markers to display
+ - Attempts to merge exploded marker data to display markers in director</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="cameraman.html" class="code" title="function varargout = cameraman(action,varargin)">cameraman</a>	</li><li><a href="createmarker.html" class="code" title="function r = createmarker(nm,sz,dis,clr)">createmarker</a>	ARGUMENTS</li><li><a href="currentperson.html" class="code" title="function r = currentperson">currentperson</a>	Updated Sept 2016</li><li><a href="displace.html" class="code" title="function r = displace(m,vec)">displace</a>	DISPLACE moves a matrix m to vector vec</li><li><a href="engine.html" class="code" title="function fl = engine(varargin)">engine</a>	fl = ENGINE(varargin) is a file searching algorithm</li><li><a href="explode.html" class="code" title="function [split,numpieces]=explode(string,delimiters)">explode</a>	EXPLODE    Splits string into pieces.</li><li><a href="extension.html" class="code" title="function varargout = extension(f,ext)">extension</a>	varargout = extension(f,ext) returns file extension. File extension can be changed if</li><li><a href="isin.html" class="code" title="function r= isin(str,substr)">isin</a>	r = isin(str,a) verifies is substring 'substr' is in string or cell array of</li><li><a href="newcolor.html" class="code" title="function r = newcolor(varargin)">newcolor</a>	</li><li><a href="pathname.html" class="code" title="function path = pathname(fl)">pathname</a>	this m-file returns only the path to which the file belongs</li><li><a href="surface2patch.html" class="code" title="function [vr,fc] = surface2patch(x,y,z)">surface2patch</a>	[vr,fc] = SURFACE2PATCH(x,y,z) converts surface orientation data to patch</li><li><a href="zload.html" class="code" title="function data = zload(fl)">zload</a>	data = ZLOAD(fl) loads zoo files for quicker typing in batch processing</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="directorold.html" class="code" title="function varargout = director(action,varargin)">directorold</a>	updated by Phil Dixon Oct 2009</li><li><a href="directorold2.html" class="code" title="function varargout = director(action,varargin)">directorold2</a>	updated by Phil Dixon Oct 2009</li><li><a href="openall.html" class="code" title="function openall(pth)">openall</a>	standalone function used by director</li><li><a href="propscopy.html" class="code" title="function varargout = props(action,varargin)">propscopy</a>	</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

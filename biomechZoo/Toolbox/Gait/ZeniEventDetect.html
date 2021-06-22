@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of ZeniEventDetect</title>
+  <meta name="keywords" content="ZeniEventDetect">
+  <meta name="description" content="ind = ZENIEVENTDETECT(data,side,evt,delta) estimates foot strike (FS) and">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Gait</a> &gt; ZeniEventDetect.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Gait&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>ZeniEventDetect
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>ind = ZENIEVENTDETECT(data,side,evt,delta) estimates foot strike (FS) and</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function indx = ZeniEventDetect(data,side,evt,delta) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> ind = ZENIEVENTDETECT(data,side,evt,delta) estimates foot strike (FS) and 
+ foot off (FO) events during gait 
+
+ ARGUMENTS
+  data     ...   zoo data to be operated on
+  side     ...   leg (left 'L' right 'R')
+  evt      ...   name of event. e.g. 'FS', 'FO', 'Left_FootStrike1'
+  delta    ...   threshold for event detection. See 'peakdet.m'. Default 10
+
+ RETURNS
+ indx      ...   indx of event
+
+ NOTES
+ - Refer to Zeni et al. (2008) &quot;Two simple methods for determining gait events during 
+   treadmill and overground walking using kinematic data&quot; Gait and Posture 27. 710-14</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="forceplate2limbside_data.html" class="code" title="function data = forceplate2limbside_data(data,ch,thresh)">forceplate2limbside_data</a>	data = FORCEPLATE2LIMBSIDE_DATA(data,fch,thresh,ref) determines which limb (right</li><li><a href="gaitevents_data.html" class="code" title="function data = gaitevents_data(data,delta)">gaitevents_data</a>	data = GAITEVENTS_DATA(data,delta) estimates foot strike (FS) and</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

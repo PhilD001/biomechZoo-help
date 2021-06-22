@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of kinetics_data</title>
+  <meta name="keywords" content="kinetics_data">
+  <meta name="description" content="data = KINETICS_DATA(data,settings,filt) will compute inverse dynamics on">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">PiG Ops</a> &gt; <a href="#">IDA Ops</a> &gt; kinetics_data.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../../index.html"><img alt="<" border="0" src="../../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\PiG Ops\IDA Ops&nbsp;<img alt=">" border="0" src="../../../../right.png"></a></td></tr></table>-->
+
+<h1>kinetics_data
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="box"><strong>data = KINETICS_DATA(data,settings,filt) will compute inverse dynamics on</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="box"><strong>function data = kinetics_data(data,settings,filt) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> data = KINETICS_DATA(data,settings,filt) will compute inverse dynamics on
+ Plugingait (PiG) or Oxford Foot model (OFM) marker sets
+
+ ARGUMENTS
+  data      ...  Zoo data containing all vicon 'bone' outputs
+  settings  ...  Settings control (struct) with the following fields:
+                 'segpar'(string). Default, 'segmentParameters' (currently only choice)
+                 'graph' (boolean). Default, false
+                 'city'  (string). Default, 'standard' sets grav const, see g
+                 'filt'  (boolean). Default, false. Don't filter intermediate calculations
+                 'comp'  (boolean). Default, true. Compares agains Vicon output (if available)
+  filt            Filter settings for GRF (struct). Default, see setFilt
+
+ RETURN
+  data      ...  Zoo data with joint kinetics and related quantities appended
+
+ NOTES
+ - This function computes all force and moments based on the method proposed by
+   Vaughan (The Dynamics of Human Gait, 1999).
+ - Joint Power are computed according to Kwon (eq 7)
+   http://www.kwon3d.com/theory/jtorque/jen.html
+ - Joint Forces are expressed in the distal segment reference frame
+   according to Vicon and not using the Grood and Suntay axes as proposed by Vaughan.
+ - Only midfoot (OFM only), ankle, knee, and hip kinetics are computed here. However,
+   pelvis segment embedded axes are included since they are required for hip power calcs
+ - For best agreement of Force values with Vicon all segments were given a mass of 0kg
+   (please see force subfunctions)
+
+ GENERAL ALGORITHM (see Vaughan for more details)
+  1) Calculate the forces at the proximal joint using Newton's 2nd law (linear form)
+  2) Calculate the moment arms, proximal and distal, between the force application
+     point and the segment centre of gravity.
+  3) Calculate the residual moment acting on the segment.
+  4) Calculate the rate of change of angular momentum for the segment
+  5) Calculate the resultant joint moment, first in the xyz system using
+     Newton's 2nd law (angular form), then in XYZ system.
+  6) Convert the joint force and moment from the XYZ system to a body-based system.
+
+
+ See also kinematicsPiG_data, makebones, prepfp_data</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../../matlabicon.gif)">
+<li><a href="bmech_kinetics.html" class="code" title="function bmech_kinetics(fld,settings,filt)">bmech_kinetics</a>	BMECH_KINETICS(fld,settings) is a batch process function to compute lower-limb</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

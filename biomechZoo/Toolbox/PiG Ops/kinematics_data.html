@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of kinematics_data</title>
+  <meta name="keywords" content="kinematics_data">
+  <meta name="description" content="data = KINEMATICS_DATA(data,settings) computes global and lower-limb">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">PiG Ops</a> &gt; kinematics_data.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\PiG Ops&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>kinematics_data
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>data = KINEMATICS_DATA(data,settings) computes global and lower-limb</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function data = kinematics_data(data,settings) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> data = KINEMATICS_DATA(data,settings) computes global and lower-limb
+ joint angles based on the joint coordinate system of Grood and Suntay (1983)
+
+ ARGUMENTS
+  data     ...  Zoo data
+  settings ...  Settings control (struct) with the following fields:
+                'graph' (boolean). Graph comparisons agains Vicon. Default, false
+                'comp'  (boolean). Vicon vs BiomeZoo RMS diff (if available). Default, true
+
+ RETURNS
+  data    ...   zoo data appended with kinemaitc channels
+
+
+ NOTES:
+ - PiG
+   * choice of segment embedded axes for angle computation based on work of
+     Vaughan (Dynamics of Human Gait 1999, Appendix B p94-96). 
+   * Lower limb PiG outputs of this function have been validated
+     (see Fig4.ppf and Supplemental Fig2.pdf in ~\biomechZoo-samplestudy\Figures\manuscript\
+   * Head angles are not offset by static posture (PiG angles use static offset)
+ - OFM
+   * choice of segment embedded axes was based on trial and error, comparing
+   results to Vicon outputs.
+   * Grood and Suntay approach is implemented
+ - Belfast Pelvis
+   * Belfast pelvis angles based on Baker 'Pelvic angles: a mathematically rigorous
+     definition which is consistent with a conventional clinical understanding of 
+     the terms'. Gait Posture. 2001 Feb;13(1):1-6. doi: 10.1016/s0966-6362(00)00083-7.    
+ - A correction for vector flips near 90 degrees has been implemented at the knee, 
+   and BelfastPelvis but might require future updates (see 'checkflip_pyCGM')
+
+
+ See also <a href="makebones_data.html" class="code" title="function data = makebones_data(data,type,foot_flat,test)">makebones_data</a>, bmech_kinematicsPiG, <a href="bmech_jointcentrePiG.html" class="code" title="function bmech_jointcentrePiG(fld,joints)">bmech_jointcentrePiG</a></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="getDir.html" class="code" title="function [data,walkDir] = getDir(data,ch)">getDir</a>	[data,dir] = GETDIR(data,ch) determines the global axis and direction of</li><li><a href="getbones_data.html" class="code" title="function [pgbone,jnt,data,oxbone] = getbones_data(data)">getbones_data</a>	[bone,jnt,data] = GETBONES_DATA(data) retrieves bone information from data struct and creates</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="bmech_kinematics.html" class="code" title="function bmech_kinematics(fld,settings)">bmech_kinematics</a>	BMECH_KINEMATICS(fld,settings) is a batch process function to compute lower-limb</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

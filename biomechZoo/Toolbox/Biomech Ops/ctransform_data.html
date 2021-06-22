@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of ctransform_data</title>
+  <meta name="keywords" content="ctransform_data">
+  <meta name="description" content="data = CTRANSFORM_DATA(data,ch,c1,c2) coordinate transformation">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Biomech Ops</a> &gt; ctransform_data.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Biomech Ops&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>ctransform_data
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>data = CTRANSFORM_DATA(data,ch,c1,c2) coordinate transformation</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function data = ctransform_data(data,ch,c1,c2) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> data = CTRANSFORM_DATA(data,ch,c1,c2) coordinate transformation 
+
+ ARGUMENTS
+  data     ...  Zoo data
+  ch       ...  Channel(s) to operate on (single string or cell array of strings)
+  c1       ...  original coordinate system (3 x 3 matrix)
+  c2       ...  New coordinate system (3 x 3 matrix). Default, global [1 0 0; 0 1 0; 0 0 1]
+
+ RETURN
+  data     ...  Data with ch in new coordinate system
+
+ See also <a href="bmech_ctransform.html" class="code" title="function bmech_ctransform(fld,ch,c1, c2)">bmech_ctransform</a>, <a href="ctransform_line.html" class="code" title="function vout = ctransform_line(vin,c1,c2)">ctransform_line</a>, gunit</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="ctransform_line.html" class="code" title="function vout = ctransform_line(vin,c1,c2)">ctransform_line</a>	vout = CTRANSFORM_LINE(vin,c1,c2) will transform a vector from c1 to c2 (T2/1)</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="bmech_ctransform.html" class="code" title="function bmech_ctransform(fld,ch,c1, c2)">bmech_ctransform</a>	BMECH_CTRANSFORM(fld,ch,c1,c2) batch process coordinate transformation</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

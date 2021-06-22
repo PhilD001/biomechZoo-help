@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of deriv_line</title>
+  <meta name="keywords" content="deriv_line">
+  <meta name="description" content="r = DERIV_LINE(r,fsamp,filt) differentiation with the option to filter.">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Biomech Ops</a> &gt; deriv_line.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for .\biomechZoo\Toolbox\Biomech Ops&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>deriv_line
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>r = DERIV_LINE(r,fsamp,filt) differentiation with the option to filter.</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function r = deriv_line(r,fsamp,filt) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> r = DERIV_LINE(r,fsamp,filt) differentiation with the option to filter.
+
+ ARGUMENTS
+  r        ...  Matrix data (n x 1 or n x3)
+  fsamp    ...  Sampling rate of signal
+  filt     ...  Filter options (boolean)
+                filt = 0 or false: do not filter (default)
+                filt = 1 or true: filter data using 4th ord butt low-pass with 10 Hz cutoff
+                filt = struct: filter according to struc fields (see bmech_filter)
+
+ RETURNS
+  r        ...  Differentiated matrix data
+
+ NOTES
+ - use the following example to test the differentiation method
+     t = (0:0.001:1)';
+     x = sin(2*pi*t);
+     dx1 = 2*pi*cos(2*pi*t);
+     dx2 = deriv_line(x,1000,0);
+     plot(dx1)
+     hold on
+     plot(dx2,'r')
+
+ See also <a href="bmech_deriv.html" class="code" title="function bmech_deriv(fld,ch,filt)">bmech_deriv</a>, <a href="deriv_data.html" class="code" title="function data = deriv_data(data,ch,filt)">deriv_data</a>, gradient, <a href="filter_line.html" class="code" title="function r = filter_line(r,filt,fsamp)">filter_line</a></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="filter_line.html" class="code" title="function r = filter_line(r,filt,fsamp)">filter_line</a>	fdata = FILTER_LINE(r,filt,fsamp) filtering via different filter options</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="deriv_data.html" class="code" title="function data = deriv_data(data,ch,filt)">deriv_data</a>	data = DERIV_DATA(data,ch,f) differentiation of given channel(s) with filter options</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Jun-2021 17:54:42 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>
