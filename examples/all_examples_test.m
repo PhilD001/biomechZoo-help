@@ -23,7 +23,9 @@ bmech_kinetics_example
 													
 generic2zoo_example		
 c3d2zoo_example			
-csv2zooVicon_example		
+csv2zooVicon_example
+xsens2zoo_example
+biometricsEMG2zoo_example
 
 
 % Zoo processing ------------------------------------------------------------------------------
