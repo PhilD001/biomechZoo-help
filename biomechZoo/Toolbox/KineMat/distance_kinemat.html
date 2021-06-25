@@ -24,7 +24,7 @@
 <div class="box"><strong>function [dist]=distance(XYZmarker1,XYZmarker2)</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function [dist]=distance_kinemat(XYZmarker1,XYZmarker2) </strong></div>
+<div class="box"><strong>function dist = distance_kinemat(XYZmarker1,XYZmarker2) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 <div class="fragment"><pre class="comment"> function [dist]=distance(XYZmarker1,XYZmarker2)
@@ -36,7 +36,14 @@
  Author:    Christoph Reinschmidt, HPL, The University of Calgary
  Date:        November, 1996
  Last Changes:    November 29, 1996
- Version:    1.0</pre></div>
+ Version:    1.0
+
+ Updated by Philippe C. Dixon June 25th, 2021
+ - replaced break statement in if loop for an error raise
+ - cleaned up code to remove matlab syntax warnings
+
+
+ See also magnitude</pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
@@ -51,6 +58,6 @@ This function is called by:
 
 
 
-<hr><address>Generated on Tue 22-Jun-2021 21:31:21 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+<hr><address>Generated on Fri 25-Jun-2021 15:18:30 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
 </body>
 </html>
