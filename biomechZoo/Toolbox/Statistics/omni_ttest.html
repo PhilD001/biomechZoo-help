@@ -24,7 +24,7 @@
 <div class="box"><strong>[P,t,df,e] = OMNI_TTEST(data1,data2,type,alpha,thresh,tail,mode,bonf) performs statistical</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function [P,t,df,e,md,CIdiff] = omni_ttest(data1,data2,type,alpha,thresh,mode,bonf) </strong></div>
+<div class="box"><strong>function [P,t,df,e,md,CIdiff] = omni_ttest(data1,data2,type,alpha,thresh,tail,mode,bonf) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 <div class="fragment"><pre class="comment"> [P,t,df,e] = OMNI_TTEST(data1,data2,type,alpha,thresh,tail,mode,bonf) performs statistical
@@ -37,44 +37,8 @@
   alpha    ...  significance level. Default '0.05'
   thresh   ...  threshold for failure of parametric assumptions and use of
                 nonparametric tests. Default '0.05'
-  corr     ...  apply bonferroni correction based on n tests. default = 1
-  mode      ... display information 'full'
-
- RETURNS
-  P        ...  pvalue associated with test (parametric or non-parametric)
-  t        ...  t-statistic associated with test
-  df       ...  degrees of freedom
-  e        ...  Effect size: cohen's d or Glass's delta if data have equal
-                variance or not, respectively
-  md       ...  mean difference between the groups
-  CIdiff   ...  CI for difference
-
- NOTES
-  - only two-sided test is possible
-  - if parametric assumptions fail, nonparametric tests are run
-  - in 'unpaired' design, group 1 is treatment group and group 2 is control
-  - see 'Medical Statistics' by  Kirkwood and Sterne section 7.6 for comp
-    details
-
- NOTES
- - for zoo files, data1 and data2 argments can be obtained using
-   'extractevents.m'. Some editing may be necessary for your project
- - only two-tailed tests can be performed
-
- Revision History
-
- Created by Philippe C Dixon Feb 2012
-
- Updated by Philippe C Dixon June 2015
- - removed reliace on 'decimals2' function
- - improved interface
- - removed option to run 'right' or 'left' sided
-
-
- Part of the biomechZoo toolbox v1.3 Copyright (c) 2006-2016
- Main contributors: Philippe C. Dixon, Yannick Michaud-Paquette, and J.J Loh
- More info: type 'zooinfo' in the command prompt or visit
- http://www.biomechzoo.com</pre></div>
+  mode     ...  display information 'full'
+  bonf     ...  apply bonferroni correction based on n tests. default n = 1</pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
@@ -89,6 +53,6 @@ This function is called by:
 
 
 
-<hr><address>Generated on Tue 29-Jun-2021 15:10:20 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+<hr><address>Generated on Wed 14-Jul-2021 11:31:48 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
 </body>
 </html>
