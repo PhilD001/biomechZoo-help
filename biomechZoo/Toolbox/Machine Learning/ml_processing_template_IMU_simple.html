@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of ml_processing_template_IMU_simple</title>
+  <meta name="keywords" content="ml_processing_template_IMU_simple">
+  <meta name="description" content="biomechZoo machine learning simple processing template for IMU data">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Machine Learning</a> &gt; ml_processing_template_IMU_simple.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/Machine Learning&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>ml_processing_template_IMU_simple
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>biomechZoo machine learning simple processing template for IMU data</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>This is a script file. </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> biomechZoo machine learning simple processing template for IMU data
+
+ This sample script shows how to run a toy binary multiclass support vector 
+ machines classification model which aims to predict surface type (flat, slope up, 
+ slope down) based on events (features) extracted from a public gait database
+ (see Luo, Coppola, Dixon, et al. A database of human gait performance on irregular
+ and uneven surfaces collected by wearable sensors. Sci Data 7, 219 (2020). 
+ https://doi.org/10.1038/s41597-020-0563-y
+
+ Processed data with features are stored in:
+ biomechZoo-help/examples/example data/IMU_4_cycle
+
+ REQUIREMENTS
+ - biomechZoo and biomechZoo-help installed
+
+ NOTES:
+   - Conditions (y): flat, slope up, slope down
+   - Predictors (x): simple statistical features (e.g. Min, Max, mean, std..)
+   -Features here are not well designed for classification, see
+   ml_processing_template_IMU for better results</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="bmech_ml_classification.html" class="code" title="function Mdl=bmech_ml_classification(data, Model_name)">bmech_ml_classification</a>	BMECH_ML_CLASSIFICATION (data,Model_name) trains a classification model</li><li><a href="bmech_zoo2table.html" class="code" title="function table_data = bmech_zoo2table(fld,ch,subjects,conditions)">bmech_zoo2table</a>	BMECH_ZOO2TABLE (fld,ch,subjects,Conditions) extracts channel line data</li><li><a href="feature_extraction.html" class="code" title="function table_event=feature_extraction(table_data,ch,method)">feature_extraction</a>	FEATURE_EXTRACTION extracts statistical features from tabular data created by</li><li><a href="statsOfMeasure.html" class="code" title="function [stats] = statsOfMeasure(confusion)">statsOfMeasure</a>	Copyright (c) 2021, Eugenio Bertolini</li><li><a href="train_test_split.html" class="code" title="function data=train_test_split(x,y,VariableName,subject,subject_wise,split,Normalize,seed)">train_test_split</a>	TRAIN_TEST_SPLIT spliting data into train test sets</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Fri 16-Jul-2021 13:18:06 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>
