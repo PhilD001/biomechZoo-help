@@ -17,7 +17,7 @@ bmech_jointcentrePiG_example
 bmech_kinematicsRvdB_example		
 bmech_kinematics_example			
 bmech_kinetics_example			
-
+bmech_emgprocess_example
 
 % Zoo conversion: ----------------------------------------------------------------------------
 													

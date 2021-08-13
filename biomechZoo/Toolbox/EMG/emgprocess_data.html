@@ -2,9 +2,9 @@
                 "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
 <head>
-  <title>Description of bmech_cocontraction</title>
-  <meta name="keywords" content="bmech_cocontraction">
-  <meta name="description" content="BMECH_COCONTRACTION computes co-contraction index for muscle pairs">
+  <title>Description of emgprocess_data</title>
+  <meta name="keywords" content="emgprocess_data">
+  <meta name="description" content="EMGPROCESS_DATA(data,emg_ch,lp_cut,hp_cut,order,span) performs EMG processing">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
   <meta name="robots" content="index, follow">
@@ -12,41 +12,42 @@
 </head>
 <body>
 <a name="_top"></a>
-<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">EMG</a> &gt; bmech_cocontraction.m</div>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">EMG</a> &gt; emgprocess_data.m</div>
 
 <!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
 <td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/EMG&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
 
-<h1>bmech_cocontraction
+<h1>emgprocess_data
 </h1>
 
 <h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>BMECH_COCONTRACTION computes co-contraction index for muscle pairs</strong></div>
+<div class="box"><strong>EMGPROCESS_DATA(data,emg_ch,lp_cut,hp_cut,order,span) performs EMG processing</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function bmech_cocontraction(fld,pairs) </strong></div>
+<div class="box"><strong>function data = emgprocess_data(data,emg_ch,lp_cut,hp_cut,order,span) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="fragment"><pre class="comment"> BMECH_COCONTRACTION computes co-contraction index for muscle pairs
+<div class="fragment"><pre class="comment"> EMGPROCESS_DATA(data,emg_ch,lp_cut,hp_cut,order,span) performs EMG processing
 
  ARGUMENTS
-  fld         ...   folder to operate on
-  pairs       ...   Names of muscle pairs (cell array of strings). 
-                    Default = {'VM_MG','VM_MH','VL_LG','VL_LH'}
+  data     ... struct, zoo data
+  emg_ch   ... cell array of strings, name of emg channels to process
+  lp_cut   ... int, low-pass filter cutoff. Default 500
+  hp_cut   ... int, high pass filter cutoff. Default 20
+  order    ... Int, filter order. Default 4
+  span     ... Int, number of frames for RMS average. Default 50
 
- NOTES
- - See cocontraction_line for co-contraction computational approach
-
- See also <a href="cocontraction_data.html" class="code" title="function data = cocontraction_data(data,muscle_pairs,sides)">cocontraction_data</a>, <a href="cocontraction_line.html" class="code" title="function cc= cocontraction_line(muscle1,muscle2,method, plotGraph)">cocontraction_line</a></pre></div>
+ RETURNS
+  data     ...  struct, zoo data appended with processed EMG channels</pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="cocontraction_data.html" class="code" title="function data = cocontraction_data(data,muscle_pairs,sides)">cocontraction_data</a>	COCONTRACTION_DATA(data,muscle_pairs) computes co-contraction indices</li></ul>
+</ul>
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-</ul>
+<li><a href="bmech_emgprocess.html" class="code" title="function bmech_emgprocess(fld,ch,lp_cut, hp_cut,order, span)">bmech_emgprocess</a>	BMECH_EMGPROCES(fld,ch,lp_cut) will perform basic processing for EMG signals</li></ul>
 <!-- crossreference -->
 
 

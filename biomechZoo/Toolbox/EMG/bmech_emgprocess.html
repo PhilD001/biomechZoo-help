@@ -4,7 +4,7 @@
 <head>
   <title>Description of bmech_emgprocess</title>
   <meta name="keywords" content="bmech_emgprocess">
-  <meta name="description" content="BMECH_EMGPROCES(fld,ch) will perform basic processing for EMG signals">
+  <meta name="description" content="BMECH_EMGPROCES(fld,ch,lp_cut) will perform basic processing for EMG signals">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
   <meta name="robots" content="index, follow">
@@ -21,30 +21,36 @@
 </h1>
 
 <h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>BMECH_EMGPROCES(fld,ch) will perform basic processing for EMG signals</strong></div>
+<div class="box"><strong>BMECH_EMGPROCES(fld,ch,lp_cut) will perform basic processing for EMG signals</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function bmech_emgprocess(fld,ch) </strong></div>
+<div class="box"><strong>function bmech_emgprocess(fld,ch,lp_cut, hp_cut,order, span) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="fragment"><pre class="comment"> BMECH_EMGPROCES(fld,ch) will perform basic processing for EMG signals
+<div class="fragment"><pre class="comment"> BMECH_EMGPROCES(fld,ch,lp_cut) will perform basic processing for EMG signals
   1- High pass filter @ 20Hz
   2- Low-pass filter  @ 500 Hz
-  3 - Rectify signal
-  4 - Root mean square
+  3- Rectify signal
+  4- Root mean square
 
  ARGUMENTS
-  fld    ... folder to operate on
-  ch     ... name of emg channels to process (cel array of strings)
+  fld      ... string, folder to operate on
+  ch       ... cell array of strings, name of emg channels to process
+  lp_cut   ... int, low-pass filter cutoff. Default 500
+  hp_cut   ... int, high pass filter cutoff. Default 20
+  order    ... Int, filter order. Default 4
+  span     ... Int, number of frames for RMS average. Default 50
 
  NOTES
- - Data should be collected at 1000 Hz minimum (Nyquist problem)</pre></div>
+ - Data should be collected at 1000 Hz minimum (Nyquist problem)
+
+ See also bmech_emgprocess_example, <a href="emgprocess_data.html" class="code" title="function data = emgprocess_data(data,emg_ch,lp_cut,hp_cut,order,span)">emgprocess_data</a></pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-</ul>
+<li><a href="emgprocess_data.html" class="code" title="function data = emgprocess_data(data,emg_ch,lp_cut,hp_cut,order,span)">emgprocess_data</a>	EMGPROCESS_DATA(data,emg_ch,lp_cut,hp_cut,order,span) performs EMG processing</li></ul>
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
 </ul>
@@ -53,6 +59,6 @@ This function is called by:
 
 
 
-<hr><address>Generated on Fri 16-Jul-2021 13:18:06 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+<hr><address>Generated on Fri 13-Aug-2021 13:15:19 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
 </body>
 </html>
