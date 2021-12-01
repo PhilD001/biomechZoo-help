@@ -4,7 +4,7 @@
 <head>
   <title>Description of cocontraction_line</title>
   <meta name="keywords" content="cocontraction_line">
-  <meta name="description" content="cc = MUSCLE_COCONTRACTION(muscle1,muscle2) computes co-contraction indices for">
+  <meta name="description" content="varargout = MUSCLE_COCONTRACTION(muscle1,muscle2) computes co-contraction indices for">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
   <meta name="robots" content="index, follow">
@@ -21,32 +21,41 @@
 </h1>
 
 <h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>cc = MUSCLE_COCONTRACTION(muscle1,muscle2) computes co-contraction indices for</strong></div>
+<div class="box"><strong>varargout = MUSCLE_COCONTRACTION(muscle1,muscle2) computes co-contraction indices for</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function cc= cocontraction_line(muscle1,muscle2,method, plotGraph) </strong></div>
+<div class="box"><strong>function varargout= cocontraction_line(muscle1,muscle2,method, plotGraph) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="fragment"><pre class="comment"> cc = MUSCLE_COCONTRACTION(muscle1,muscle2) computes co-contraction indices for
+<div class="fragment"><pre class="comment"> varargout = MUSCLE_COCONTRACTION(muscle1,muscle2) computes co-contraction indices for
       muscle pairs (muscle 1 and muscle2)
 
  ARGUMENTS
   muscle1      ...   n x 1 or 1 x n  vector of processed EMG data
   muscle2      ...   n x 1 or 1 x n  vector of processed EMG data
   method       ...   Choice of algorithm to use. Choices: 'Rudolph',
-                     'Falconer'. See notes for more details.
+                     'Falconer', 'Lo2017'. See notes for more details.
   plotGraph    ...   Choice to plot graph (boolean). Default false
 
  RETURNS
-  cc           ...   n x 1  vector of co-contraction indices
+  cc (co-contraction indices)          ...   n x 1  vector of co-contraction indices 
+                                             in case of Rudolph and Falconer
+ (or)
+  cc (common area curve) and cc_value  ...   (1) n x 1  vector of minima form two curves 
+                                             used to estimate co-contraction incase
+                                             of Lo2017 (2)  co-contraction value
 
  NOTES
  - Algorithm choices:
    (a) Rudolph et al. 2000. Dynamic stability after ACL injury: who can hop?
        Knee Surg Sports Traumatol Arthrosc 8, 262-269 (commented)
-    (b)Falconer, K., Winter, D., 1985. Quantitative assessment of co-contraction at the
+   (b) Falconer, K., Winter, D., 1985. Quantitative assessment of co-contraction at the
        ankle joint in walking. Electromyogr. Clin. Neurophysiol. 25, 135149.
        (This option is commented out in the code below)
+    (c) Justine Lo, On-Yee Lo, Erin A. Olson, Daniel Habtemariam, Ikechukwu Iloputaife, Margaret M. Gagnon, Brad Manor, Lewis A. Lipsitz,
+       Functional implications of muscle co-contraction during gait in advanced age. Gait &amp; Posture,Volume 53,2017,Pages 110-114,
+       ISSN 0966-6362,
+       https://doi.org/10.1016/j.gaitpost.2017.01.010.
 
  Created by Philippe C. Dixon Nov 21 2017
 
@@ -59,12 +68,12 @@ This function calls:
 </ul>
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="cocontraction_data.html" class="code" title="function data = cocontraction_data(data,muscle_pairs,sides)">cocontraction_data</a>	COCONTRACTION_DATA(data,muscle_pairs) computes co-contraction indices</li></ul>
+<li><a href="bmech_muscle_cocontraction.html" class="code" title="function bmech_muscle_cocontraction(fld,ch)">bmech_muscle_cocontraction</a>	This function computes co-contraction index for chanels</li><li><a href="cocontraction_data.html" class="code" title="function data = cocontraction_data(data,muscle_pairs,varargin)">cocontraction_data</a>	COCONTRACTION_DATA(data,muscle_pairs) computes co-contraction indices</li></ul>
 <!-- crossreference -->
 
 
 
 
-<hr><address>Generated on Fri 13-Aug-2021 13:15:19 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+<hr><address>Generated on Tue 30-Nov-2021 21:09:32 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
 </body>
 </html>

@@ -24,37 +24,37 @@
 <div class="box"><strong>COCONTRACTION_DATA(data,muscle_pairs) computes co-contraction indices</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function data = cocontraction_data(data,muscle_pairs,sides) </strong></div>
+<div class="box"><strong>function data = cocontraction_data(data,muscle_pairs,varargin) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="fragment"><pre class="comment"> COCONTRACTION_DATA(data,muscle_pairs) computes co-contraction indices 
+<div class="fragment"><pre class="comment"> COCONTRACTION_DATA(data,muscle_pairs) computes co-contraction indices
 
  ARGUMENTS
   data     ...   zoo struct
-  pairs    ...   Names of muscle pairs (cell array of strings). 
-  sides    ...   Prefix for limb side. Default = {'R','L'}
-
+  pairs    ...   Names of muscle pairs (cell array of strings).
+  method   ...   Choice of algorithm to use.
+                 Default :'Rudolph'. Other choices :'Falconer' and 'Lo2017'.
  RETURNS
   data     ...  updated zoo struct
 
  NOTES
  - See cocontraction_line for co-contraction computational approach
 
- See also <a href="bmech_cocontraction.html" class="code" title="function bmech_cocontraction(fld,pairs)">bmech_cocontraction</a>, <a href="cocontraction_line.html" class="code" title="function cc= cocontraction_line(muscle1,muscle2,method, plotGraph)">cocontraction_line</a></pre></div>
+ See also <a href="bmech_cocontraction.html" class="code" title="function bmech_cocontraction(fld,pairs,varargin)">bmech_cocontraction</a>, <a href="cocontraction_line.html" class="code" title="function varargout= cocontraction_line(muscle1,muscle2,method, plotGraph)">cocontraction_line</a></pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="cocontraction_line.html" class="code" title="function cc= cocontraction_line(muscle1,muscle2,method, plotGraph)">cocontraction_line</a>	cc = MUSCLE_COCONTRACTION(muscle1,muscle2) computes co-contraction indices for</li></ul>
+<li><a href="cocontraction_line.html" class="code" title="function varargout= cocontraction_line(muscle1,muscle2,method, plotGraph)">cocontraction_line</a>	varargout = MUSCLE_COCONTRACTION(muscle1,muscle2) computes co-contraction indices for</li></ul>
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="bmech_cocontraction.html" class="code" title="function bmech_cocontraction(fld,pairs)">bmech_cocontraction</a>	BMECH_COCONTRACTION computes co-contraction index for muscle pairs</li></ul>
+<li><a href="bmech_cocontraction.html" class="code" title="function bmech_cocontraction(fld,pairs,varargin)">bmech_cocontraction</a>	BMECH_COCONTRACTION computes co-contraction index for muscle pairs</li></ul>
 <!-- crossreference -->
 
 
 
 
-<hr><address>Generated on Fri 13-Aug-2021 13:15:19 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+<hr><address>Generated on Tue 30-Nov-2021 21:09:32 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
 </body>
 </html>

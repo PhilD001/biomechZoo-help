@@ -2,9 +2,9 @@
                 "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
 <head>
-  <title>Description of emgprocess_data</title>
-  <meta name="keywords" content="emgprocess_data">
-  <meta name="description" content="EMGPROCESS_DATA(data,emg_ch,lp_cut,hp_cut,order,span) performs EMG processing">
+  <title>Description of bmech_emg_dynamic_normalization</title>
+  <meta name="keywords" content="bmech_emg_dynamic_normalization">
+  <meta name="description" content="BMECH_EMG_DYNAMIC_NORMALIZATION(fld,ch before_str,after_str) will perform nonmalize filtereld EMG signals">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
   <meta name="robots" content="index, follow">
@@ -12,33 +12,38 @@
 </head>
 <body>
 <a name="_top"></a>
-<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">EMG</a> &gt; emgprocess_data.m</div>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">EMG</a> &gt; bmech_emg_dynamic_normalization.m</div>
 
 <!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
 <td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/EMG&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
 
-<h1>emgprocess_data
+<h1>bmech_emg_dynamic_normalization
 </h1>
 
 <h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>EMGPROCESS_DATA(data,emg_ch,lp_cut,hp_cut,order,span) performs EMG processing</strong></div>
+<div class="box"><strong>BMECH_EMG_DYNAMIC_NORMALIZATION(fld,ch before_str,after_str) will perform nonmalize filtereld EMG signals</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function data = emgprocess_data(data,emg_ch,lp_cut,hp_cut,order,span) </strong></div>
+<div class="box"><strong>function bmech_emg_dynamic_normalization(fld,ch,before_str,after_str, static_str) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="fragment"><pre class="comment"> EMGPROCESS_DATA(data,emg_ch,lp_cut,hp_cut,order,span) performs EMG processing
+<div class="fragment"><pre class="comment"> BMECH_EMG_DYNAMIC_NORMALIZATION(fld,ch before_str,after_str) will perform nonmalize filtereld EMG signals
+  1-  est. local max events for all channel (*_rect_RMS)
+  2-  est. global max based on local max events
+  3-  normlize  *_rect_RMS
 
  ARGUMENTS
-  data     ... struct, zoo data
-  emg_ch   ... cell array of strings, name of emg channels to process
-  lp_cut   ... int, low-pass filter cutoff. Default 500
-  hp_cut   ... int, high pass filter cutoff. Default 20
-  order    ... Int, filter order. Default 4
-  span     ... Int, number of frames for RMS average. Default 50
-
- RETURNS
-  data     ...  struct, zoo data appended with processed EMG channels</pre></div>
+  fld          ... folder to operate on
+  ch           ... name of emg channels to process (cell array of strings)
+  before_str   ... string characters before subject_id
+  after_str    ... string characters after subject_id
+                   Example: File Name = 'Trimmed_HYA03_Walking_T02-level.zoo'
+                   Subject ID = HYA03
+                   before_str = ' Trimmed_'
+                   after_str = '_Walking'
+  static_str   ... str, name of static files (if any) to ignore
+ *** note: if Subject ID is in the begining  of the file name
+                         before_str='';</pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
@@ -47,7 +52,7 @@ This function calls:
 </ul>
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="bmech_emgprocess.html" class="code" title="function bmech_emgprocess(fld,ch,lp_cut, hp_cut,order, span)">bmech_emgprocess</a>	BMECH_EMGPROCES(fld,ch,lp_cut) will perform basic processing for EMG signals</li></ul>
+</ul>
 <!-- crossreference -->
 
 

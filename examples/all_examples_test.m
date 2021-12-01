@@ -18,7 +18,8 @@ bmech_kinematicsRvdB_example
 bmech_kinematics_example			
 bmech_kinetics_example			
 bmech_emgprocess_example
-
+bmech_cocontraction_example
+bmech_emg_dynamic_normalization_example
 % Zoo conversion: ----------------------------------------------------------------------------
 													
 generic2zoo_example		

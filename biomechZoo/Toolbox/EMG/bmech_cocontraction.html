@@ -24,26 +24,40 @@
 <div class="box"><strong>BMECH_COCONTRACTION computes co-contraction index for muscle pairs</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function bmech_cocontraction(fld,pairs) </strong></div>
+<div class="box"><strong>function bmech_cocontraction(fld,pairs,varargin) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 <div class="fragment"><pre class="comment"> BMECH_COCONTRACTION computes co-contraction index for muscle pairs
 
  ARGUMENTS
-  fld         ...   folder to operate on
-  pairs       ...   Names of muscle pairs (cell array of strings). 
-                    Default = {'VM_MG','VM_MH','VL_LG','VL_LH'}
+  fld       ...  str, folder to operate on
 
- NOTES
- - See cocontraction_line for co-contraction computational approach
+  pairs     ...  cell array of str, names of muscle pairs.
+                 Example = {'L_TibAnt-L_GM','L_RF-L_Ham'} computes co-contaction 
+                 for L_TibAnt and L_GM &amp; L_RF and L_Ham muscle pairs.
 
- See also <a href="cocontraction_data.html" class="code" title="function data = cocontraction_data(data,muscle_pairs,sides)">cocontraction_data</a>, <a href="cocontraction_line.html" class="code" title="function cc= cocontraction_line(muscle1,muscle2,method, plotGraph)">cocontraction_line</a></pre></div>
+ 'method'  ...   str, optional. Choice of algorithm to use. 
+                 Default :'Rudolph'. Other choices :'Falconer' and 'Lo2017'.
+                 See - Rudolph et al. 2000. Dynamic stability after ACL injury: who can hop?
+                       Knee Surg Sports Traumatol Arthrosc 8, 262-269 (commented)
+                     - Falconer, K., Winter, D., 1985. Quantitative assessment of co-contraction at the
+                       ankle joint in walking. Electromyogr. Clin. Neurophysiol. 25, 135149.
+                     - Lo J, Lo O-Y, Olson E-A et al. Functional implications of muscle co-contraction 
+                       during gait in advanced age. Gait &amp; Posture,Volume 53,2017,p 110-114.
+
+ 'events'   ...  cell arrat of str. Optional, Pair of global events (only for Lo2017 method). 
+                 Estimates  percent co-contraction btw the events (value stored in event). 
+                 Note: Ignores events for other methods and computes co-contation line for entire data
+                 Example = {'Left_FootStrike1','Left_FootStrike2'}
+
+
+ See also <a href="cocontraction_data.html" class="code" title="function data = cocontraction_data(data,muscle_pairs,varargin)">cocontraction_data</a>, <a href="cocontraction_line.html" class="code" title="function varargout= cocontraction_line(muscle1,muscle2,method, plotGraph)">cocontraction_line</a></pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="cocontraction_data.html" class="code" title="function data = cocontraction_data(data,muscle_pairs,sides)">cocontraction_data</a>	COCONTRACTION_DATA(data,muscle_pairs) computes co-contraction indices</li></ul>
+<li><a href="cocontraction_data.html" class="code" title="function data = cocontraction_data(data,muscle_pairs,varargin)">cocontraction_data</a>	COCONTRACTION_DATA(data,muscle_pairs) computes co-contraction indices</li></ul>
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
 </ul>
@@ -52,6 +66,6 @@ This function is called by:
 
 
 
-<hr><address>Generated on Fri 13-Aug-2021 13:15:19 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+<hr><address>Generated on Tue 30-Nov-2021 21:09:32 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
 </body>
 </html>
