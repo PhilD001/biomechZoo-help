@@ -66,7 +66,7 @@ Conditions=unique(Conditions);
 %   bmech_feature_extraction
 %
 if ~ismember(model_name,{'LSTM','BiLS','CNN', 'sequence', 'FF' 'stack'})
-    events = bmech_feature_extraction(fld, ch);
+    events = bmech_compute_features(fld, ch);
     table_data = bmech_events2table(fld,ch,events,subjects,Conditions);
 else
     table_data = bmech_line2table(fld,ch,subjects,Conditions);
@@ -111,17 +111,15 @@ Mdl=model_train(ml_data,model_name);
 %% Step 8: Predict gait condition classification on the test set -------------------------
 % - model_predict is a wrapper function permitting easier access to
 %   existing matlab routines
-% - statsOfMeasure summarizes model performance and was downloaded from file exchange
-% - confusionmat is an existing matlab file to extraction confusion matrix
-%   https://www.mathworks.com/matlabcentral/fileexchange/86158-precision-specificity-sensitivity-accuracy-f1-score
-% - confusionchart plots confusion matrix 
+
 
 ml_data.y_pred = model_predict(Mdl, model_name, ml_data.x_test);
 
-[C,~] = confusionmat(ml_data.y_test, ml_data.y_pred);
-confusionchart(C,ml_data.Conditions);
+%% step 9: Evaluation of trained model
+% - model_evalute summarizes model performance and plots confusion matrix
 
-[stats] = statsOfMeasure(C);  % replace by matlab version?
+stats=model_evalute(ml_data.y_test, ml_data.y_pred,ml_data.Conditions);
+
 
 if strfind(mode,'auto')
     disp(' ')
