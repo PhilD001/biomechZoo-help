@@ -2,11 +2,6 @@ function all_examples_test
 
 % ALL_EXAMPLES_TEST runs through every example to test that there are no errors
 
-% Machine learning ----------------------------------------------------------------------------
-ml_imu_example
-ml_mocap_example('Bsvm')
-ml_mocap_example('LSTM')
-
 
 % Basic operations ----------------------------------------------------------------------------	
 %
@@ -47,11 +42,9 @@ bmech_normalize_example
 bmech_partition_example			
 
 % Machine learning ----------------------------------------------------------------------------
-machine_learning('Bsvm')
-machine_learning('LSTM')
-ml_processing_template_IMU_simple
-ml_processing_template_IMU
-ml_processing_template_mocap
+ml_mocap_example('Bsvm')
+ml_mocap_example('LSTM')
+ml_imu_example
 
 
 % Visualization--------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-function ml_mocap_example(model_name)% Introduction_to_deep_learning_capabilities_of_BiomechZoo
+function ml_mocap_example(model_name)
 %
 % biomechZoo machine learning processing template for mocap data
 %
