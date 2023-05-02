@@ -24,7 +24,7 @@
 <div class="box"><strong>computes spatial-temporal parameters for any walking condition</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function [StrideLength, StepLength,StrideWidth] = SpatialParameters(FS1,FS2,FS3) </strong></div>
+<div class="box"><strong>function [StrideLength, StepLength,StrideWidth] = SpatialParameters(FS1,FS2,FS3, LegLength) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 <div class="fragment"><pre class="comment"> computes spatial-temporal parameters for any walking condition
@@ -32,14 +32,15 @@
  Gait &amp; Posture 23 (2006) Huxham et al.
 
  ARGUMENTS
- FS1            ... coordinates of 1st ipsilateral foot strike
- FS2            ... coordinates of 1st contraleral foot strike
- FS3            ... coordinates of 2nd ipsilateral foot strike
+   FS1            ... coordinates of 1st ipsilateral foot strike
+   FS2            ... coordinates of 1st contraleral foot strike
+   FS3            ... coordinates of 2nd ipsilateral foot strike
+   leg_length     ... optional. Length of leg, used to normalize paramters
 
  RETURNS
- StrideLength  ... Stride Length in same units as input units
- StepLength    ... Step Length in same units as input units
- StrideWidth   ... Stride width in same units as input units</pre></div>
+   StrideLength  ... Stride Length in same units as input units
+   StepLength    ... Step Length in same units as input units
+   StrideWidth   ... Stride width in same units as input units</pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
@@ -54,6 +55,6 @@ This function is called by:
 
 
 
-<hr><address>Generated on Mon 02-May-2022 15:41:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+<hr><address>Generated on Tue 02-May-2023 14:11:33 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
 </body>
 </html>

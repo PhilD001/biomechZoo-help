@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of cop_com_inclination_data</title>
+  <meta name="keywords" content="cop_com_inclination_data">
+  <meta name="description" content="BMECH_COP_COM_INCLINATION compute the angle between the COP and COM in the">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Gait</a> &gt; cop_com_inclination_data.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/Gait&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>cop_com_inclination_data
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>BMECH_COP_COM_INCLINATION compute the angle between the COP and COM in the</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function data = cop_com_inclination_data(data, ch_COM, ch_COP, vertical) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> BMECH_COP_COM_INCLINATION compute the angle between the COP and COM in the
+ antero-posterior and medio-lateral diretion with respect to the global vertical
+
+ ARGUMENTS
+   data     ...  struct, loaded zoo file
+   ch_COM   ...  str, name of center of mass channel. Default CentreOfMass
+   ch_COP   ...  str, name of center of pressure channel. default COP.
+
+ RETURNS
+  data     ...  struct, with cop-com inclination angle appended.
+
+ see Lee HJ, Chou LS. Detection of gait instability using the center of
+ mass and center of pressure inclination angles. Arch Phys Med Rehabil
+ 2006;87:569–75. https://doi.org/10.1016/j.apmr.2005.11.033
+
+ see also cbmech_op_com_inclination, <a href="cop_com_inclinaton.html" class="code" title="function [inc_angle_ap, inc_angle_ml] = cop_com_inclinaton(COM, COP, vertical_unit)">cop_com_inclinaton</a></pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="cop_com_inclinaton.html" class="code" title="function [inc_angle_ap, inc_angle_ml] = cop_com_inclinaton(COM, COP, vertical_unit)">cop_com_inclinaton</a>	</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="bmech_cop_com_inclination.html" class="code" title="function bmech_cop_com_inclination(fld, ch_com, ch_cop, vertical)">bmech_cop_com_inclination</a>	BMECH_COP_COM_INCLINATION compute the angle between the COP and COM in the</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 02-May-2023 14:11:33 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

@@ -2,9 +2,9 @@
                 "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
 <head>
-  <title>Description of reversepol_data</title>
-  <meta name="keywords" content="reversepol_data">
-  <meta name="description" content="data = REVERSEPOL_data(data,ch) polarity reversing for a given channel and">
+  <title>Description of bodyCOM_data</title>
+  <meta name="keywords" content="bodyCOM_data">
+  <meta name="description" content="data = BODYCOM_DATA(data,ch)computes center of mass (COM) position from all available body">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
   <meta name="robots" content="index, follow">
@@ -12,41 +12,41 @@
 </head>
 <body>
 <a name="_top"></a>
-<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Biomech Ops</a> &gt; reversepol_data.m</div>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Biomech Ops</a> &gt; bodyCOM_data.m</div>
 
 <!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
 <td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/Biomech Ops&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
 
-<h1>reversepol_data
+<h1>bodyCOM_data
 </h1>
 
 <h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>data = REVERSEPOL_data(data,ch) polarity reversing for a given channel and</strong></div>
+<div class="box"><strong>data = BODYCOM_DATA(data,ch)computes center of mass (COM) position from all available body</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function data = reversepol_data(data,ch) </strong></div>
+<div class="box"><strong>function data = bodyCOM_data(data,ch) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="fragment"><pre class="comment"> data = REVERSEPOL_data(data,ch) polarity reversing for a given channel and
- accompanying event if available
+<div class="fragment"><pre class="comment"> data = BODYCOM_DATA(data,ch)computes center of mass (COM) position from all available body
+ segment positions
 
  ARGUMENTS
-  data     ...  Zoo data
-  ch       ...  Channels to reverse as cell array of strings
+  data   ...  Zoo data to operate on
+  ch     ...  Name of new body COM channel. Default 'BodyCOM'
 
- RETURNS
-  data     ...  Zoo data with channels in ch with reversed polarity
+ RETURN
+  data   ... Zoo data with body COM position appended
 
- See also <a href="bmech_reversepol.html" class="code" title="function bmech_reversepol(fld,ch)">bmech_reversepol</a>, <a href="reversepol_line.html" class="code" title="function r_rev = reversepol_line(r)">reversepol_line</a></pre></div>
+ See also <a href="segmentCOM_data.html" class="code" title="function data = segmentCOM_data(data)">segmentCOM_data</a></pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="reversepol_line.html" class="code" title="function r_rev = reversepol_line(r)">reversepol_line</a>	r_rev = REVERSEPOL_line(r) polarity reversing for a vector</li></ul>
+<li><a href="segmentCOM_data.html" class="code" title="function data = segmentCOM_data(data)">segmentCOM_data</a>	data = SEGMENTCOM_DATA(data) computes segmental COM positions for Plug-in Gait marker set</li></ul>
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="bmech_reversepol.html" class="code" title="function bmech_reversepol(fld,ch)">bmech_reversepol</a>	BMECH_REVERSEPOL(fld,ch) batch process polarity reversing for a given channel and</li></ul>
+<li><a href="bmech_bodyCOM.html" class="code" title="function bmech_bodyCOM(fld)">bmech_bodyCOM</a>	bmech_bodyCOM computes the overall body center of mass based on weightings of individual</li></ul>
 <!-- crossreference -->
 
 

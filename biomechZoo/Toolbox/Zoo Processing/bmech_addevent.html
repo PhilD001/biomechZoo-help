@@ -24,7 +24,7 @@
 <div class="box"><strong>BMECH_ADDEVENT(fld,ch,ename,type,sfld) batch process of event addition</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function bmech_addevent(fld,ch,ename,type,sfld) </strong></div>
+<div class="box"><strong>function bmech_addevent(fld,ch,ename,type,sfld,constant) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 <div class="fragment"><pre class="comment"> BMECH_ADDEVENT(fld,ch,ename,type,sfld) batch process of event addition
@@ -36,18 +36,19 @@
   ename    ... The name of new event branch in zoo file as string
   type     ... See line 47 ('max' 'min' 'toe off' heel strike'...) string
   sfld     ... Subfolder of files not to include in addevent algorithm. Default ''
+  constant ...  a constant value to be used by a specific case.
 
  NOTES:
  - adding events can be done at any point during processing and can be called numerous times
  - add new cases as required to compute new events in addevents.m
 
- See also <a href="addevent_data.html" class="code" title="function data = addevent_data(data,ch,ename,type)">addevent_data</a>, <a href="bmech_removeevent.html" class="code" title="function bmech_removeevent(fld,evt,ch)">bmech_removeevent</a>, <a href="bmech_renameevent.html" class="code" title="function bmech_renameevent(fld,evt,nevt)">bmech_renameevent</a></pre></div>
+ See also <a href="addevent_data.html" class="code" title="function data = addevent_data(data,ch,ename,type, constant)">addevent_data</a>, <a href="bmech_removeevent.html" class="code" title="function bmech_removeevent(fld,evt,ch)">bmech_removeevent</a>, <a href="bmech_renameevent.html" class="code" title="function bmech_renameevent(fld,evt,nevt)">bmech_renameevent</a></pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="addevent_data.html" class="code" title="function data = addevent_data(data,ch,ename,type)">addevent_data</a>	data = ADDEVENT_DATA(data,ch,ename,type) called by bmech_addevent to add data to event branches.</li></ul>
+<li><a href="addevent_data.html" class="code" title="function data = addevent_data(data,ch,ename,type, constant)">addevent_data</a>	data = ADDEVENT_DATA(data,ch,ename,type) called by bmech_addevent to add data to event branches.</li></ul>
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
 </ul>
@@ -56,6 +57,6 @@ This function is called by:
 
 
 
-<hr><address>Generated on Mon 02-May-2022 15:41:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+<hr><address>Generated on Tue 02-May-2023 14:11:33 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
 </body>
 </html>

@@ -2,9 +2,9 @@
                 "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
 <head>
-  <title>Description of bmech_removeevent</title>
-  <meta name="keywords" content="bmech_removeevent">
-  <meta name="description" content="BMECH_REMOVEEVENT(fld,evt,ch) removes events from data set.">
+  <title>Description of cop_com_inclinaton</title>
+  <meta name="keywords" content="cop_com_inclinaton">
+  <meta name="description" content="">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
   <meta name="robots" content="index, follow">
@@ -12,37 +12,31 @@
 </head>
 <body>
 <a name="_top"></a>
-<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Zoo Processing</a> &gt; bmech_removeevent.m</div>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Gait</a> &gt; cop_com_inclinaton.m</div>
 
 <!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
-<td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/Zoo Processing&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+<td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/Gait&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
 
-<h1>bmech_removeevent
+<h1>cop_com_inclinaton
 </h1>
 
 <h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>BMECH_REMOVEEVENT(fld,evt,ch) removes events from data set.</strong></div>
+<div class="box"><strong></strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function bmech_removeevent(fld,evt,ch) </strong></div>
+<div class="box"><strong>function [inc_angle_ap, inc_angle_ml] = cop_com_inclinaton(COM, COP, vertical_unit) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="fragment"><pre class="comment"> BMECH_REMOVEEVENT(fld,evt,ch) removes events from data set. 
-
- ARGUMENTS
-  fld  ...   Folder to operate on
-  evt  ...   Name of event(s) to remove (string or cell array of strings) e.g.{'HS','TO'}. 
-             Default is 'all'
-  ch   ...   channels from which to remove events. Default is 'all'</pre></div>
+<div class="fragment"><pre class="comment"></pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="removeevent_data.html" class="code" title="function data = removeevent_data(data,evt,ch)">removeevent_data</a>	data = REMOVEEVENT_DATA(data,evt,ch) removes event from zoo file</li></ul>
+</ul>
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-</ul>
+<li><a href="cop_com_inclination_data.html" class="code" title="function data = cop_com_inclination_data(data, ch_COM, ch_COP, vertical)">cop_com_inclination_data</a>	BMECH_COP_COM_INCLINATION compute the angle between the COP and COM in the</li></ul>
 <!-- crossreference -->
 
 

@@ -24,7 +24,7 @@
 <div class="box"><strong>data = ADDEVENT_DATA(data,ch,ename,type) called by bmech_addevent to add data to event branches.</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function data = addevent_data(data,ch,ename,type) </strong></div>
+<div class="box"><strong>function data = addevent_data(data,ch,ename,type, constant) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 <div class="fragment"><pre class="comment"> data = ADDEVENT_DATA(data,ch,ename,type) called by bmech_addevent to add data to event branches.
@@ -34,6 +34,7 @@
   ch       ...  Channels to add event to (cell arrray of strings). 
   ename    ...  The name of the new event branch in zoo file as string
   type     ...  See line 47 ('max' 'min' 'toe off' heel strike'...) string
+  constant ...  a constant value to be used by a specific case.
 
  RETURNS
   data     ...  Zoo data with new event data appended
@@ -42,7 +43,7 @@
  - Users are encouraged to modify event functions for specific needs
  - Not all events have been tested
 
- See also <a href="bmech_addevent.html" class="code" title="function bmech_addevent(fld,ch,ename,type,sfld)">bmech_addevent</a>, <a href="bmech_removeevent.html" class="code" title="function bmech_removeevent(fld,evt,ch)">bmech_removeevent</a>, <a href="bmech_renameevent.html" class="code" title="function bmech_renameevent(fld,evt,nevt)">bmech_renameevent</a></pre></div>
+ See also <a href="bmech_addevent.html" class="code" title="function bmech_addevent(fld,ch,ename,type,sfld,constant)">bmech_addevent</a>, <a href="bmech_removeevent.html" class="code" title="function bmech_removeevent(fld,evt,ch)">bmech_removeevent</a>, <a href="bmech_renameevent.html" class="code" title="function bmech_renameevent(fld,evt,nevt)">bmech_renameevent</a></pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
@@ -51,12 +52,12 @@ This function calls:
 </ul>
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-<li><a href="bmech_addevent.html" class="code" title="function bmech_addevent(fld,ch,ename,type,sfld)">bmech_addevent</a>	BMECH_ADDEVENT(fld,ch,ename,type,sfld) batch process of event addition</li></ul>
+<li><a href="bmech_addevent.html" class="code" title="function bmech_addevent(fld,ch,ename,type,sfld,constant)">bmech_addevent</a>	BMECH_ADDEVENT(fld,ch,ename,type,sfld) batch process of event addition</li></ul>
 <!-- crossreference -->
 
 
 
 
-<hr><address>Generated on Mon 02-May-2022 15:41:47 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+<hr><address>Generated on Tue 02-May-2023 14:11:33 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
 </body>
 </html>
