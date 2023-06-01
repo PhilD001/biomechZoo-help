@@ -24,7 +24,7 @@
 <div class="box"><strong>BMECH_PHASE_ANGLE(fld, evt1, evt2) computes phase angles between evt1 and evt2 for channels</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
-<div class="box"><strong>function bmech_phase_angle(fld, chns, evt1, evt2) </strong></div>
+<div class="box"><strong>function bmech_phase_angle(fld, chns, evt1, evt2, pad_type) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 <div class="fragment"><pre class="comment"> BMECH_PHASE_ANGLE(fld, evt1, evt2) computes phase angles between evt1 and evt2 for channels
@@ -33,13 +33,14 @@
   fld        ...  Folder to batch process (string). 
   chns       ...  Channels for which to compute phase angle. Channels must be 1 x n (exploded)
   event1     ...   start of section of interest for angle data
-  event2     ...   end of section of interest for angle data</pre></div>
+  event2     ...   end of section of interest for angle data
+  pad_type    ... num, option to pad with zeros or Nans. Default is NaN</pre></div>
 
 <!-- crossreference -->
 <h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
 This function calls:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
-</ul>
+<li><a href="phase_angle_data.html" class="code" title="function data = phase_angle_data(data, chns, evt1, evt2, pad_type)">phase_angle_data</a>	PHASE_ANGLE_DATA(data, chns, evt1, evt2) computes phase angle taking into</li></ul>
 This function is called by:
 <ul style="list-style-image:url(../../../matlabicon.gif)">
 </ul>
@@ -48,6 +49,6 @@ This function is called by:
 
 
 
-<hr><address>Generated on Wed 03-May-2023 10:26:15 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+<hr><address>Generated on Wed 31-May-2023 22:04:17 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
 </body>
 </html>

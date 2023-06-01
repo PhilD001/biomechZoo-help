@@ -28,76 +28,58 @@ dest_data = [root_help, filesep, 'examples', filesep,'inter_joint_coordination',
 copyfile(src_data, dest_data)
 
 %% STEP 1: PREPARE DATA SET
-% - keep trials starting with a right foot strike (arbitrary)
+% - remove turning and static trials
 % - remove trials that are too short
 
 fld = dest_data;
 fl_static = engine('path',fld,'extension','zoo', 'folder', 'Static');
 fl_turn = engine('path',fld,'extension','zoo', 'folder','Turn');
-fl_straight = engine('path',fld,'extension','zoo', 'folder','Straight');
 
 delfile(fl_static)
 delfile(fl_turn)
 
-for i = 1:length(fl_straight)
- 
-    data = zload(fl_straight{i});
-    RFS1 = findfield(data, 'Right_FootStrike1');
-    LFS1 = findfield(data, 'Left_FootStrike1');
-    RFO2 = findfield(data, 'Right_FootOff2');
-    if RFS1(1) > LFS1(1)
-       delfile(fl_straight{i}); 
-    end
-    
-    if isempty(RFO2)
-        delfile(fl_straight{i});
-    end
-        
-    if strfind(fl_straight{i}, 'HC036')  % contains some nans so remove
-        delfile(fl_straight{i});
-    end
-
-end
 
 %% STEP 2 : CLEAN UP DATA
-% - data are cut (partitionned) over the same section of the gait cycle
 % - channels not required are removed to speed up downstream processes
 % - channels are exploded (one n x 3 channel becomes three n x 1 channels) 
-% - data are normalized to same length (101 frames)
-bmech_partition(fld,'Right_FootStrike1', 'Right_FootOff2')
-bmech_removechannel(fld, {'SACR', 'LKneeAngles', 'LHipAngles'}, 'keep')
+bmech_removechannel(fld, {'SACR', 'RKneeAngles', 'RHipAngles'}, 'keep')
 bmech_explode(fld)
-bmech_normalize(fld)
 
 %% STEP 3: COMPUTE PHASE ANGLES
 % - phase angle computed using hilbert transform
 % - data before and after evt1 and evt2 are used for padding to obtain
 %   stable Hilbert transform results. 
 % - Phase angle data before and after events are set to zeros
-evt1 = 'Left_FootStrike1';
-evt2 = 'Left_FootStrike2';
-chns = {'LHipAngles_x', 'LKneeAngles_x'}; 
+evt1 = 'Right_FootStrike1';
+evt2 = 'Right_FootStrike2';
+chns = {'RHipAngles_x', 'RKneeAngles_x'}; 
 bmech_phase_angle(fld, chns, evt1, evt2)
 
 %% STEP 4: COMPUTE CRP
 % - continuous relative phase is computed
 % - creates new channel with crp data called LKneeAngles_x_phase_LHipAngles_x_phase_crp
-dist_phase_angle_ch = 'LKneeAngles_x_phase';
-prox_phase_angle_ch = 'LHipAngles_x_phase';
+dist_phase_angle_ch = 'RKneeAngles_x_phase';
+prox_phase_angle_ch = 'RHipAngles_x_phase';
 bmech_continuous_relative_phase(fld, dist_phase_angle_ch, prox_phase_angle_ch)
+
+%% STEP 5: PARTITION AND NORMALIZE DATA
+% - get rid of data before and after events
+% - normalize to 100% to allow computation of CRP stats MARP, DP)
+bmech_partition(fld, 'Right_FootStrike1', 'Right_FootStrike2')
+bmech_normalize(fld)
 
 %% STEP 5: COMPUTE METRICS AND PLOT
 % - collect CRP and run basic stats to get output metrics
-crp_ch = 'LHipAngles_x_phase_LKneeAngles_x_phase_crp';
+
+crp_ch = 'RHipAngles_x_phase_RKneeAngles_x_phase_crp';
 fl = engine('path',fld,'extension','zoo');
-crp_stk = [];
+crp_stk = zeros(length(fl), 101);
 for i = 1:length(fl)
     data = zload(fl{i});
-    r = data.(crp_ch).line;
-    crp_stk = [crp_stk r];
+    crp_stk(i, :) = data.(crp_ch).line;
 end
     
-[MARP,DP]=CRP_stats(crp_stk');
+[MARP,DP]=CRP_stats(crp_stk);
 
 figure
 title('MARP and DP')
