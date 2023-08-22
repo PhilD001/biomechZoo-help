@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of xlwrite</title>
+  <meta name="keywords" content="xlwrite">
+  <meta name="description" content="XLWRITE Write to Microsoft Excel spreadsheet file using Java">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; <a href="#">xlwrite</a> &gt; xlwrite.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../../index.html"><img alt="<" border="0" src="../../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/Support Functions/xlwrite&nbsp;<img alt=">" border="0" src="../../../../right.png"></a></td></tr></table>-->
+
+<h1>xlwrite
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="box"><strong>XLWRITE Write to Microsoft Excel spreadsheet file using Java</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="box"><strong>function [status, message]=xlwrite(filename,A,sheet, range) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> XLWRITE Write to Microsoft Excel spreadsheet file using Java
+   XLWRITE(FILE,ARRAY) writes ARRAY to the first worksheet in the Excel
+   file named FILE, starting at cell A1. It aims to have exactly the same
+   behaviour as XLSWRITE. See also XLSWRITE.
+
+   XLWRITE(FILE,ARRAY,SHEET) writes to the specified worksheet.
+
+   XLWRITE(FILE,ARRAY,RANGE) writes to the rectangular region
+   specified by RANGE in the first worksheet of the file. Specify RANGE
+   using the syntax 'C1:C2', where C1 and C2 are opposing corners of the
+   region.
+
+   XLWRITE(FILE,ARRAY,SHEET,RANGE) writes to the specified SHEET and
+   RANGE.
+
+   STATUS = XLWRITE(FILE,ARRAY,SHEET,RANGE) returns the completion
+   status of the write operation: TRUE (logical 1) for success, FALSE
+   (logical 0) for failure.  Inputs SHEET and RANGE are optional.
+
+   Input Arguments:
+
+   FILE    String that specifies the file to write. If the file does not
+           exist, <a href="xlwrite.html" class="code" title="function [status, message]=xlwrite(filename,A,sheet, range)">XLWRITE</a> creates a file, determining the format based on
+           the specified extension. To create a file compatible with Excel
+           97-2003 software, specify an extension of '.xls'. If you do not
+           specify an extension, <a href="xlwrite.html" class="code" title="function [status, message]=xlwrite(filename,A,sheet, range)">XLWRITE</a> applies '.xls'.
+   ARRAY   Two-dimensional logical, numeric or character array or, if each
+           cell contains a single element, a cell array.
+   SHEET   Worksheet to write. One of the following:
+           * String that contains the worksheet name.
+           * Positive, integer-valued scalar indicating the worksheet
+             index.
+           If SHEET does not exist, <a href="xlwrite.html" class="code" title="function [status, message]=xlwrite(filename,A,sheet, range)">XLWRITE</a> adds a new sheet at the end
+           of the worksheet collection.
+   RANGE   String that specifies a rectangular portion of the worksheet to
+           read. Not case sensitive. Use Excel A1 reference style.
+           * If you specify a SHEET, RANGE can either fit the size of
+             ARRAY or specify only the first cell (such as 'D2').
+           * If you do not specify a SHEET, RANGE must include both
+             corners and a colon character (:), even for a single cell
+             (such as 'D2:D2').
+           * If RANGE is larger than the size of ARRAY, Excel fills the
+             remainder of the region with #N/A. If RANGE is smaller than
+             the size of ARRAY, <a href="xlwrite.html" class="code" title="function [status, message]=xlwrite(filename,A,sheet, range)">XLWRITE</a> writes only the subset that fits
+             into RANGE to the file.
+
+   Note
+   * This function requires the POI library to be in your javapath.
+     To add the Apache POI Library execute commands:
+     (This assumes the POI lib files are in folder 'poi_library')
+       javaaddpath('poi_library/poi-3.8-20120326.jar');
+       javaaddpath('poi_library/poi-ooxml-3.8-20120326.jar');
+       javaaddpath('poi_library/poi-ooxml-schemas-3.8-20120326.jar');
+       javaaddpath('poi_library/xmlbeans-2.3.0.jar');
+       javaaddpath('poi_library/dom4j-1.6.1.jar');
+   * Excel converts Inf values to 65535. <a href="xlwrite.html" class="code" title="function [status, message]=xlwrite(filename,A,sheet, range)">XLWRITE</a> converts NaN values to
+     empty cells.
+
+   EXAMPLES
+   % Write a 7-element vector to testdata.xls:
+   xlwrite('testdata.xls', [12.7, 5.02, -98, 63.9, 0, -.2, 56])
+
+   % Write mixed text and numeric data to testdata2.xls
+   % starting at cell E1 of Sheet1:
+   d = {'Time','Temperature'; 12,98; 13,99; 14,97};
+   xlwrite('testdata2.xls', d, 1, 'E1')
+
+
+   REVISIONS
+   20121004 - First version using JExcelApi
+   20121101 - Modified to use POI library instead of JExcelApi (allows to
+           generate XLSX)
+   20121127 - Fixed bug: use existing rows if present, instead of
+           overwrite rows by default. Thanks to Dan &amp; Jason.
+   20121204 - Fixed bug: if a numeric sheet is given &amp; didn't exist,
+           an error was returned instead of creating the sheet. Thanks to Marianna
+   20130106 - Fixed bug: use existing cell if present, instead of
+           overwriting. This way original XLS formatting is kept &amp; not
+           overwritten.
+   20130125 - Fixed bug &amp; documentation. Incorrect working of NaN. Thanks Klaus
+   20130227 - Fixed bug when no sheet number given &amp; added Stax to java
+               load. Thanks to Thierry
+
+   Copyright 2012-2013, Alec de Zegher
+==============================================================================</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../../matlabicon.gif)">
+<li><a href="Test_xlWrite.html" class="code" title="">Test_xlWrite</a>	% Small demonstration on how to use XLWRITE</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Aug-2023 13:39:48 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

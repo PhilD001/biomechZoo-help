@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of engine</title>
+  <meta name="keywords" content="engine">
+  <meta name="description" content="fl = ENGINE(varargin) is a file searching algorithm">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; engine.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/Support Functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>engine
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>fl = ENGINE(varargin) is a file searching algorithm</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function file_list = engine(varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> fl = ENGINE(varargin) is a file searching algorithm
+
+ inputs are in pairs where the first element is the property name and the second is a property value
+ The 'path' property is required.  All other properties are optional. All arguments must be strings.
+
+ ARGUMENTS
+  'path', 'pth' or 'fld'       ...  root folder path to begin the search as string
+  'extension' or 'ext'         ...  type of file to search as string. ex. '.c3d' or 'csv' ('.' not necessary)
+  'file' or 'search file'      ...  return only files containing specific string ex. '_g_'
+  'substring' , 'search path'  ...  search for a particular string in the path name ex 'hello' in data/helloworld and data/worldhello
+  'subfolder' or 'folder'      ...  search only in folders of a specific name located downstream from the root path (string)
+                                    ex 'helloworld' searches only in folders called 'helloworld'
+
+ RETURNS
+  fl                           ...  list of files as cell array of strings
+
+ e.g. #1 Return all files in the root folder C:/Users/Public which contain the
+ string 'imba':
+ fl = engine('path','C:/Users/Public','search file','imba')
+
+ e.g. #2 Return all files in the root folder C:/Users/Public which are
+ located in the subfolder Sample Music:
+ fld = 'C:/Users/Public';
+ fl = engine('path',fld,'search path','Sample Music')</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="bmech_continuous_stats_ensembler4.html" class="code" title="function [compcons,maxval] = bmech_continuous_stats_ensembler4(fld,ch,r,alpha,ax,nboots,maxval,check,cohen)">bmech_continuous_stats_ensembler4</a>	bmech_continuous_stats_ensembler4 computes continuous stats based on Bootstrap confidence intervals</li><li><a href="bmech_zoo2table.html" class="code" title="function table_data = bmech_zoo2table(fld,ch,subjects,conditions)">bmech_zoo2table</a>	BMECH_ZOO2TABLE (fld,ch,subjects,conditions) extracts channel line data</li><li><a href="build_interjoint_test_data.html" class="code" title="">build_interjoint_test_data</a>	script to generate mat file data for testing inter-joint coordination</li><li><a href="checkinput.html" class="code" title="function [fld,fl,saveFile] = checkinput(fld,ext)">checkinput</a>	[fld,fl,saveFile] = CHECKINPUT(fld,ext) standalone function used to</li><li><a href="colorprops.html" class="code" title="function colorprops(nclr)">colorprops</a>	</li><li><a href="costume2prop.html" class="code" title="function costume2prop(fld)">costume2prop</a>	costume2prop(fld) converts costume objects to props</li><li><a href="delfile.html" class="code" title="function delfile(fl)">delfile</a>	DELFILE(fl) deletes a single file or group of files</li><li><a href="directorold.html" class="code" title="function varargout = director(action,varargin)">directorold</a>	updated by Phil Dixon Oct 2009</li><li><a href="directorold2.html" class="code" title="function varargout = director(action,varargin)">directorold2</a>	updated by Phil Dixon Oct 2009</li><li><a href="getmaxval.html" class="code" title="function [maxval,temp,mult] = getmaxval(fld,ch,alpha,ax,nboots,check,cohen)">getmaxval</a>	getmaxval automatically checks all axes for maxdifference between conditons for later graphing</li><li><a href="marker.html" class="code" title="function varargout = marker(action,varargin)">marker</a>	varargout = marker(action,varargin) performs various actions for director</li><li><a href="openall.html" class="code" title="function openall(pth)">openall</a>	standalone function used by director</li><li><a href="propscopy.html" class="code" title="function varargout = props(action,varargin)">propscopy</a>	</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Aug-2023 13:39:48 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of showwindow</title>
+  <meta name="keywords" content="showwindow">
+  <meta name="description" content="SHOWWINDOW Change the state of a window.">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; showwindow.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/Support Functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>showwindow
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>SHOWWINDOW Change the state of a window.</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function showwindow(name,state) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment">SHOWWINDOW Change the state of a window.
+   SHOWWINDOW(NAME,STATE) changes the state of the window with a certain NAME
+   to the specified STATE.  STATE must be one of the following:
+
+   'hide','shownormal','normal','showminimized','showmaximized','maximize',
+   'shownoactivate','show','minimize','showminnoactive','showna','restore',
+   'showdefault','forceminimize','max'
+
+   This page describes the difference between these states:
+
+   &lt;http://msdn.microsoft.com/library/en-us/winui/winui/windowsuserinterface/windowing/windows/windowreference/windowfunctions/showwindow.asp&gt;
+
+   FORCEMINIMIZE Windows 2000/XP: Minimizes a window, even if the thread that
+   owns the window is hung. This flag should only be used when minimizing
+   windows from a different thread.
+ 
+   HIDE Hides the window and activates another window.
+ 
+   MAXIMIZE Maximizes the specified window.
+ 
+   MINIMIZE Minimizes the specified window and activates the next top-level
+   window in the Z order.
+ 
+   RESTORE Activates and displays the window. If the window is minimized or
+   maximized, the system restores it to its original size and position. An
+   application should specify this flag when restoring a minimized window.
+ 
+   SHOW Activates the window and displays it in its current size and position. 
+ 
+   SHOWDEFAULT Sets the show state based on the SW_ value specified in the
+   STARTUPINFO structure passed to the CreateProcess function by the program
+   that started the application. 
+ 
+   SHOWMAXIMIZED Activates the window and displays it as a maximized window.
+ 
+   SHOWMINIMIZED Activates the window and displays it as a minimized window.
+ 
+   SHOWMINNOACTIVE Displays the window as a minimized window. This value is
+   similar to SW_SHOWMINIMIZED, except the window is not activated.
+ 
+   SHOWNA Displays the window in its current size and position. This value is
+   similar to SW_SHOW, except the window is not activated.
+ 
+   SHOWNOACTIVATE Displays a window in its most recent size and position. This
+   value is similar to SW_SHOWNORMAL, except the window is not actived.
+ 
+   SHOWNORMAL Activates and displays a window. If the window is minimized or
+   maximized, the system restores it to its original size and position. An
+   application should specify this flag when displaying the window for the
+   first time.
+
+   Examples:
+   &gt;&gt; showwindow('MATLAB','minimize')
+   &gt;&gt; showwindow('','minimize')
+   &gt;&gt; figure(4); showwindow('Figure No. 4','maximize'); text(.5,.5,'Simoneau')</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Aug-2023 13:39:48 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

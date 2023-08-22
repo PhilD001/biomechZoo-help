@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of bmech_continuous_stats_ensembler4</title>
+  <meta name="keywords" content="bmech_continuous_stats_ensembler4">
+  <meta name="description" content="bmech_continuous_stats_ensembler4 computes continuous stats based on Bootstrap confidence intervals">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; bmech_continuous_stats_ensembler4.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/Support Functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>bmech_continuous_stats_ensembler4
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>bmech_continuous_stats_ensembler4 computes continuous stats based on Bootstrap confidence intervals</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function [compcons,maxval] = bmech_continuous_stats_ensembler4(fld,ch,r,alpha,ax,nboots,maxval,check,cohen) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> bmech_continuous_stats_ensembler4 computes continuous stats based on Bootstrap confidence intervals
+
+
+ ARGUMENTS
+ fld          ...   directory where data resides
+ ch           ...   channel of zoo file to investigate (string)
+ alpha        ...   significance level (default 0.05)
+ ax           ...   axis handle
+ check        ...   check the summary statistics
+ cohen        ...   use cohen's d insted of mean difference (boolean)
+
+ RETURNS
+ compconsstk  ...   used for ensembler. cons gives order of colorbars
+ maxval       ...   maxval of all differences for color bar legend
+
+
+ NOTE: Creating patch fails in MAC. No solution provided
+
+
+ Created May 2012 by Philippe C. Dixon
+
+
+
+ Updated June 2012
+ - fixed small error with color reporting
+ - better visualisation of color bars
+
+ Updated August 2012
+ -optimized for use in ensembler
+
+ Updated November 2012
+ - function can handle empty emsembler channels
+ - small changes can be expressed over numerous colors
+
+ updated Jan 12th 2013
+ - complies with zoosystem v1.1
+
+ updated Jan 19th 2013
+ - maxval and mult are set here as default
+
+ updated Feb 28th 2013
+ - mult dependent on maxval
+
+ updated July 27th 2013
+ - function restructured for speed and clarity
+ - mult and maxval computed automatically by function
+ - function can handle unequal samples sizes
+
+ Updatec October 23rd 2013
+ - conditions can handle the '+' identifier in ensembler</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="computecolorbars.html" class="code" title="function [mdiffdatastk,maxvalstk,mult,cons,SigDiffIndxStk,frames,compconsstk,chat_con,maxvalcohenstk,cohendstk] = computecolorbars(r,cons,ch,fl,nboots,alpha,check,mode,cohen)">computecolorbars</a>	made as stand alone function July 29th 2013</li><li><a href="engine.html" class="code" title="function file_list = engine(varargin)">engine</a>	fl = ENGINE(varargin) is a file searching algorithm</li><li><a href="isin.html" class="code" title="function r= isin(str,substr)">isin</a>	r = isin(str,a) verifies is substring 'substr' is in string or cell array of</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Aug-2023 13:39:48 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

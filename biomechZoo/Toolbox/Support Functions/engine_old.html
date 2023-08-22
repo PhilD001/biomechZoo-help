@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of engine_old</title>
+  <meta name="keywords" content="engine_old">
+  <meta name="description" content="fl = ENGINE_OLD(varargin) is a file searching algorithm">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; engine_old.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/Support Functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>engine_old
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>fl = ENGINE_OLD(varargin) is a file searching algorithm</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function fl = engine_old(varargin) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> fl = ENGINE_OLD(varargin) is a file searching algorithm
+
+ inputs are in pairs where the first element is the property name and the second is a property value
+ The 'path' property is required.  All other properties are optional. All arguments must be strings.
+
+ ARGUMENTS
+  'pth, 'path' or 'fld'  ...  folder path to begin the search as string
+  'extension' or 'ext'   ...  type of file to search as string. ex. '.c3d' or 'csv' ('.' not necessary)
+  'search file'          ...  return only files containing specific string ex. '_g_'
+  'search path'          ...  search for a particular string in the path name ex 'hello' in data/hello
+  'folder'               ...  search only in folders of a specific name located downstream from the path (string)
+
+ RETURNS
+  fl                     ...  list of files as cell array of strings  
+
+ e.g. #1 Return all files in the root folder C:/Users/Public which contain the
+ string 'imba':
+ fl = engine('path','C:/Users/Public','search file','imba')
+
+ e.g. #2 Return all files in the root folder C:/Users/Public which are
+ located in the subfolder Sample Music: 
+ fld = 'C:/Users/Public';
+ fl = engine('path',fld,'search path','Sample Music')</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="concatfile.html" class="code" title="function r = concatfile(varargin)">concatfile</a>	Updated by Phil Dixon Oct 2011</li><li><a href="directory.html" class="code" title="function [f,p] = directory(pth)">directory</a>	</li><li><a href="iseven.html" class="code" title="function r = iseven(x)">iseven</a>	r = ISEVEN(x) determines if numeric data is even.</li><li><a href="isin.html" class="code" title="function r= isin(str,substr)">isin</a>	r = isin(str,a) verifies is substring 'substr' is in string or cell array of</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Aug-2023 13:39:48 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

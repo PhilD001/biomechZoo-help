@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of readc3d</title>
+  <meta name="keywords" content="readc3d">
+  <meta name="description" content="DATA = READC3D(FNAME) will read a .c3d file and output the data in a structured array">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../../index.html">Home</a> &gt;  <a href="#">biomechZoo</a> &gt; <a href="#">Toolbox</a> &gt; <a href="#">Support Functions</a> &gt; readc3d.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../../index.html"><img alt="<" border="0" src="../../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for ./biomechZoo/Toolbox/Support Functions&nbsp;<img alt=">" border="0" src="../../../right.png"></a></td></tr></table>-->
+
+<h1>readc3d
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>DATA = READC3D(FNAME) will read a .c3d file and output the data in a structured array</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="box"><strong>function data =readc3d(fname) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> DATA = READC3D(FNAME) will read a .c3d file and output the data in a structured array
+
+ ARGUMENTS
+  fname     ... the c3d file and path (as a string) eg: 'c:\documents\myfile.c3d'
+
+ RETURNS
+  data      ...  structured array
+
+ Notes
+ - Machinetype variable may not be correct for intel or MIPS C3D files.
+   This m-file needs to be tested with C3D files of these types.
+   This m-file was tested and passed with DEC (VAX PDP-11) C3D files
+ - Only character, integer, and real numbers have been tested.
+   see http://www.c3d.org/HTML/default.htm for information
+ - Residuals of 3D data are not handled</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="g.html" class="code" title="function r=g(city)">g</a>	r=G(city) returns value of acceleration in different cities. You can get really nerdy and</li><li><a href="makecolumn.html" class="code" title="function r = makecolumn(s)">makecolumn</a>	MAKECOLUMN forces row vector to be a column vector</li><li><a href="makevalidfield.html" class="code" title="function ch = makevalidfield(ch)">makevalidfield</a>	ch = makevalidfield(ch) fixes common invalid field names for structed</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../../matlabicon.gif)">
+<li><a href="grab.html" class="code" title="">grab</a>	GRAB is the easy way to open .zoo and .c3d files. Simply type 'grab' and select</li><li><a href="plugingait.html" class="code" title="function ob = plugingait(bones,c3d)">plugingait</a>	</li><li><a href="propscopy.html" class="code" title="function varargout = props(action,varargin)">propscopy</a>	</li><li><a href="zmarker.html" class="code" title="function varargout = zmarker(action,varargin)">zmarker</a>	</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Tue 22-Aug-2023 13:39:48 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>
