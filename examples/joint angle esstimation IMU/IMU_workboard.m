@@ -29,7 +29,7 @@ mode = 'auto';                                                             % ent
 
 if strfind(mode,'auto')                                                    %#ok<*STRIFCND>
     tic
-    rfld = fullfile(fileparts(which('all_examples_test')),'example data joint angle esstimation IMU');
+    rfld = fullfile(fileparts(which('all_examples_test')),'IMU_kinematics');
     fld = fullfile(rfld,'test_data');
 else
     fld=uigetfolder;
@@ -40,7 +40,7 @@ end
 %% Step 1: joint angle computation -----------------------------------------------------------
 
 segment_pairs = { {'trunk', 'thighR'}, {'thighR', 'shankR'},{'trunk', 'thighL'},{'thighL', 'shankL'}}; % Sensor pairs
-parameters.SampleRate=100; % sampleing rate
+parameters.SampleRate=100; % sampling rate
 parameters.AccelerometerGain=0.01; % accelerometer gain
 parameters.MagnetometerGain=0.01; % magnetometer gain
 parameters.HasMagnetometer=true; 
@@ -52,11 +52,10 @@ bmech_imu_joint_angle(fld,parameters,segment_pairs) % function that will compute
 %   HasMagnetometer      - Enable magnetometer input
 %   OrientationFormat    - Output format specified as "quaternion" or
 %                          "Rotation matrix"
+
 %% Step 2: comparing IMU vs Mocap data -----------------------------------------------------------
 file=engine('fld',fld,'ext','.zoo');
 data=zload(file);
-compare_imu_vs_mocap(data)
-%% Step 2: comparing IMU vs Mocap data -----------------------------------------------------------
 pairs2compare={{'hipR_flex','RHipAngles_x'},{'kneeR_flex','RKneeAngles_x'},{'hipL_flex','LHipAngles_x'},{'kneeL_flex','LKneeAngles_x'}};
 row=2;
 colum=2;
