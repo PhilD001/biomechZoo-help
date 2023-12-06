@@ -29,7 +29,7 @@ mode = 'auto';                                                             % ent
 
 if strfind(mode,'auto')                                                    %#ok<*STRIFCND>
     tic
-    rfld = fullfile(fileparts(which('all_examples_test')),'IMU_kinematics');
+    rfld = fullfile(fileparts(which('all_examples_test')),'example data joint angle esstimation IMU');
     fld = fullfile(rfld,'test_data');
 else
     fld=uigetfolder;
@@ -55,7 +55,7 @@ bmech_imu_joint_angle(fld,parameters,segment_pairs) % function that will compute
 
 %% Step 2: comparing IMU vs Mocap data -----------------------------------------------------------
 file=engine('fld',fld,'ext','.zoo');
-data=zload(file);
+data=zload(file{1});
 pairs2compare={{'hipR_flex','RHipAngles_x'},{'kneeR_flex','RKneeAngles_x'},{'hipL_flex','LHipAngles_x'},{'kneeL_flex','LKneeAngles_x'}};
 row=2;
 colum=2;
